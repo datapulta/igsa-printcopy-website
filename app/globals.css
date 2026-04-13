@@ -10,19 +10,22 @@
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.15 0 0);
   --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.75 0.18 145);
+  /* Verde lima IGSA #A4C639 */
+  --primary: hsl(85 68% 60%);
   --primary-foreground: oklch(0.1 0 0);
-  --secondary: oklch(0.2 0 0);
+  /* Azul oscuro IGSA #003F7F */
+  --secondary: hsl(205 100% 25%);
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.25 0 0);
   --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.55 0.15 250);
-  --accent-foreground: oklch(0.98 0 0);
+  /* Azul grisáceo IGSA #6FA5C2 */
+  --accent: hsl(203 40% 62%);
+  --accent-foreground: oklch(0.1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.3 0 0);
   --input: oklch(0.2 0 0);
-  --ring: oklch(0.75 0.18 145);
+  --ring: hsl(85 68% 60%);
   --radius: 0.5rem;
 }
 

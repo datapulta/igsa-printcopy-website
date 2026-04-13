@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 const navigation = [
   { name: "Inicio", href: "/" },
@@ -17,17 +18,14 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex flex-col">
-            <span className="text-2xl font-bold tracking-tight">
-              <span className="text-primary">i</span>
-              <span className="text-accent">G</span>
-              <span className="text-foreground">SA</span>
-            </span>
-            <span className="text-[10px] font-medium bg-primary text-primary-foreground px-2 py-0.5 rounded -mt-1">
-              Print & Copy
-            </span>
-          </div>
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/images/logo-igsa.jpg" 
+            alt="IGSA Print & Copy Logo"
+            width={140}
+            height={80}
+            className="h-auto w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}

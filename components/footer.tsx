@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Phone, Mail, MapPin } from "lucide-react"
+import Image from "next/image"
 
 const locations = [
   {
@@ -29,17 +30,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo */}
           <div className="flex flex-col">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold tracking-tight">
-                  <span className="text-primary">i</span>
-                  <span className="text-accent">G</span>
-                  <span className="text-foreground">SA</span>
-                </span>
-                <span className="text-[10px] font-medium bg-primary text-primary-foreground px-2 py-0.5 rounded -mt-1 w-fit">
-                  Print & Copy
-                </span>
-              </div>
+            <Link href="/" className="flex items-center mb-4 w-fit">
+              <Image 
+                src="/images/logo-igsa.jpg" 
+                alt="IGSA Print & Copy Logo"
+                width={150}
+                height={90}
+                className="h-auto w-auto"
+              />
             </Link>
             <p className="text-sm text-muted-foreground">
               Más de 20 años brindando soluciones de impresión de alta calidad.
