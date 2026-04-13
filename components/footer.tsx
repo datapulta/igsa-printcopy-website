@@ -31,12 +31,10 @@ export function Footer() {
           {/* Logo */}
           <div className="flex flex-col">
             <Link href="/" className="flex items-center mb-4 w-fit">
-              <Image 
-                src="/images/logo-igsa.jpg" 
+              <img 
+                src="/images/logo-igsa.svg" 
                 alt="IGSA Print & Copy Logo"
-                width={150}
-                height={90}
-                className="h-auto w-auto"
+                className="h-20 w-auto"
               />
             </Link>
             <p className="text-sm text-muted-foreground">

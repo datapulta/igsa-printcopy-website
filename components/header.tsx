@@ -19,12 +19,10 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center">
-          <Image 
-            src="/images/logo-igsa.jpg" 
+          <img 
+            src="/images/logo-igsa.svg" 
             alt="IGSA Print & Copy Logo"
-            width={140}
-            height={80}
-            className="h-auto w-auto"
+            className="h-16 w-auto"
           />
         </Link>
 
