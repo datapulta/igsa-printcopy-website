@@ -6,6 +6,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { AnimateOnScroll } from "@/components/animate-on-scroll"
+import { MessageCircle } from "lucide-react"
 
 const faqs = [
   {
@@ -44,47 +46,80 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section className="py-20 bg-card">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <span className="inline-block px-4 py-2 text-sm font-medium bg-secondary text-foreground rounded-lg mb-4">
-              FAQ
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-              Preguntas más frecuentes
-            </h2>
-            
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border-border">
-                  <AccordionTrigger className="text-left text-foreground hover:text-primary">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-          
-          <div className="relative hidden lg:block">
-            <div className="sticky top-32">
-              <div className="relative aspect-square max-w-md ml-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl transform rotate-3" />
-                <div className="absolute inset-0 bg-card rounded-3xl border border-border flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-primary">24/7</span>
-                    </div>
-                    <p className="text-lg text-foreground font-medium">Servicio disponible</p>
-                    <p className="text-sm text-muted-foreground mt-2">Estamos aquí para resolver todas tus dudas</p>
+    <section className="py-24 relative section-divider">
+      <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* FAQ Column */}
+          <AnimateOnScroll direction="left">
+            <div>
+              <span className="inline-block px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full mb-4">
+                FAQ
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10">
+                Preguntas{" "}
+                <span className="gradient-text">frecuentes</span>
+              </h2>
+
+              <Accordion type="single" collapsible className="w-full space-y-2">
+                {faqs.map((faq, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="border border-white/[0.06] rounded-xl px-5 data-[state=open]:bg-white/[0.02] data-[state=open]:border-primary/20 transition-colors duration-300"
+                  >
+                    <AccordionTrigger className="text-left text-foreground hover:text-primary text-sm font-medium py-4 [&[data-state=open]]:text-primary">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-4">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Decorative Side Panel */}
+          <AnimateOnScroll direction="right" className="hidden lg:block">
+            <div className="sticky top-32 space-y-6">
+              {/* 24/7 Card */}
+              <div className="relative p-10 rounded-3xl glass-card overflow-hidden">
+                {/* Decorative glow */}
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-[80px]" />
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-accent/10 rounded-full blur-[60px]" />
+
+                <div className="relative text-center">
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 mb-6 animate-pulse-glow">
+                    <span className="text-3xl font-black gradient-text">24/7</span>
                   </div>
+                  <p className="text-xl font-bold text-foreground mb-2">
+                    Servicio disponible
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Estamos aquí para resolver todas tus dudas y atender proyectos urgentes
+                  </p>
                 </div>
               </div>
+
+              {/* Quick Contact Card */}
+              <div className="p-6 rounded-2xl glass-card">
+                <p className="text-sm font-medium text-foreground mb-3">
+                  ¿No encuentras tu respuesta?
+                </p>
+                <a
+                  href="https://wa.me/5255358703358?text=Hola%2C%20tengo%20una%20pregunta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-primary text-primary-foreground rounded-full hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-[1.03]"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Pregúntanos directo
+                </a>
+              </div>
             </div>
-          </div>
+          </AnimateOnScroll>
         </div>
       </div>
     </section>
