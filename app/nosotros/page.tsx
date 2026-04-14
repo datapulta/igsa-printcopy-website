@@ -1,10 +1,25 @@
-"use client"
-
+import type { Metadata } from 'next'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
 import { Lightbulb, Shield, Users } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
+
+export const metadata: Metadata = {
+  title: 'Nosotros — Más de 20 Años de Experiencia en Impresión',
+  description:
+    'Conoce la historia de IGSA Print & Copy. Fundada en 1993, somos una imprenta profesional con más de 20 años de experiencia en Huixquilucan. Misión, visión y valores.',
+  alternates: {
+    canonical: '/nosotros',
+  },
+  openGraph: {
+    title: 'Nosotros | IGSA Print & Copy',
+    description: 'Más de 20 años ofreciendo soluciones de impresión de alta calidad en Huixquilucan.',
+    url: '/nosotros',
+    images: [{ url: '/images/about-printing.jpg', width: 1200, height: 630, alt: 'IGSA Print & Copy — Nuestra historia' }],
+  },
+}
 
 const values = [
   {
@@ -30,6 +45,7 @@ const values = [
 export default function NosotrosPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Inicio", href: "/" }, { name: "Nosotros", href: "/nosotros" }]} />
       <Header />
       <main className="min-h-screen pt-20">
         {/* Hero Section */}
@@ -69,7 +85,7 @@ export default function NosotrosPage() {
                   <div className="relative min-h-[300px] lg:min-h-[500px]">
                     <Image
                       src="/images/about-printing.jpg"
-                      alt="Instalaciones IGSA Print"
+                      alt="Instalaciones IGSA Print & Copy en Huixquilucan"
                       fill
                       className="object-cover"
                     />
@@ -84,7 +100,6 @@ export default function NosotrosPage() {
         {/* Mission Section */}
         <section className="py-20 md:py-28 relative section-divider">
           <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
-
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <AnimateOnScroll direction="left">
@@ -100,7 +115,6 @@ export default function NosotrosPage() {
                   </p>
                 </div>
               </AnimateOnScroll>
-
               <AnimateOnScroll direction="right">
                 <div className="grid grid-cols-2 gap-4">
                   {[
@@ -123,16 +137,10 @@ export default function NosotrosPage() {
         {/* Vision Section */}
         <section className="relative py-20 md:py-28 overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/vision-printing.jpg"
-              alt="Visión IGSA Print"
-              fill
-              className="object-cover"
-            />
+            <Image src="/images/vision-printing.jpg" alt="Visión de IGSA Print & Copy" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
           </div>
-
           <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
             <AnimateOnScroll direction="right">
               <div className="max-w-2xl ml-auto">
@@ -152,7 +160,6 @@ export default function NosotrosPage() {
         {/* Values Section */}
         <section className="py-20 md:py-28 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
-
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
             <AnimateOnScroll className="text-center mb-14">
               <span className="inline-block px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full mb-4">
@@ -162,7 +169,6 @@ export default function NosotrosPage() {
                 Lo que nos <span className="gradient-text">define</span>
               </h2>
             </AnimateOnScroll>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {values.map((value, index) => (
                 <AnimateOnScroll key={index} delay={index * 0.12}>
@@ -172,9 +178,7 @@ export default function NosotrosPage() {
                     </div>
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-1 h-6 bg-gradient-to-b from-primary to-primary/30 rounded-full" />
-                      <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-                        {value.title}
-                      </h3>
+                      <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{value.title}</h3>
                     </div>
                     <p className="text-muted-foreground leading-relaxed">{value.description}</p>
                   </div>
