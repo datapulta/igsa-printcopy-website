@@ -24,7 +24,7 @@ const locations = [
     name: "Sucursal Huixquilucan",
     address: "Av. Venustiano Carranza #30, 2do Piso, San Melchor, 52760 Huixquilucan de Degollado, Mex.",
     phone: "+52 55 3587 0335",
-    whatsapp: "5255358703358",
+    whatsapp: "5535870335",
     mapUrl: "https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z",
   },
   {
@@ -32,7 +32,7 @@ const locations = [
     address: "Carretera Huixquilucan - Naucalpan, Magdalena Chichicaspa, 52773, Edo. Mex.",
     reference: "A la altura del Tecnológico Cuicalli",
     phone: "+52 55 7138 1809",
-    whatsapp: "525571381809",
+    whatsapp: "5571381809",
     mapUrl: "https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z",
   },
 ]
@@ -43,7 +43,7 @@ const contactMethods = [
     title: "WhatsApp",
     description: "Respuesta inmediata. Envíanos fotos de tu proyecto y te cotizamos al momento.",
     action: "Enviar mensaje",
-    href: "https://wa.me/5255358703358?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio%20de%20impresi%C3%B3n",
+    href: "https://wa.me/5535870335?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio%20de%20impresi%C3%B3n",
     color: "from-[#25D366]/20 to-[#25D366]/5",
     hoverGlow: "hover:shadow-[#25D366]/20",
     iconColor: "text-[#25D366]",

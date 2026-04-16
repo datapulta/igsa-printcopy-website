@@ -109,7 +109,7 @@ export function FAQSection() {
                   ¿No encuentras tu respuesta?
                 </p>
                 <a
-                  href="https://wa.me/5255358703358?text=Hola%2C%20tengo%20una%20pregunta"
+                  href="https://wa.me/5535870335?text=Hola%2C%20tengo%20una%20pregunta"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-primary text-primary-foreground rounded-full hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-[1.03]"

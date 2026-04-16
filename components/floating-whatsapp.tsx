@@ -12,7 +12,7 @@ export function FloatingWhatsApp() {
 
   return (
     <a
-      href="https://wa.me/5255358703358?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio%20de%20impresi%C3%B3n"
+      href="https://wa.me/5535870335?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio%20de%20impresi%C3%B3n"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
