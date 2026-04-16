@@ -42,11 +42,13 @@ export function Header() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
           {/* Logo */}
           <Link href="/" className="relative flex items-center group z-10">
-            <img
-              src="/images/logo-igsa.svg"
-              alt="IGSA Print & Copy Logo"
-              className="h-12 lg:h-14 w-auto transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsla(85,68%,50%,0.3)]"
-            />
+            <div className="bg-white/90 rounded-xl px-2 py-1 transition-all duration-500 group-hover:bg-white group-hover:shadow-md">
+              <img
+                src="/images/logo-igsa.svg"
+                alt="IGSA Print & Copy Logo"
+                className="h-10 lg:h-12 w-auto transition-all duration-500 group-hover:scale-105"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation — Centered */}
@@ -77,7 +79,7 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3 z-10">
             <a
-              href="https://wa.me/5255358703358?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio"
+              href="https://wa.me/5535870335?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-primary text-primary-foreground rounded-full hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
@@ -158,7 +160,7 @@ export function Header() {
             style={{ transitionDelay: mobileMenuOpen ? "0.5s" : "0s" }}
           >
             <a
-              href="https://wa.me/5255358703358?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio"
+              href="https://wa.me/5535870335?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold bg-primary text-primary-foreground rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all"
