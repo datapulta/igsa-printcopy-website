@@ -1,32 +1,13 @@
 import type { MetadataRoute } from 'next'
+import { siteConfig } from '@/lib/seo-config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://v0-igsa-print-copy.vercel.app'
+  const base = siteConfig.url
 
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/nosotros`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/servicios`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contacto`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
+    { url: base, lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${base}/nosotros`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/servicios`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/contacto`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
   ]
 }
