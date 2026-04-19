@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { FloatingWhatsApp } from '@/components/floating-whatsapp'
 import { OrganizationJsonLd } from '@/components/structured-data'
+import { siteConfig } from '@/lib/seo-config'
 import './globals.css'
 
 const geistSans = Geist({
@@ -15,8 +16,8 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono'
 })
 
-const SITE_URL = 'https://www.igsaprint.com/'
-const SITE_NAME = 'IGSA Print & Copy'
+const SITE_URL = siteConfig.url
+const SITE_NAME = siteConfig.name
 
 export const viewport: Viewport = {
   themeColor: [

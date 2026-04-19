@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
-import { BreadcrumbJsonLd } from "@/components/structured-data"
+import { BreadcrumbJsonLd, ServicePageJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: 'Servicios de Impresión — Digital, Gran Formato, Rotulación y Más',
@@ -42,6 +42,7 @@ export default function ServiciosPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Inicio", href: "/" }, { name: "Servicios", href: "/servicios" }]} />
+      <ServicePageJsonLd />
       <Header />
       <main className="min-h-screen pt-20">
         {/* Hero */}

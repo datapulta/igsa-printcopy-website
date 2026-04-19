@@ -1,16 +1,20 @@
+import { siteConfig } from '@/lib/seo-config'
+
+const S = siteConfig
+
 export function OrganizationJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://v0-igsa-print-copy.vercel.app/#organization",
-    name: "IGSA Print & Copy",
-    url: "https://v0-igsa-print-copy.vercel.app",
-    logo: "https://v0-igsa-print-copy.vercel.app/images/logo-igsa.svg",
+    "@id": `${S.url}/#organization`,
+    name: S.name,
+    url: S.url,
+    logo: `${S.url}/images/logo-igsa.svg`,
     description:
       "Imprenta profesional con más de 20 años de experiencia en Huixquilucan, Estado de México. Servicios de impresión digital, gran formato, rotulación, señalética y más.",
-    foundingDate: "1993",
-    email: "igsaprintcopy2@gmail.com",
-    telephone: ["+525535870335", "+525571381809"],
+    foundingDate: S.foundingYear,
+    email: S.email,
+    telephone: [S.phone.huixquilucan, S.phone.chichicaspa],
     address: [
       {
         "@type": "PostalAddress",
@@ -22,33 +26,24 @@ export function OrganizationJsonLd() {
       },
       {
         "@type": "PostalAddress",
-        streetAddress:
-          "Carretera Huixquilucan - Naucalpan, Magdalena Chichicaspa",
+        streetAddress: "Carretera Huixquilucan - Naucalpan, Magdalena Chichicaspa",
         addressLocality: "Huixquilucan de Degollado",
         addressRegion: "Estado de México",
         postalCode: "52773",
         addressCountry: "MX",
       },
     ],
-    sameAs: ["https://facebook.com", "https://instagram.com"],
+    sameAs: [S.social.facebook, S.social.instagram],
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+525535870335",
+        telephone: S.phone.huixquilucan,
         contactType: "customer service",
         areaServed: "MX",
         availableLanguage: "Spanish",
         hoursAvailable: {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
-          ],
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
           opens: "00:00",
           closes: "23:59",
         },
@@ -56,27 +51,22 @@ export function OrganizationJsonLd() {
     ],
   }
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 }
 
 export function LocalBusinessJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://v0-igsa-print-copy.vercel.app/#business",
-    name: "IGSA Print & Copy",
-    image: "https://v0-igsa-print-copy.vercel.app/images/logo-igsa.jpg",
-    url: "https://v0-igsa-print-copy.vercel.app",
-    telephone: "+525535870335",
-    email: "igsaprintcopy2@gmail.com",
+    "@type": ["LocalBusiness", "PrintingService"],
+    "@id": `${S.url}/#business`,
+    name: S.name,
+    image: `${S.url}/images/logo-igsa.jpg`,
+    url: S.url,
+    telephone: S.phone.huixquilucan,
+    email: S.email,
     description:
       "Imprenta profesional con más de 20 años de experiencia. Servicios de impresión digital, gran formato, rotulación, señalética, letreros 3D, sublimación y corte láser. Servicio 24 horas.",
-    foundingDate: "1993",
+    foundingDate: S.foundingYear,
     priceRange: "$$",
     currenciesAccepted: "MXN",
     paymentAccepted: "Efectivo, Tarjeta de crédito, Tarjeta de débito, Transferencia",
@@ -90,32 +80,30 @@ export function LocalBusinessJsonLd() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 19.3621026,
-      longitude: -99.3491322,
+      latitude: S.geo.latitude,
+      longitude: S.geo.longitude,
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       opens: "00:00",
       closes: "23:59",
     },
-    areaServed: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: 19.3621026,
-        longitude: -99.3491322,
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Huixquilucan de Degollado",
       },
-      geoRadius: "50000",
-    },
+      {
+        "@type": "State",
+        name: "Estado de México",
+      },
+      {
+        "@type": "GeoCircle",
+        geoMidpoint: { "@type": "GeoCoordinates", latitude: S.geo.latitude, longitude: S.geo.longitude },
+        geoRadius: "50000",
+      },
+    ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Servicios de Impresión",
@@ -153,47 +141,34 @@ export function LocalBusinessJsonLd() {
       ratingValue: "4.0",
       reviewCount: "6",
     },
+    potentialAction: {
+      "@type": "OrderAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `https://wa.me/${S.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio`,
+        actionPlatform: ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"],
+      },
+      name: "Cotizar por WhatsApp",
+    },
   }
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 }
 
-export function FAQPageJsonLd({
-  faqs,
-}: {
-  faqs: { question: string; answer: string }[]
-}) {
+export function FAQPageJsonLd({ faqs }: { faqs: { question: string; answer: string }[] }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
     })),
   }
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 }
 
-export function BreadcrumbJsonLd({
-  items,
-}: {
-  items: { name: string; href: string }[]
-}) {
+export function BreadcrumbJsonLd({ items }: { items: { name: string; href: string }[] }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -201,37 +176,49 @@ export function BreadcrumbJsonLd({
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `https://v0-igsa-print-copy.vercel.app${item.href}`,
+      item: `${S.url}${item.href}`,
     })),
   }
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 }
 
 export function WebSiteJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://v0-igsa-print-copy.vercel.app/#website",
-    name: "IGSA Print & Copy",
-    url: "https://v0-igsa-print-copy.vercel.app",
-    description:
-      "Imprenta profesional en Huixquilucan con más de 20 años de experiencia. Servicio 24 horas.",
-    publisher: {
-      "@id": "https://v0-igsa-print-copy.vercel.app/#organization",
-    },
+    "@id": `${S.url}/#website`,
+    name: S.name,
+    url: S.url,
+    description: "Imprenta profesional en Huixquilucan con más de 20 años de experiencia. Servicio 24 horas.",
+    publisher: { "@id": `${S.url}/#organization` },
     inLanguage: "es-MX",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: { "@type": "EntryPoint", urlTemplate: `${S.url}/servicios` },
+      "query-input": "required name=search_term_string",
+    },
   }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+}
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+export function ServicePageJsonLd() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Servicios de Impresión IGSA Print & Copy",
+    description: "Catálogo completo de servicios de impresión, señalización y diseño gráfico.",
+    url: `${S.url}/servicios`,
+    numberOfItems: 8,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Impresiones Digitales", url: `${S.url}/servicios#digitales` },
+      { "@type": "ListItem", position: 2, name: "Gran Formato", url: `${S.url}/servicios#gran-formato` },
+      { "@type": "ListItem", position: 3, name: "Sublimación", url: `${S.url}/servicios#sublimacion` },
+      { "@type": "ListItem", position: 4, name: "Letreros 3D", url: `${S.url}/servicios#letreros-3d` },
+      { "@type": "ListItem", position: 5, name: "Rotulación Vehicular", url: `${S.url}/servicios#rotulacion` },
+      { "@type": "ListItem", position: 6, name: "Señalética", url: `${S.url}/servicios#senaletica` },
+      { "@type": "ListItem", position: 7, name: "Corte Láser", url: `${S.url}/servicios#corte-laser` },
+      { "@type": "ListItem", position: 8, name: "Diseño Gráfico", url: `${S.url}/servicios#diseno` },
+    ],
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 }
