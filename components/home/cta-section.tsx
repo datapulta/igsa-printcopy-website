@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
+import { siteConfig } from "@/lib/seo-config"
 
 export function CTASection() {
   return (
@@ -34,7 +35,7 @@ export function CTASection() {
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
                 <a
-                  href="https://wa.me/5535870335?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio"
+                  href={`https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold text-foreground rounded-full border border-white/[0.12] bg-white/[0.04] hover:bg-white/[0.08] hover:border-white/[0.2] transition-all duration-300"

@@ -8,7 +8,7 @@ export const siteConfig = {
     huixquilucan: '+525535870335',
     chichicaspa: '+525571381809',
   },
-  whatsapp: '5255358703358',
+  whatsapp: '525571381809',
   foundingYear: '1993',
   geo: {
     latitude: 19.3621026,

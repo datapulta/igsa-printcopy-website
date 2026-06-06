@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
 import { MessageCircle } from "lucide-react"
+import { siteConfig } from "@/lib/seo-config"
 
 const navigation = [
   { name: "Inicio", href: "/" },
@@ -79,7 +80,7 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3 z-10">
             <a
-              href="https://wa.me/5535870335?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio"
+              href={`https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-primary text-primary-foreground rounded-full hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
@@ -160,7 +161,7 @@ export function Header() {
             style={{ transitionDelay: mobileMenuOpen ? "0.5s" : "0s" }}
           >
             <a
-              href="https://wa.me/5535870335?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio"
+              href={`https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold bg-primary text-primary-foreground rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all"

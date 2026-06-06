@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer"
 import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
+import { siteConfig } from "@/lib/seo-config"
 
 export const metadata: Metadata = {
   title: 'Contacto — WhatsApp, Teléfono y Correo | Atención 24 Horas',
@@ -43,7 +44,7 @@ const contactMethods = [
     title: "WhatsApp",
     description: "Respuesta inmediata. Envíanos fotos de tu proyecto y te cotizamos al momento.",
     action: "Enviar mensaje",
-    href: "https://wa.me/5535870335?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio%20de%20impresi%C3%B3n",
+    href: `https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio%20de%20impresi%C3%B3n`,
     color: "from-[#25D366]/20 to-[#25D366]/5",
     hoverGlow: "hover:shadow-[#25D366]/20",
     iconColor: "text-[#25D366]",
