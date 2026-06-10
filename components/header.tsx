@@ -40,6 +40,19 @@ export function Header() {
             : "bg-transparent"
         }`}
       >
+        {/* Banner de Sorteo Mundialista */}
+        <Link
+          href="/sorteo"
+          className="group block w-full bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-700 text-center py-2 px-4 text-xs font-bold text-white hover:brightness-110 transition-all duration-300 relative overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
+          <span className="relative z-10 flex items-center justify-center gap-1.5 flex-wrap">
+            <span>🏆 ¡Participa en el Sorteo Mundialista 2026 y gana hasta $3,000 en bonos!</span>
+            <span className="underline decoration-white/50 group-hover:decoration-white transition-all flex items-center gap-0.5">
+              Participa aquí <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </span>
+          </span>
+        </Link>
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
           {/* Logo */}
           <Link href="/" className="relative flex items-center group z-10">

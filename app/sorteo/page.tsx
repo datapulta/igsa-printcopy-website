@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
@@ -391,37 +392,32 @@ export default function SorteoPage() {
         <section className="py-16 bg-slate-900 text-white border-t-4 border-emerald-600">
           <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              {/* Left: FIFA World Cup 2026 Logo Placeholder */}
-              <div className="flex flex-col items-center lg:items-start gap-4">
-                <div className="w-32 h-32 bg-slate-800 rounded-2xl border border-slate-700 flex items-center justify-center p-4">
-                  <span className="text-xs text-center text-slate-400 font-bold">
-                    FIFA World Cup 2026<br/>Logo Placeholder
-                  </span>
+              {/* Left: Brand Logo */}
+              <div className="flex items-center">
+                <div className="relative w-28 h-28 shrink-0">
+                  <Image
+                    src="/logo-igsa-2026-facebook.svg"
+                    alt="IGSA Print & Copy Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
-                <p className="text-sm text-slate-400 text-center lg:text-left max-w-xs">
-                  Evento no afiliado oficialmente con FIFA. Sorteo organizado independientemente por IGSA Print & Copy con motivo del Mundial 2026.
+              </div>
+
+              {/* Center: Sweepstakes Slogan */}
+              <div className="hidden lg:flex flex-col items-center gap-1 text-center max-w-sm">
+                <span className="text-sm font-black text-yellow-400 tracking-widest uppercase">
+                  🏆 LA COPA DE LOS CAMPEONES
+                </span>
+                <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                  Registra tu participación antes del 21 de Junio. Exclusivo para Huixquilucan.
                 </p>
               </div>
 
               {/* Right: Contact Info */}
               <div className="flex flex-col items-center lg:items-end gap-6 text-center lg:text-right">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 justify-center lg:justify-end">
-                    <Phone className="h-5 w-5 text-emerald-400" />
-                    <span className="font-bold text-lg">+52 55 7138 1809</span>
-                  </div>
-                  <div className="flex items-center gap-3 justify-center lg:justify-end">
-                    <Mail className="h-5 w-5 text-emerald-400" />
-                    <span className="text-slate-300">igsaprintcopy2@gmail.com</span>
-                  </div>
-                  <div className="flex items-center gap-3 justify-center lg:justify-end">
-                    <MapPin className="h-5 w-5 text-emerald-400" />
-                    <span className="text-slate-300">Sucursales: Centro & Magdalena Chichicaspa</span>
-                  </div>
-                </div>
-                
                 <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-500 text-white font-black text-lg px-8 py-6 rounded-full shadow-lg shadow-emerald-900/50 animate-pulse">
-                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Registrarse y participar en el sorteo">
+                  <a href="https://www.facebook.com/share/p/1BzK9p4QFA/" target="_blank" rel="noopener noreferrer" aria-label="Registrarse y participar en el sorteo">
                     ¡REGÍSTRATE Y PARTICIPA! 👉📲
                   </a>
                 </Button>
