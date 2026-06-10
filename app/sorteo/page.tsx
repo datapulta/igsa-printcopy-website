@@ -10,12 +10,82 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { siteConfig } from "@/lib/seo-config"
 
+const SITE_URL = siteConfig.url
+
 export const metadata: Metadata = {
-  title: 'Sorteo: La Copa Mundial de los Campeones | IGSA Print & Copy',
-  description: 'Participa y gana hasta $3,000 MXN en bonos de impresión para tu negocio o proyecto en Huixquilucan. ¡La fiebre mundialista llegó a IGSA Print!',
+  title: 'Sorteo Mundialista: Gana $6,000 en Bonos | IGSA Print Huixquilucan',
+  description: 'Participa en La Copa Mundial de los Campeones de IGSA Print. Gana hasta $3,000 MXN en bonos de impresión para tu negocio o proyecto en Huixquilucan. Sorteo en vivo el 23 de Junio 2026.',
+  keywords: [
+    'sorteo huixquilucan',
+    'concurso impresión',
+    'bonos igsa print',
+    'sorteo mundialista',
+    'imprenta huixquilucan sorteo',
+    'ganar lonas publicitarias',
+    'regalos igsa print'
+  ],
   alternates: {
-    canonical: '/sorteo',
+    canonical: `${SITE_URL}/sorteo`,
   },
+  openGraph: {
+    title: 'Sorteo Mundialista: Gana $6,000 en Bonos | IGSA Print',
+    description: 'Participa y gana hasta $3,000 MXN en bonos de impresión para tu negocio o proyecto en Huixquilucan. ¡La fiebre mundialista llegó a IGSA Print!',
+    url: `${SITE_URL}/sorteo`,
+    siteName: siteConfig.name,
+    locale: 'es_MX',
+    type: 'website',
+    images: [
+      {
+        url: '/images/logo-igsa.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Sorteo Mundialista IGSA Print & Copy',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sorteo Mundialista: Gana $6,000 en Bonos | IGSA Print',
+    description: 'Participa y gana hasta $3,000 MXN en bonos de impresión para tu negocio o proyecto en Huixquilucan.',
+    images: ['/images/logo-igsa.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
+const giveawayJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'Sorteo La Copa Mundial de los Campeones - IGSA Print',
+  description: 'Concurso para ganar hasta $3,000 MXN en bonos de impresión para negocios o proyectos en Huixquilucan.',
+  startDate: '2026-06-01T00:00:00-06:00',
+  endDate: '2026-06-23T12:00:00-06:00',
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
+  location: {
+    '@type': 'Place',
+    name: 'IGSA Print & Copy',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Huixquilucan',
+      addressRegion: 'Estado de México',
+      addressCountry: 'MX'
+    }
+  },
+  organizer: {
+    '@type': 'Organization',
+    name: siteConfig.name,
+    url: SITE_URL
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'MXN',
+    availability: 'https://schema.org/InStock',
+    validFrom: '2026-06-01T00:00:00-06:00'
+  }
 }
 
 const steps = [
@@ -52,11 +122,14 @@ const services = [
 ]
 
 export default function SorteoPage() {
-  // ⚠️ REEMPLAZA ESTO CON TU ENLACE REAL DE WHATSAPP
   const whatsappLink = "https://wa.me/525535870335?text=Hola%2C%20quiero%20registrar%20mi%20participación%20en%20el%20sorteo%20mundialista"
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(giveawayJsonLd) }}
+      />
       <Header />
       <main className="min-h-screen pt-20">
         {/* Hero Section */}
@@ -78,7 +151,12 @@ export default function SorteoPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg px-8 py-6 rounded-full shadow-lg shadow-emerald-900/20">
-                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                  <a 
+                    href={whatsappLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="Registrar participación en el sorteo por WhatsApp"
+                  >
                     <MessageCircle className="mr-2 h-5 w-5" />
                     Registrar mi participación
                   </a>
@@ -298,7 +376,12 @@ export default function SorteoPage() {
                 <br />¡Muchísima suerte a todos! Haz de tus proyectos un éxito con IGSA. 🍀⚽
               </p>
               <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg px-10 py-6 rounded-full shadow-lg">
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                <a 
+                  href={whatsappLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Registrar participación en el sorteo por WhatsApp"
+                >
                   <MessageCircle className="mr-2 h-5 w-5" />
                   ¡Quiero participar ahora!
                 </a>
