@@ -40,29 +40,34 @@ export function Header() {
             : "bg-transparent"
         }`}
       >
-        {/* Banner de Sorteo Mundialista */}
-        <Link
-          href="/sorteo"
-          className="group block w-full bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-700 text-center py-2 px-4 text-xs font-bold text-white hover:brightness-110 transition-all duration-300 relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
-          <span className="relative z-10 flex items-center justify-center gap-1.5 flex-wrap">
-            <span>🏆 ¡Participa en el Sorteo Mundialista 2026 y gana hasta $3,000 en bonos!</span>
-            <span className="underline decoration-white/50 group-hover:decoration-white transition-all flex items-center gap-0.5">
-              Participa aquí <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+        {/* Barra de colores mexicana (solo en página de sorteo) */}
+        {pathname === "/sorteo" && (
+          <div className="w-full h-1 bg-gradient-to-r from-green-600 via-white to-red-600" />
+        )}
+        
+        {/* Banner de Sorteo Mundialista (oculto en página de sorteo) */}
+        {pathname !== "/sorteo" && (
+          <Link
+            href="/sorteo"
+            className="group block w-full bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-700 text-center py-2 px-4 text-xs font-bold text-white hover:brightness-110 transition-all duration-300 relative overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
+            <span className="relative z-10 flex items-center justify-center gap-1.5 flex-wrap">
+              <span>🏆 ¡Participa en el Sorteo Mundialista 2026 y gana hasta $3,000 en bonos!</span>
+              <span className="underline decoration-white/50 group-hover:decoration-white transition-all flex items-center gap-0.5">
+                Participa aquí <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </span>
             </span>
-          </span>
-        </Link>
+          </Link>
+        )}
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
           {/* Logo */}
           <Link href="/" className="relative flex items-center group z-10">
-            <div className="bg-white/90 rounded-xl px-2 py-1 transition-all duration-500 group-hover:bg-white group-hover:shadow-md">
-              <img
-                src="/images/logo-igsa.svg"
-                alt="IGSA Print & Copy Logo"
-                className="h-10 lg:h-12 w-auto transition-all duration-500 group-hover:scale-105"
-              />
-            </div>
+            <img
+              src="/logo-igsa-2026-facebook.svg"
+              alt="IGSA Print & Copy Logo"
+              className="h-10 lg:h-12 w-auto transition-all duration-500 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation — Centered */}

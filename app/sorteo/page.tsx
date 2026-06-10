@@ -131,8 +131,6 @@ export default function SorteoPage() {
       <main className="min-h-screen pt-20">
         {/* Hero Section with Stadium Floodlights Effect */}
         <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900 via-slate-950 to-black py-20 lg:py-32">
-          {/* Subtle flag motif border top */}
-          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-green-600 via-white to-red-600" />
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -176,7 +174,14 @@ export default function SorteoPage() {
                     <div className="relative w-full h-full rounded-full border-8 border-yellow-500 bg-gradient-to-br from-emerald-700 to-slate-900 shadow-[0_0_60px_rgba(16,185,129,0.4)] animate-[spin_12s_linear_infinite] flex items-center justify-center">
                       <div className="absolute inset-2 rounded-full border-4 border-dashed border-white/20" />
                       <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent_0_20deg,rgba(255,255,255,0.1)_20deg_40deg,transparent_40deg)]" />
-                      <Trophy className="h-28 w-28 text-yellow-400 drop-shadow-lg" />
+                      <div className="relative w-28 h-28 md:w-36 md:h-36 mb-6">
+                        <Image
+                          src="/logo-igsa-2026-facebook.svg"
+                          alt="Logo IGSA Print & Copy"
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
                       <span className="absolute bottom-12 text-white font-black text-2xl tracking-widest drop-shadow-md">RULETA IGSA</span>
                     </div>
                     {/* Pointer */}

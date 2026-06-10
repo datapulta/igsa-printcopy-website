@@ -37,11 +37,11 @@ export function Footer() {
           {/* Logo & Description */}
           <div className="lg:col-span-3 flex flex-col">
             <Link href="/" className="flex items-center mb-5 w-fit group">
-              <div className="bg-white/90 rounded-xl px-2 py-1 transition-all duration-300 group-hover:bg-white group-hover:shadow-md">
+              <div className="transition-all duration-300 group-hover:scale-105">
                 <img
-                  src="/images/logo-igsa.svg"
+                  src="/logo-igsa-2026-facebook.svg"
                   alt="IGSA Print & Copy Logo"
-                  className="h-14 w-auto transition-all duration-300"
+                  className="h-16 w-auto transition-all duration-300"
                 />
               </div>
             </Link>
