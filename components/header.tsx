@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
 import { MessageCircle } from "lucide-react"
@@ -63,12 +64,13 @@ export function Header() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
           {/* Logo */}
           <Link href="/" className="relative flex items-center group z-10">
-            <img
+            <Image
               src="/logo-igsa-2026-facebook.svg"
               alt="IGSA Print & Copy Logo"
+              width={48}
+              height={48}
               className="h-10 lg:h-12 w-auto transition-all duration-500 group-hover:scale-105"
-              loading="eager"
-              fetchPriority="high"
+              priority
             />
           </Link>
 

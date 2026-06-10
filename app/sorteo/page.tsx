@@ -337,7 +337,7 @@ export default function SorteoPage() {
                   <h3 className="text-xl font-bold mb-2 text-white">Gran Final EN VIVO</h3>
                   <p className="text-3xl font-black text-yellow-400">23 de Junio, 2026</p>
                   <p className="text-slate-300 mt-3 text-sm leading-relaxed">
-                    Se seleccionará primero a 10 convocados (finalistas) tomando en cuenta los comentarios, impulsando tu idea, de ahí pasaremos a la <strong className="text-emerald-400">RULETA IGSA</strong> en vivo para definir a los 3 campeones oficiales. ¡Transparencia total frente a las cámaras!
+                    Se seleccionará primero a 10 convocados (finalistas) tomando en cuenta las reacciones, likes y los comentarios impulsando tu idea, de ahí pasaremos a la <strong className="text-emerald-400">RULETA IGSA</strong> en vivo para definir a los 3 campeones oficiales. ¡Transparencia total frente a las cámaras!
                   </p>
                 </div>
               </div>
