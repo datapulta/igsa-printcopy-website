@@ -292,15 +292,7 @@ export default function SorteoPage() {
                 ))}
               </div>
               
-              <div className="mt-12 text-center p-8 bg-emerald-50 dark:bg-emerald-950/20 border-2 border-emerald-200 dark:border-emerald-800 rounded-3xl max-w-3xl mx-auto relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-200 dark:bg-emerald-800 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2" />
-                <h4 className="text-2xl font-black text-emerald-700 dark:text-emerald-400 mb-3 flex items-center justify-center gap-2 relative z-10">
-                  <Disc className="h-6 w-6" /> ¡Jugadas Extra!
-                </h4>
-                <p className="text-slate-700 dark:text-slate-300 relative z-10">
-                  Cada comentario adicional con una <strong>fotografía diferente</strong> de tus productos, local o actividades escolares, junto a <strong>3 amigos nuevos</strong>, cuenta como un tiro al arco adicional. ¡Entre más comentes, más posibilidades tienes de ganar!
-                </p>
-              </div>
+
             </AnimateOnScroll>
           </div>
         </section>
