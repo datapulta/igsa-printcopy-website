@@ -324,10 +324,10 @@ export default function SorteoPage() {
                 <div className="bg-gradient-to-br from-emerald-900/50 to-slate-900/50 backdrop-blur-md border border-emerald-500/30 p-8 rounded-2xl text-center relative overflow-hidden group hover:border-emerald-500/60 transition-colors">
                   <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-black px-4 py-1.5 rounded-bl-lg animate-pulse">EN VIVO</div>
                   <Trophy className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2 text-white">Gran Final</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Gran Final EN VIVO</h3>
                   <p className="text-3xl font-black text-yellow-400">23 de Junio, 2026</p>
                   <p className="text-slate-300 mt-3 text-sm leading-relaxed">
-                    Se seleccionarán 10 convocados al azar y pasaremos a la <strong className="text-emerald-400">RULETA IGSA</strong> en vivo para definir a los 3 campeones oficiales. ¡Transparencia total frente a las cámaras!
+                    Se seleccionará primero a 10 convocados (finalistas) tomando en cuenta los comentarios, impulsando tu idea, de ahí pasaremos a la <strong className="text-emerald-400">RULETA IGSA</strong> en vivo para definir a los 3 campeones oficiales. ¡Transparencia total frente a las cámaras!
                   </p>
                 </div>
               </div>
