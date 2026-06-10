@@ -156,8 +156,8 @@ export default function SorteoPage() {
                       </a>
                     </Button>
                     <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 rounded-full border-2 border-white/20 text-white hover:bg-white/10">
-                      <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Registrar participación por WhatsApp">
-                        <MessageCircle className="mr-2 h-5 w-5" />
+                      <a href="https://www.facebook.com/share/p/1BzK9p4QFA/" target="_blank" rel="noopener noreferrer" aria-label="Ir a la publicación del sorteo en Facebook para participar">
+                        <Share2 className="mr-2 h-5 w-5" />
                         Registrar participación
                       </a>
                     </Button>
