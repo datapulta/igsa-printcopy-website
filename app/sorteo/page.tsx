@@ -130,7 +130,19 @@ export default function SorteoPage() {
       <Header />
       <main className="min-h-screen pt-20">
         {/* Hero Section with Stadium Floodlights Effect */}
-        <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900 via-slate-950 to-black py-20 lg:py-32">
+        <section className="relative overflow-hidden bg-slate-950 py-20 lg:py-32">
+          {/* Background Image with Lime/Blue waves */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/sorteo-bg.jpg"
+              alt="Sorteo Mundialista IGSA Background"
+              fill
+              className="object-cover opacity-40 scale-105"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/50" />
+          </div>
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">

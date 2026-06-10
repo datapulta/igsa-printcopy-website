@@ -67,6 +67,8 @@ export function Header() {
               src="/logo-igsa-2026-facebook.svg"
               alt="IGSA Print & Copy Logo"
               className="h-10 lg:h-12 w-auto transition-all duration-500 group-hover:scale-105"
+              loading="eager"
+              fetchPriority="high"
             />
           </Link>
 
