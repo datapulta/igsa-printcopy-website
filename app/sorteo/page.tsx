@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 import { 
   Trophy, Medal, CalendarDays, ShieldCheck, AlertTriangle, 
-  Camera, Share2, Heart, MessageCircle, MapPin, CheckCircle2, XCircle 
+  Camera, Share2, Heart, MessageCircle, MapPin, CheckCircle2, XCircle, Disc, Phone, Mail
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -13,22 +13,21 @@ import { siteConfig } from "@/lib/seo-config"
 const SITE_URL = siteConfig.url
 
 export const metadata: Metadata = {
-  title: 'Sorteo Mundialista: Gana $6,000 en Bonos | IGSA Print Huixquilucan',
-  description: 'Participa en La Copa Mundial de los Campeones de IGSA Print. Gana hasta $3,000 MXN en bonos de impresión para tu negocio o proyecto en Huixquilucan. Sorteo en vivo el 23 de Junio 2026.',
+  title: 'Sorteo Mundialista 2026: Gana $6,000 en Bonos | IGSA Print Huixquilucan',
+  description: 'Participa en La Copa de los Campeones. Gana hasta $3,000 MXN en bonos de impresión. Sorteo en vivo el 23 de Junio 2026 con la Ruleta IGSA.',
   keywords: [
     'sorteo huixquilucan',
-    'concurso impresión',
+    'concurso impresión 2026',
     'bonos igsa print',
     'sorteo mundialista',
-    'imprenta huixquilucan sorteo',
-    'ganar lonas publicitarias',
-    'regalos igsa print'
+    'ruleta igsa',
+    'imprenta huixquilucan sorteo'
   ],
   alternates: {
     canonical: `${SITE_URL}/sorteo`,
   },
   openGraph: {
-    title: 'Sorteo Mundialista: Gana $6,000 en Bonos | IGSA Print',
+    title: 'Sorteo Mundialista 2026: Gana $6,000 en Bonos | IGSA Print',
     description: 'Participa y gana hasta $3,000 MXN en bonos de impresión para tu negocio o proyecto en Huixquilucan. ¡La fiebre mundialista llegó a IGSA Print!',
     url: `${SITE_URL}/sorteo`,
     siteName: siteConfig.name,
@@ -39,13 +38,13 @@ export const metadata: Metadata = {
         url: '/images/logo-igsa.jpg',
         width: 1200,
         height: 630,
-        alt: 'Sorteo Mundialista IGSA Print & Copy',
+        alt: 'Sorteo Mundialista IGSA Print & Copy 2026',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sorteo Mundialista: Gana $6,000 en Bonos | IGSA Print',
+    title: 'Sorteo Mundialista 2026: Gana $6,000 en Bonos | IGSA Print',
     description: 'Participa y gana hasta $3,000 MXN en bonos de impresión para tu negocio o proyecto en Huixquilucan.',
     images: ['/images/logo-igsa.jpg'],
   },
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
 const giveawayJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Event',
-  name: 'Sorteo La Copa Mundial de los Campeones - IGSA Print',
+  name: 'Sorteo La Copa de los Campeones - IGSA Print 2026',
   description: 'Concurso para ganar hasta $3,000 MXN en bonos de impresión para negocios o proyectos en Huixquilucan.',
   startDate: '2026-06-01T00:00:00-06:00',
   endDate: '2026-06-23T12:00:00-06:00',
@@ -91,38 +90,35 @@ const giveawayJsonLd = {
 const steps = [
   {
     icon: Heart,
-    title: "Sigue y da Me Gusta",
-    desc: "Sigue a nuestra página y dale ❤️ a la publicación del sorteo."
+    title: "Sigue nuestra página y reacciona",
+    desc: "Dale ❤️ a la publicación del sorteo y síguenos para no perderte nada."
   },
   {
     icon: Share2,
-    title: "Comparte en tu muro",
-    desc: "Comparte la publicación en modo público (indispensable para validar tu juego)."
+    title: "Comparte en modo público",
+    desc: "Comparte la publicación en tu Historia o Muro en modo público (indispensable para validar tu juego)."
   },
   {
     icon: Camera,
-    title: "Comenta con FOTO REAL",
-    desc: "Sube una foto real de tu negocio, proyecto escolar o idea. ¡Etiqueta a 3 amigos de Huixquilucan!"
+    title: "Comenta con una FOTO REAL",
+    desc: "Sube una foto real de tu negocio, proyecto escolar o idea y etiqueta a 3 amigos de Huixquilucan."
   },
   {
     icon: MessageCircle,
-    title: "Registra tu participación",
-    desc: "Guarda nuestro WhatsApp y envía un mensaje para registrar tu participación oficialmente."
+    title: "Guarda nuestro WhatsApp",
+    desc: "Envía un mensaje para registrar tu participación oficialmente y estar en contacto."
   }
 ]
 
-const services = [
-  "Lonas y viniles de gran formato",
-  "Banners, banderas y anuncios para fachada",
-  "Volantes, folletos y tarjetas de presentación",
-  "Impresión digital, stickers y etiquetas troqueladas",
-  "Vasos, termos y souvenirs personalizados",
-  "Uniformes o playeras deportivas publicitarias",
-  "Letreros 2D o 3D de alto impacto"
+const prizeExamples = [
+  "Momentos personalizados del Mundial",
+  "Jerseys y uniformes deportivos",
+  "Papelería y tarjetas de presentación",
+  "Tarjetas de descuento especiales"
 ]
 
 export default function SorteoPage() {
-  const whatsappLink = "https://wa.me/525535870335?text=Hola%2C%20quiero%20registrar%20mi%20participación%20en%20el%20sorteo%20mundialista"
+  const whatsappLink = "https://wa.me/525571381809?text=Hola%2C%20quiero%20registrar%20mi%20participación%20en%20el%20Sorteo%20Mundialista%202026"
 
   return (
     <>
@@ -132,86 +128,138 @@ export default function SorteoPage() {
       />
       <Header />
       <main className="min-h-screen pt-20">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-emerald-950 to-background py-20 lg:py-32">
-          <div className="container mx-auto px-4 relative z-10 text-center">
-            <AnimateOnScroll>
-              <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-wider text-emerald-400 uppercase bg-emerald-950/50 border border-emerald-800 rounded-full">
-                ⚽🏆 Huixquilucan
-              </span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground mb-6">
-                LA COPA MUNDIAL DE <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
-                  LOS CAMPEONES
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                ¡La fiebre mundialista ya se siente en IGSA Print & Copy! 
-                Te patrocinamos con <span className="text-emerald-400 font-bold">$6,000 MXN EN BONOS</span> para que juegues en primera división.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg px-8 py-6 rounded-full shadow-lg shadow-emerald-900/20">
-                  <a 
-                    href={whatsappLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="Registrar participación en el sorteo por WhatsApp"
-                  >
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    Registrar mi participación
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 rounded-full border-2">
-                  <a href="#como-participar">
-                    Ver mecánica
-                  </a>
-                </Button>
+        {/* Hero Section with Stadium Floodlights Effect */}
+        <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900 via-slate-950 to-black py-20 lg:py-32">
+          {/* Subtle flag motif border top */}
+          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-green-600 via-white to-red-600" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="flex-1 text-center lg:text-left">
+                <AnimateOnScroll>
+                  <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-white mb-4 leading-tight">
+                    ¡LA COPA DE LOS CAMPEONES! 🏆 <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">
+                      SORTEO MUNDIALISTA 2026 iGSA
+                    </span>
+                  </h1>
+                  <p className="text-3xl md:text-5xl font-black text-yellow-400 mb-8 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
+                    $6,000 MXN EN BONOS
+                  </p>
+                  <p className="text-lg text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0">
+                    La fiebre mundialista llegó a Huixquilucan. Participa y juega en primera división con los mejores premios en impresión.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <Button asChild size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-black text-lg px-8 py-6 rounded-full shadow-lg shadow-yellow-500/20 transition-transform hover:scale-105">
+                      <a href="#como-participar" aria-label="Ver mecánica del sorteo">
+                        ¡COMENTA Y GANA AHORA! 👇
+                      </a>
+                    </Button>
+                    <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 rounded-full border-2 border-white/20 text-white hover:bg-white/10">
+                      <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Registrar participación por WhatsApp">
+                        <MessageCircle className="mr-2 h-5 w-5" />
+                        Registrar participación
+                      </a>
+                    </Button>
+                  </div>
+                </AnimateOnScroll>
               </div>
-            </AnimateOnScroll>
+              
+              {/* Spinning Prize Wheel Visual */}
+              <div className="flex-1 flex justify-center">
+                <AnimateOnScroll>
+                  <div className="relative w-72 h-72 md:w-96 md:h-96">
+                    {/* Outer glow */}
+                    <div className="absolute inset-0 rounded-full bg-emerald-500/30 blur-3xl animate-pulse" />
+                    {/* Wheel container */}
+                    <div className="relative w-full h-full rounded-full border-8 border-yellow-500 bg-gradient-to-br from-emerald-700 to-slate-900 shadow-[0_0_60px_rgba(16,185,129,0.4)] animate-[spin_12s_linear_infinite] flex items-center justify-center">
+                      <div className="absolute inset-2 rounded-full border-4 border-dashed border-white/20" />
+                      <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent_0_20deg,rgba(255,255,255,0.1)_20deg_40deg,transparent_40deg)]" />
+                      <Trophy className="h-28 w-28 text-yellow-400 drop-shadow-lg" />
+                      <span className="absolute bottom-12 text-white font-black text-2xl tracking-widest drop-shadow-md">RULETA IGSA</span>
+                    </div>
+                    {/* Pointer */}
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[40px] border-t-yellow-500 drop-shadow-lg z-20" />
+                  </div>
+                </AnimateOnScroll>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Prizes Section */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-slate-50 dark:bg-slate-950 relative">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-700 via-white to-red-600 opacity-50" />
           <div className="container mx-auto px-4">
             <AnimateOnScroll>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                Premios a los <span className="text-emerald-500">Campeones</span>
-              </h2>
+              <div className="text-center mb-12">
+                <span className="inline-block px-4 py-1.5 mb-4 text-sm font-black tracking-wider text-yellow-600 uppercase bg-yellow-100 dark:bg-yellow-900/30 rounded-full border border-yellow-300 dark:border-yellow-700">
+                  ¡GANA!
+                </span>
+                <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white">
+                  Premios a los <span className="text-emerald-600 dark:text-emerald-400">Campeones</span>
+                </h2>
+              </div>
+              
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {/* 2nd Place */}
-                <Card className="border-gray-300 dark:border-gray-700 bg-gradient-to-b from-background to-gray-50 dark:to-gray-900/50 order-2 md:order-1 mt-8 md:mt-12">
-                  <CardHeader className="text-center">
-                    <Medal className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                    <CardTitle className="text-2xl">Subcampeón</CardTitle>
+                <Card className="border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 order-2 md:order-1 mt-8 md:mt-12 shadow-lg">
+                  <CardHeader className="text-center pb-2">
+                    <Medal className="h-16 w-16 text-slate-400 mx-auto mb-2" />
+                    <CardTitle className="text-xl font-bold text-slate-700 dark:text-slate-300">Subcampeón</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
-                    <p className="text-4xl font-extrabold text-gray-600 dark:text-gray-300 mb-2">$2,000</p>
-                    <p className="text-muted-foreground">MXN en Bono de Canje</p>
+                    <p className="text-4xl font-black text-slate-600 dark:text-slate-200 mb-2">$2,000</p>
+                    <p className="text-sm text-muted-foreground mb-4">MXN en Bono de Canje</p>
+                    <ul className="text-xs text-left space-y-2 text-slate-600 dark:text-slate-400">
+                      {prizeExamples.slice(0, 2).map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
 
                 {/* 1st Place */}
-                <Card className="border-yellow-500/50 bg-gradient-to-b from-background to-yellow-50/50 dark:to-yellow-950/20 shadow-xl shadow-yellow-500/10 order-1 md:order-2 transform md:-translate-y-4">
-                  <CardHeader className="text-center">
-                    <Trophy className="h-20 w-20 text-yellow-500 mx-auto mb-4" />
-                    <CardTitle className="text-3xl text-yellow-600 dark:text-yellow-400">Campeón del Torneo</CardTitle>
+                <Card className="border-yellow-500 dark:border-yellow-400 bg-gradient-to-b from-white to-yellow-50 dark:from-slate-900 dark:to-yellow-950/30 shadow-2xl shadow-yellow-500/10 order-1 md:order-2 transform md:-translate-y-4 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 bg-yellow-500 text-slate-950 text-xs font-black px-3 py-1 rounded-bl-lg">¡GANA!</div>
+                  <CardHeader className="text-center pb-2">
+                    <Trophy className="h-20 w-20 text-yellow-500 mx-auto mb-2 drop-shadow-sm" />
+                    <CardTitle className="text-2xl font-black text-yellow-600 dark:text-yellow-400">Campeón del Torneo</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
-                    <p className="text-5xl font-extrabold text-yellow-600 dark:text-yellow-400 mb-2">$3,000</p>
-                    <p className="text-muted-foreground font-medium">MXN en Bono de Canje</p>
+                    <p className="text-5xl font-black text-yellow-600 dark:text-yellow-400 mb-2">$3,000</p>
+                    <p className="text-sm font-medium text-muted-foreground mb-4">MXN en Bono de Canje</p>
+                    <ul className="text-xs text-left space-y-2 text-slate-700 dark:text-slate-300">
+                      {prizeExamples.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-yellow-600 dark:text-yellow-400 mt-0.5 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
 
                 {/* 3rd Place */}
-                <Card className="border-amber-700/50 bg-gradient-to-b from-background to-amber-50/50 dark:to-amber-950/20 order-3 mt-8 md:mt-12">
-                  <CardHeader className="text-center">
-                    <Medal className="h-16 w-16 text-amber-700 mx-auto mb-4" />
-                    <CardTitle className="text-2xl">Tercer Puesto</CardTitle>
+                <Card className="border-amber-700/50 dark:border-amber-600/50 bg-white dark:bg-slate-900 order-3 mt-8 md:mt-12 shadow-lg">
+                  <CardHeader className="text-center pb-2">
+                    <Medal className="h-16 w-16 text-amber-700 dark:text-amber-600 mx-auto mb-2" />
+                    <CardTitle className="text-xl font-bold text-amber-800 dark:text-amber-500">Tercer Puesto</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
-                    <p className="text-4xl font-extrabold text-amber-700 dark:text-amber-600 mb-2">$1,000</p>
-                    <p className="text-muted-foreground">MXN en Bono de Canje</p>
+                    <p className="text-4xl font-black text-amber-700 dark:text-amber-600 mb-2">$1,000</p>
+                    <p className="text-sm text-muted-foreground mb-4">MXN en Bono de Canje</p>
+                    <ul className="text-xs text-left space-y-2 text-slate-600 dark:text-slate-400">
+                      {prizeExamples.slice(2, 4).map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               </div>
@@ -220,10 +268,10 @@ export default function SorteoPage() {
         </section>
 
         {/* How to Enter */}
-        <section id="como-participar" className="py-20 bg-muted/30">
+        <section id="como-participar" className="py-20 bg-white dark:bg-slate-950">
           <div className="container mx-auto px-4">
             <AnimateOnScroll>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              <h2 className="text-3xl md:text-4xl font-black text-center mb-4 text-slate-900 dark:text-white">
                 👇 ¿Cómo entrar a la cancha?
               </h2>
               <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -231,22 +279,25 @@ export default function SorteoPage() {
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {steps.map((step, index) => (
-                  <div key={index} className="relative bg-background p-6 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
-                    <div className="absolute -top-4 -left-4 w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  <div key={index} className="relative bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                    <div className="absolute -top-4 -left-4 w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-black text-lg shadow-lg border-2 border-white dark:border-slate-950">
                       {index + 1}
                     </div>
-                    <step.icon className="h-10 w-10 text-emerald-600 mb-4 mt-2" />
-                    <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground">{step.desc}</p>
+                    <div className="flex items-center gap-3 mb-3 mt-2">
+                      <step.icon className="h-8 w-8 text-emerald-600 dark:text-emerald-400" />
+                      <h3 className="text-lg font-bold text-slate-900 dark:text-white">{step.title}</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-12 text-center p-6 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 rounded-2xl max-w-3xl mx-auto">
-                <h4 className="text-xl font-bold text-emerald-700 dark:text-emerald-400 mb-2 flex items-center justify-center gap-2">
-                  <Trophy className="h-5 w-5" /> ¡Jugadas Extra!
+              <div className="mt-12 text-center p-8 bg-emerald-50 dark:bg-emerald-950/20 border-2 border-emerald-200 dark:border-emerald-800 rounded-3xl max-w-3xl mx-auto relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-200 dark:bg-emerald-800 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2" />
+                <h4 className="text-2xl font-black text-emerald-700 dark:text-emerald-400 mb-3 flex items-center justify-center gap-2 relative z-10">
+                  <Disc className="h-6 w-6" /> ¡Jugadas Extra!
                 </h4>
-                <p className="text-muted-foreground">
+                <p className="text-slate-700 dark:text-slate-300 relative z-10">
                   Cada comentario adicional con una <strong>fotografía diferente</strong> de tus productos, local o actividades escolares, junto a <strong>3 amigos nuevos</strong>, cuenta como un tiro al arco adicional. ¡Entre más comentes, más posibilidades tienes de ganar!
                 </p>
               </div>
@@ -254,49 +305,29 @@ export default function SorteoPage() {
           </div>
         </section>
 
-        {/* Eligible Services */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
+        {/* Timeline Banner */}
+        <section className="py-16 bg-slate-900 relative overflow-hidden">
+          {/* Stadium graphics hint */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-900/40 via-slate-900 to-slate-950" />
+          <div className="container mx-auto px-4 relative z-10">
             <AnimateOnScroll>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-                🖨️ Tácticas de Canje
-              </h2>
-              <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                Diseña la idea publicitaria que tu marca o proyecto necesite. Tu bono es válido para:
-              </p>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-                {services.map((service, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 rounded-xl bg-muted/50 border border-border/50">
-                    <CheckCircle2 className="h-5 w-5 text-emerald-500 mt-0.5 shrink-0" />
-                    <span className="font-medium">{service}</span>
-                  </div>
-                ))}
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* Timeline */}
-        <section className="py-20 bg-emerald-950 text-white">
-          <div className="container mx-auto px-4">
-            <AnimateOnScroll>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                📅 Pase a la Gran Final en Vivo
+              <h2 className="text-3xl md:text-4xl font-black text-center mb-12 text-white">
+                📅 Pase a la Gran Final
               </h2>
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl text-center">
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl text-center hover:bg-white/10 transition-colors">
                   <CalendarDays className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Cierre de Participaciones</h3>
-                  <p className="text-3xl font-extrabold text-yellow-400">21 de Junio</p>
-                  <p className="text-white/70">12:00 hrs (Mediodía)</p>
+                  <h3 className="text-xl font-bold mb-2 text-white">Cierre de Pases</h3>
+                  <p className="text-3xl font-black text-yellow-400">21 de Junio</p>
+                  <p className="text-slate-300 font-medium">12:00 PM (Mediodía)</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl text-center relative overflow-hidden">
-                  <div className="absolute top-0 right-0 bg-red-600 text-xs font-bold px-3 py-1 rounded-bl-lg">EN VIVO</div>
+                <div className="bg-gradient-to-br from-emerald-900/50 to-slate-900/50 backdrop-blur-md border border-emerald-500/30 p-8 rounded-2xl text-center relative overflow-hidden group hover:border-emerald-500/60 transition-colors">
+                  <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-black px-4 py-1.5 rounded-bl-lg animate-pulse">EN VIVO</div>
                   <Trophy className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Gran Final</h3>
-                  <p className="text-3xl font-extrabold text-yellow-400">23 de Junio 2026</p>
-                  <p className="text-white/70 mt-2 text-sm">
-                    Se seleccionarán 10 convocados al azar y pasaremos a la <strong>RULETA IGSA</strong> en vivo para definir a los 3 campeones. ¡Transparencia total!
+                  <h3 className="text-xl font-bold mb-2 text-white">Gran Final</h3>
+                  <p className="text-3xl font-black text-yellow-400">23 de Junio, 2026</p>
+                  <p className="text-slate-300 mt-3 text-sm leading-relaxed">
+                    Se seleccionarán 10 convocados al azar y pasaremos a la <strong className="text-emerald-400">RULETA IGSA</strong> en vivo para definir a los 3 campeones oficiales. ¡Transparencia total frente a las cámaras!
                   </p>
                 </div>
               </div>
@@ -305,56 +336,57 @@ export default function SorteoPage() {
         </section>
 
         {/* Rules & Security */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20 bg-slate-50 dark:bg-slate-950">
           <div className="container mx-auto px-4">
             <AnimateOnScroll>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                📋 Reglamento de Juego Limpio
-              </h2>
-              <div className="max-w-4xl mx-auto space-y-6">
+              <div className="flex items-center justify-center gap-3 mb-12">
+                <Trophy className="h-8 w-8 text-yellow-500" />
+                <h2 className="text-3xl md:text-4xl font-black text-center text-slate-900 dark:text-white">
+                  Reglamento de Juego Limpio
+                </h2>
+              </div>
+              <div className="max-w-4xl mx-auto space-y-4">
                 {[
                   {
                     icon: MapPin,
-                    title: "Validación de Identidad Local",
+                    title: "Identidad Local",
                     desc: "El ganador deberá presentar físicamente en sucursal una identificación oficial (INE), credencial escolar o comprobante de domicilio que acredite que vive, estudia o tiene su negocio dentro del municipio de Huixquilucan."
                   },
                   {
                     icon: XCircle,
                     title: "Tarjeta Roja al Plagio",
-                    desc: "Cada negocio o proyecto participa una sola vez por cuenta. El uso de la misma fotografía en diferentes perfiles causará la descalificación inmediata. Nada de fotos de internet ni de inteligencia artificial."
+                    desc: "Cada negocio o proyecto participa una sola vez por cuenta. El uso de la misma fotografía en diferentes perfiles causará la descalificación inmediata. Nada de fotos de internet ni de inteligencia artificial (IA)."
                   },
                   {
                     icon: ShieldCheck,
-                    title: "Pases Válidos y Filtro Anti-Fantasmas",
+                    title: "Pases Válidos y Filtro Antifraude",
                     desc: "Los 3 amigos etiquetados deben ser cuentas reales y activas. NO participan perfiles 'caza-sorteos' (muros dedicados exclusivamente a rifas). Se verificará el perfil en vivo."
                   },
                   {
                     icon: CalendarDays,
                     title: "Uso del Bono",
                     desc: "Válido únicamente para servicios de IGSA Print & Copy; no se cambia por dinero en efectivo. Si tu pedido supera el valor del bono, solo pagas la diferencia. Tienes 30 días naturales para usarlo tras el sorteo."
-                  },
-                  {
-                    icon: AlertTriangle,
-                    title: "Políticas de la Empresa",
-                    desc: "Queda estrictamente prohibida la participación de empleados de IGSA Print & Copy y sus familiares directos para garantizar la total equidad del torneo."
                   }
                 ].map((rule, index) => (
-                  <div key={index} className="flex gap-4 p-6 bg-background rounded-xl border border-border shadow-sm">
-                    <rule.icon className="h-6 w-6 text-emerald-600 shrink-0 mt-1" />
+                  <div key={index} className="flex gap-4 p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                    <rule.icon className="h-6 w-6 text-emerald-600 dark:text-emerald-400 shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-bold text-lg mb-1">{rule.title}</h3>
+                      <h3 className="font-bold text-lg mb-1 text-slate-900 dark:text-white">{rule.title}</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">{rule.desc}</p>
                     </div>
                   </div>
                 ))}
 
                 {/* Security Alert */}
-                <div className="mt-8 p-6 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900 rounded-xl flex gap-4">
-                  <AlertTriangle className="h-6 w-6 text-red-600 dark:text-red-400 shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-bold text-lg text-red-700 dark:text-red-400 mb-1">🚨 ALERTA ARBITRAL DE SEGURIDAD</h3>
-                    <p className="text-red-600/80 dark:text-red-300/80 text-sm leading-relaxed">
-                      En IGSA Print & Copy cuidamos tu seguridad. <strong>NUNCA</strong> te pediremos datos bancarios, tarjetas de crédito, ni te enviaremos enlaces externos para registrarte por mensaje privado. Los ganadores se elegirán exclusivamente EN VIVO en esta página oficial. ¡No caigas en fuera de juego con cuentas falsas!
+                <div className="mt-8 p-6 bg-red-50 dark:bg-red-950/20 border-2 border-red-200 dark:border-red-900 rounded-xl flex gap-4 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-red-200 dark:bg-red-900 rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2" />
+                  <AlertTriangle className="h-8 w-8 text-red-600 dark:text-red-400 shrink-0 mt-1 relative z-10" />
+                  <div className="relative z-10">
+                    <h3 className="font-black text-lg text-red-700 dark:text-red-400 mb-1 flex items-center gap-2">
+                      🚨 ALERTA DE SEGURIDAD
+                    </h3>
+                    <p className="text-red-600/90 dark:text-red-300/90 text-sm leading-relaxed font-medium">
+                      Sorteo 100% gratuito. <strong>NUNCA</strong> pediremos tus datos bancarios, tarjetas de crédito, ni te enviaremos enlaces externos por mensaje privado. Los ganadores se elegirán exclusivamente EN VIVO. No caigas en fuera de juego con cuentas falsas.
                     </p>
                   </div>
                 </div>
@@ -363,30 +395,46 @@ export default function SorteoPage() {
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="py-20 bg-background text-center">
+        {/* Sweepstakes Custom Footer */}
+        <section className="py-16 bg-slate-900 text-white border-t-4 border-emerald-600">
           <div className="container mx-auto px-4">
-            <AnimateOnScroll>
-              <MapPin className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                📍 ¡Válido para todo Huixquilucan!
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto mb-8 text-lg">
-                Podrás recoger tus trabajos en la sucursal de tu elección: <strong>Centro</strong> o <strong>Magdalena Chichicaspa</strong>. 
-                <br />¡Muchísima suerte a todos! Haz de tus proyectos un éxito con IGSA. 🍀⚽
-              </p>
-              <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg px-10 py-6 rounded-full shadow-lg">
-                <a 
-                  href={whatsappLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label="Registrar participación en el sorteo por WhatsApp"
-                >
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  ¡Quiero participar ahora!
-                </a>
-              </Button>
-            </AnimateOnScroll>
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              {/* Left: FIFA World Cup 2026 Logo Placeholder */}
+              <div className="flex flex-col items-center lg:items-start gap-4">
+                <div className="w-32 h-32 bg-slate-800 rounded-2xl border border-slate-700 flex items-center justify-center p-4">
+                  <span className="text-xs text-center text-slate-400 font-bold">
+                    FIFA World Cup 2026<br/>Logo Placeholder
+                  </span>
+                </div>
+                <p className="text-sm text-slate-400 text-center lg:text-left max-w-xs">
+                  Evento no afiliado oficialmente con FIFA. Sorteo organizado independientemente por IGSA Print & Copy con motivo del Mundial 2026.
+                </p>
+              </div>
+
+              {/* Right: Contact Info */}
+              <div className="flex flex-col items-center lg:items-end gap-6 text-center lg:text-right">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 justify-center lg:justify-end">
+                    <Phone className="h-5 w-5 text-emerald-400" />
+                    <span className="font-bold text-lg">+52 55 7138 1809</span>
+                  </div>
+                  <div className="flex items-center gap-3 justify-center lg:justify-end">
+                    <Mail className="h-5 w-5 text-emerald-400" />
+                    <span className="text-slate-300">igsaprintcopy2@gmail.com</span>
+                  </div>
+                  <div className="flex items-center gap-3 justify-center lg:justify-end">
+                    <MapPin className="h-5 w-5 text-emerald-400" />
+                    <span className="text-slate-300">Sucursales: Centro & Magdalena Chichicaspa</span>
+                  </div>
+                </div>
+                
+                <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-500 text-white font-black text-lg px-8 py-6 rounded-full shadow-lg shadow-emerald-900/50 animate-pulse">
+                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Registrarse y participar en el sorteo">
+                    ¡REGÍSTRATE Y PARTICIPA! 👉📲
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
       </main>
