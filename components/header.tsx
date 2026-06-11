@@ -46,7 +46,7 @@ export function Header() {
           <div className="w-full h-1 bg-gradient-to-r from-green-600 via-white to-red-600" />
         )}
         
-        {/* Banner de Sorteo Mundialista (oculto en página de sorteo) */}
+        {/* Banner de Sorteo (oculto en página de sorteo) */}
         {pathname !== "/sorteo" && (
           <Link
             href="/sorteo"
@@ -54,7 +54,7 @@ export function Header() {
           >
             <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
             <span className="relative z-10 flex items-center justify-center gap-1.5 flex-wrap">
-              <span>🏆 ¡Participa en el Sorteo Mundialista 2026 y gana hasta $3,000 en bonos!</span>
+              <span>🏆 ¡Participa en el Sorteo 2026 y gana hasta $3,000 en bonos!</span>
               <span className="underline decoration-white/50 group-hover:decoration-white transition-all flex items-center gap-0.5">
                 Participa aquí <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
               </span>

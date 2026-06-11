@@ -14,13 +14,13 @@ import { siteConfig } from "@/lib/seo-config"
 const SITE_URL = siteConfig.url
 
 export const metadata: Metadata = {
-  title: 'Sorteo Mundialista 2026: Gana $6,000 en Bonos | IGSA Print Huixquilucan',
+  title: 'Sorteo 2026: Gana $6,000 en Bonos | IGSA Print Huixquilucan',
   description: 'Participa en La Copa de los Campeones. Gana hasta $3,000 MXN en bonos de impresión. Sorteo en vivo el 23 de Junio 2026 con la Ruleta IGSA.',
   keywords: [
     'sorteo huixquilucan',
     'concurso impresión 2026',
     'bonos igsa print',
-    'sorteo mundialista',
+    'sorteo igsa print',
     'ruleta igsa',
     'imprenta huixquilucan sorteo'
   ],
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/sorteo`,
   },
   openGraph: {
-    title: 'Sorteo Mundialista 2026: Gana $6,000 en Bonos | IGSA Print',
-    description: 'Participa y gana hasta $3,000 MXN en bonos de impresión para tu negocio o proyecto en Huixquilucan. ¡La fiebre mundialista llegó a IGSA Print!',
+    title: 'Sorteo 2026: Gana $6,000 en Bonos | IGSA Print',
+    description: 'Participa y gana hasta $3,000 MXN en bonos de impresión para tu negocio o proyecto en Huixquilucan. ¡El gran sorteo llegó a IGSA Print!',
     url: `${SITE_URL}/sorteo`,
     siteName: siteConfig.name,
     locale: 'es_MX',
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
         url: '/images/logo-igsa.jpg',
         width: 1200,
         height: 630,
-        alt: 'Sorteo Mundialista IGSA Print & Copy 2026',
+        alt: 'Sorteo IGSA Print & Copy 2026',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sorteo Mundialista 2026: Gana $6,000 en Bonos | IGSA Print',
+    title: 'Sorteo 2026: Gana $6,000 en Bonos | IGSA Print',
     description: 'Participa y gana hasta $3,000 MXN en bonos de impresión para tu negocio o proyecto en Huixquilucan.',
     images: ['/images/logo-igsa.jpg'],
   },
@@ -112,14 +112,14 @@ const steps = [
 ]
 
 const prizeExamples = [
-  "Momentos personalizados del Mundial",
+  "Cuadros y posters personalizados",
   "Jerseys y uniformes deportivos",
   "Papelería y tarjetas de presentación",
   "Tarjetas de descuento especiales"
 ]
 
 export default function SorteoPage() {
-  const whatsappLink = "https://wa.me/525571381809?text=Hola%2C%20quiero%20registrar%20mi%20participación%20en%20el%20Sorteo%20Mundialista%202026"
+  const whatsappLink = "https://wa.me/525571381809?text=Hola%2C%20quiero%20registrar%20mi%20participación%20en%20el%20Sorteo%20IGSA%202026"
 
   return (
     <>
@@ -135,7 +135,7 @@ export default function SorteoPage() {
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/sorteo-bg.jpg"
-              alt="Sorteo Mundialista IGSA Background"
+              alt="Sorteo IGSA Background"
               fill
               className="object-cover opacity-40 scale-105"
               priority
@@ -151,14 +151,14 @@ export default function SorteoPage() {
                   <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-white mb-4 leading-tight">
                     ¡LA COPA DE LOS CAMPEONES! 🏆 <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">
-                      SORTEO MUNDIALISTA 2026 iGSA
+                      SORTEO 2026 iGSA
                     </span>
                   </h1>
                   <p className="text-3xl md:text-5xl font-black text-yellow-400 mb-8 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
                     $6,000 MXN EN BONOS
                   </p>
                   <p className="text-lg text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0">
-                    La fiebre mundialista llegó a Huixquilucan. Participa y juega en primera división con los mejores premios en impresión.
+                    La gran emoción llegó a Huixquilucan. Participa y juega en primera división con los mejores premios en impresión.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <Button asChild size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-black text-lg px-8 py-6 rounded-full shadow-lg shadow-yellow-500/20 transition-transform hover:scale-105">
