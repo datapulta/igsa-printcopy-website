@@ -3,7 +3,8 @@ export const siteConfig = {
   url: 'https://www.igsaprint.com',
   locale: 'es_MX',
   language: 'es',
-  email: 'igsaprintcopy2@gmail.com',
+  email: 'cotizacion@igsaprint.com',
+  secondaryEmail: 'igsaprintcopy@gmail.com',
   phone: {
     huixquilucan: '+525535870335',
     chichicaspa: '+525571381809',

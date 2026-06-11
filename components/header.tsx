@@ -204,8 +204,11 @@ export function Header() {
             <a href="tel:+525535870335" className="hover:text-primary transition-colors">
               +52 55 3587 0335
             </a>
-            <a href="mailto:igsaprintcopy2@gmail.com" className="hover:text-primary transition-colors">
-              igsaprintcopy2@gmail.com
+            <a href="mailto:cotizacion@igsaprint.com" className="hover:text-primary transition-colors">
+              cotizacion@igsaprint.com
+            </a>
+            <a href="mailto:igsaprintcopy@gmail.com" className="hover:text-primary transition-colors">
+              igsaprintcopy@gmail.com
             </a>
           </div>
         </div>

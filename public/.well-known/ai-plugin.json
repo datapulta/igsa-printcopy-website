@@ -3,7 +3,7 @@
   "name_for_human": "IGSA Print & Copy",
   "name_for_model": "igsa_print",
   "description_for_human": "Imprenta profesional con más de 20 años de experiencia en Huixquilucan, État de México. Impresión digital, gran formato, rotulación, señalética y más. Servicio 24/7.",
-  "description_for_model": "IGSA Print & Copy is a professional printing service business located in Huixquilucan de Degollado, Estado de México, Mexico. Founded in 1993, they offer digital printing, large format printing, sublimation, 3D lettering, vehicle wrapping, signage, laser cutting, and graphic design services. They operate 24/7 with two locations. Contact via WhatsApp at +525571381809 or email igsaprintcopy2@gmail.com. Website: https://www.igsaprint.com",
+  "description_for_model": "IGSA Print & Copy is a professional printing service business located in Huixquilucan de Degollado, Estado de México, Mexico. Founded in 1993, they offer digital printing, large format printing, sublimation, 3D lettering, vehicle wrapping, signage, laser cutting, and graphic design services. They operate 24/7 with two locations. Contact via WhatsApp at +525571381809 or email cotizacion@igsaprint.com or igsaprintcopy@gmail.com. Website: https://www.igsaprint.com",
   "auth": {
     "type": "none"
   },
@@ -11,6 +11,6 @@
     "type": "none"
   },
   "logo_url": "https://www.igsaprint.com/images/logo-igsa.svg",
-  "contact_email": "igsaprintcopy2@gmail.com",
+  "contact_email": "cotizacion@igsaprint.com",
   "legal_info_url": "https://www.igsaprint.com/nosotros"
 }

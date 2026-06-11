@@ -66,7 +66,7 @@ const contactMethods = [
     title: "Correo electrónico",
     description: "Para proyectos más detallados, envíanos tus archivos y especificaciones.",
     action: "Enviar correo",
-    href: "mailto:igsaprintcopy2@gmail.com?subject=Cotización%20IGSA%20Print&body=Hola%2C%20me%20interesa%20cotizar%20el%20siguiente%20servicio%3A",
+    href: "mailto:cotizacion@igsaprint.com?subject=Cotización%20IGSA%20Print&body=Hola%2C%20me%20interesa%20cotizar%20el%20siguiente%20servicio%3A",
     color: "from-primary/20 to-primary/5",
     hoverGlow: "hover:shadow-primary/20",
     iconColor: "text-primary",

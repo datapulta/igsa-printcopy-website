@@ -144,13 +144,20 @@ export function Footer() {
             <h3 className="text-xs font-semibold text-foreground uppercase tracking-widest mb-5">
               Contacto
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <a
-                href="mailto:igsaprintcopy2@gmail.com"
+                href="mailto:cotizacion@igsaprint.com"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 <Mail className="h-4 w-4 text-primary/60" />
-                igsaprintcopy2@gmail.com
+                cotizacion@igsaprint.com
+              </a>
+              <a
+                href="mailto:igsaprintcopy@gmail.com"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+              >
+                <Mail className="h-4 w-4 text-primary/60" />
+                igsaprintcopy@gmail.com
               </a>
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 mt-0.5 shrink-0 text-primary/60" />
