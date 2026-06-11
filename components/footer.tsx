@@ -7,14 +7,16 @@ const locations = [
     name: "Sucursal Huixquilucan",
     address: "Av. Venustiano Carranza #30, 2do Piso, San Melchor, 52760 Huixquilucan de Degollado, Mex.",
     phone: "+52 55 3587 0335",
-    mapUrl: "https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z"
+    mapUrl: "https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z",
+    schedule: "24 horas, los 7 días de la semana"
   },
   {
     name: "Sucursal Chichicaspa",
     address: "Carretera Huixquilucan - Naucalpan, Magdalena Chichicaspa, 52773, Edo. Mex.",
     reference: "A la altura del Tecnológico Cuicalli",
     phone: "+52 55 7138 1809",
-    mapUrl: "https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z"
+    mapUrl: "https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z",
+    schedule: "Lunes a Viernes: 9 AM a 7 PM | Sábados: 9 AM a 2 PM"
   }
 ]
 
@@ -131,9 +133,13 @@ export function Footer() {
                     href={`tel:${location.phone.replace(/\s/g, '')}`}
                     className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 ml-6"
                   >
-                    <Phone className="h-3.5 w-3.5" />
+                    <Phone className="h-3.5 w-3.5 text-primary/60 shrink-0" />
                     {location.phone}
                   </a>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground/80 ml-6">
+                    <Clock className="h-3.5 w-3.5 text-primary/60 shrink-0" />
+                    <span>{location.schedule}</span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -162,9 +168,12 @@ export function Footer() {
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 mt-0.5 shrink-0 text-primary/60" />
                 <div>
-                  <p className="font-medium text-foreground">Horario de atención</p>
-                  <p className="text-xs mt-1">Servicio disponible 24 horas</p>
-                  <p className="text-xs">Los 7 días de la semana</p>
+                  <p className="font-medium text-foreground">Horarios de atención</p>
+                  <p className="text-xs mt-1.5 font-semibold text-foreground/90">Huixquilucan:</p>
+                  <p className="text-xs text-muted-foreground">24 horas, 7 días de la semana</p>
+                  <p className="text-xs mt-1.5 font-semibold text-foreground/90">Chichicaspa:</p>
+                  <p className="text-xs text-muted-foreground">Lun a Vie: 9 AM - 7 PM</p>
+                  <p className="text-xs text-muted-foreground">Sáb: 9 AM - 2 PM</p>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from "lucide-react"
+import { Phone, Mail, MapPin, MessageCircle, ArrowRight, Clock } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 import { siteConfig } from "@/lib/seo-config"
@@ -27,6 +27,7 @@ const locations = [
     phone: "+52 55 3587 0335",
     whatsapp: "5535870335",
     mapUrl: "https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z",
+    schedule: "24 horas, los 7 días de la semana"
   },
   {
     name: "Sucursal Chichicaspa",
@@ -35,7 +36,8 @@ const locations = [
     phone: "+52 55 7138 1809",
     whatsapp: "5571381809",
     mapUrl: "https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z",
-  },
+    schedule: "Lunes a Viernes: 9 AM a 7 PM | Sábados: 9 AM a 2 PM"
+  }
 ]
 
 const contactMethods = [
@@ -138,6 +140,10 @@ export default function ContactoPage() {
                         <span className="text-sm leading-relaxed">{location.address}</span>
                       </a>
                       {location.reference && <p className="text-xs text-muted-foreground ml-7">Ref: {location.reference}</p>}
+                      <div className="flex items-start gap-3 text-foreground/80">
+                        <Clock className="h-4 w-4 mt-1 shrink-0 text-primary/60" />
+                        <span className="text-sm leading-relaxed">{location.schedule}</span>
+                      </div>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       <a href={`https://wa.me/${location.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 hover:bg-[#25D366]/20 transition-all duration-300">
