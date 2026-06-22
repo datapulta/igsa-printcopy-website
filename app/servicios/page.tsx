@@ -32,6 +32,7 @@ const categories = [
 const services = [
   { title: "Impresiones Digitales", description: "Ideal para tiradas cortas y medianas. Imprimimos tarjetas de presentación, folletos y documentos con acabados profesionales al momento.", image: "/images/printing-services.jpg" },
   { title: "Impresiones a Gran Formato", description: "Imprimimos pósters, banners, lonas y gráficos de gran tamaño con la máxima calidad y colores vibrantes para publicidad exterior.", image: "/images/large-format.jpg" },
+  { title: "Materiales Rígidos", description: "Impresión de alta calidad directa o en vinil sobre PVC, acrílico, Dibond y coroplast. Perfecto para exhibidores, stands y señalética exterior.", image: "/images/printing-services.jpg", href: "/servicios/rigidos" },
   { title: "Personalizables", description: "Técnica de impresión versátil y resistente ideal para personalizar textiles, merchandising y artículos promocionales.", image: "/images/hero-printing.jpg" },
   { title: "Letreros 3D", description: "Fabricamos letras corpóreas de diversos materiales con o sin iluminación para una presencia sofisticada y memorable.", image: "/images/3d-letters.jpg" },
   { title: "Rotulación", description: "Aplicación profesional de vinilos de alta resistencia para decorar o marcar vehículos, escaparates, paredes y cualquier superficie.", image: "/images/vehicle-wrap.jpg" },
@@ -114,8 +115,8 @@ export default function ServiciosPage() {
                     <div className="flex flex-col justify-center p-6">
                       <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed mb-5">{service.description}</p>
-                      <Link href="/contacto" className="group/btn inline-flex items-center gap-2 px-5 py-2 text-xs font-semibold text-foreground rounded-full border border-white/[0.1] bg-white/[0.03] hover:bg-primary/10 hover:border-primary/30 hover:text-primary transition-all duration-300 w-fit">
-                        Solicitar cotización
+                      <Link href={service.href || "/contacto"} className="group/btn inline-flex items-center gap-2 px-5 py-2 text-xs font-semibold text-foreground rounded-full border border-white/[0.1] bg-white/[0.03] hover:bg-primary/10 hover:border-primary/30 hover:text-primary transition-all duration-300 w-fit">
+                        {service.href ? "Ver detalles" : "Solicitar cotización"}
                         <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
                       </Link>
                     </div>
