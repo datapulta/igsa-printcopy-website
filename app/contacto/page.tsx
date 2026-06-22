@@ -166,16 +166,40 @@ export default function ContactoPage() {
         <section className="py-16 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-card to-background" />
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-            <AnimateOnScroll>
-              <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Encuéntranos</h2>
-              <div className="rounded-2xl overflow-hidden border border-white/[0.06] h-96 glass-card">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.0123456789!2d-99.3491322!3d19.3621026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d207c5d125be03%3A0x5844f6fe77c39456!2sIgsa%20Print%20%26%20Copy!5e0!3m2!1ses!2smx!4v1234567890"
-                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade" title="Ubicación IGSA Print & Copy en Huixquilucan"
-                />
-              </div>
+            <AnimateOnScroll className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-foreground">Encuéntranos</h2>
+              <p className="text-sm text-muted-foreground mt-2">Visítanos en cualquiera de nuestras dos sucursales</p>
             </AnimateOnScroll>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Sucursal Huixquilucan */}
+              <AnimateOnScroll delay={0.1}>
+                <div className="space-y-4">
+                  <h4 className="text-lg font-semibold text-primary">Sucursal Huixquilucan (Centro)</h4>
+                  <div className="rounded-2xl overflow-hidden border border-white/[0.06] h-96 glass-card">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.0123456789!2d-99.3491322!3d19.3621026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d207c5d125be03%3A0x5844f6fe77c39456!2sIgsa%20Print%20%26%20Copy!5e0!3m2!1ses!2smx!4v1234567890"
+                      width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade" title="Ubicación IGSA Print & Copy en Huixquilucan Centro"
+                    />
+                  </div>
+                </div>
+              </AnimateOnScroll>
+
+              {/* Sucursal Magdalena */}
+              <AnimateOnScroll delay={0.2}>
+                <div className="space-y-4">
+                  <h4 className="text-lg font-semibold text-primary">Sucursal Magdalena (Chichicaspa)</h4>
+                  <div className="rounded-2xl overflow-hidden border border-white/[0.06] h-96 glass-card">
+                    <iframe
+                      src="https://maps.google.com/maps?q=Carretera%20Huixquilucan%20-%20Naucalpan%2C%20Magdalena%20Chichicaspa%2C%2052773%2C%20Edo.%20Mex.&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                      width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade" title="Ubicación IGSA Print & Copy en Magdalena Chichicaspa"
+                    />
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            </div>
           </div>
         </section>
       </main>
