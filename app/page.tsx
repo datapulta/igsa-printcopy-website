@@ -20,7 +20,7 @@ const faqs = [
   { question: "¿Cuentan con impresión en un ancho más grande que el rollo?", answer: "Sí, podemos realizar impresiones más grandes mediante la técnica de unión de paneles, garantizando un acabado profesional y sin costuras visibles." },
   { question: "¿Mi lona incluye ojillos?", answer: "Sí, todas nuestras lonas incluyen ojillos en las esquinas sin costo adicional. Si requieres ojillos adicionales, con gusto los agregamos." },
   { question: "¿Cuánto tardamos en entregar una lona impresa con acabados?", answer: "El tiempo de entrega estándar es de 24 a 48 horas hábiles dependiendo del tamaño y acabados requeridos. Para urgencias, consulta disponibilidad." },
-  { question: "¿Trabajan urgencias?", answer: "Sí, contamos con servicio de urgencias las 24 horas. El costo puede variar dependiendo del trabajo requerido y la hora de solicitud." },
+  { question: "¿Trabajan pedidos urgentes?", answer: "Sí, realizamos trabajos urgentes y entregas express según la disponibilidad de nuestra agenda. Te recomendamos contactarnos directamente por WhatsApp para darte prioridad." },
   { question: "¿Qué me recomiendan para una lona que va al exterior?", answer: "Recomendamos lona vinílica con acabado mate o brillante, resistente a UV y agua. También ofrecemos lona mesh para zonas con mucho viento." },
   { question: "¿IGSA Print ofrece el servicio de instalación de lonas?", answer: "Sí, contamos con equipo especializado para la instalación de lonas en diferentes superficies y alturas. Solicita tu cotización." },
 ]

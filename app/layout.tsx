@@ -35,11 +35,11 @@ export const metadata: Metadata = {
 
   title: {
     template: `%s | ${SITE_NAME}`,
-    default: 'IGSA Print & Copy Huixquilucan | Imprenta Profesional 24 Horas',
+    default: 'IGSA Print & Copy Huixquilucan | Imprenta Profesional',
   },
 
   description:
-    'Imprenta profesional con más de 20 años de experiencia en Huixquilucan. Impresión digital, gran formato, rotulación, señalética, letreros 3D y más. Servicio 24 horas, 2 sucursales.',
+    'Imprenta profesional con más de 20 años de experiencia en Huixquilucan. Impresión digital, gran formato, rotulación, señalética, letreros 3D y más. 2 sucursales con excelente servicio.',
 
   keywords: [
     'imprenta Huixquilucan',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     'señalética',
     'letreros 3D',
     'lonas publicitarias',
-    'impresión 24 horas',
+    'imprenta rápida',
     'IGSA Print',
     'IGSA Print & Copy',
     'imprenta Estado de México',
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: 'IGSA Print & Copy | Imprenta Profesional en Huixquilucan',
     description:
-      'Más de 20 años ofreciendo soluciones de impresión de alta calidad. Impresión digital, gran formato, rotulación, señalética y más. Servicio 24/7.',
+      'Más de 20 años ofreciendo soluciones de impresión de alta calidad. Impresión digital, gran formato, rotulación, señalética y más.',
     images: [
       {
         url: '/images/logo-igsa.jpg',
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'IGSA Print & Copy | Imprenta Profesional 24 Horas',
+    title: 'IGSA Print & Copy | Imprenta Profesional',
     description:
       'Imprenta profesional en Huixquilucan con más de 20 años. Impresión digital, gran formato, rotulación y más.',
     images: ['/images/logo-igsa.jpg'],

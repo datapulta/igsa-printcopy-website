@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,
     short_name: 'IGSA Print',
-    description: 'Imprenta profesional 24 horas en Huixquilucan. Impresión digital, gran formato, rotulación y más.',
+    description: 'Imprenta profesional en Huixquilucan. Impresión digital, gran formato, rotulación y más.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0a0b14',

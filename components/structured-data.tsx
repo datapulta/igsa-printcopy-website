@@ -41,12 +41,20 @@ export function OrganizationJsonLd() {
         contactType: "customer service",
         areaServed: "MX",
         availableLanguage: "Spanish",
-        hoursAvailable: {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          opens: "00:00",
-          closes: "23:59",
-        },
+        hoursAvailable: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "09:00",
+            closes: "15:00",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "16:00",
+            closes: "18:00",
+          }
+        ],
       },
     ],
   }
@@ -65,7 +73,7 @@ export function LocalBusinessJsonLd() {
     telephone: S.phone.huixquilucan,
     email: S.email,
     description:
-      "Imprenta profesional con más de 20 años de experiencia. Servicios de impresión digital, gran formato, rotulación, señalética, letreros 3D, sublimación y corte láser. Servicio 24 horas.",
+      "Imprenta profesional con más de 20 años de experiencia. Servicios de impresión digital, gran formato, rotulación, señalética, letreros 3D, sublimación y corte láser con excelente tiempo de entrega.",
     foundingDate: S.foundingYear,
     priceRange: "$$",
     currenciesAccepted: "MXN",
@@ -83,12 +91,20 @@ export function LocalBusinessJsonLd() {
       latitude: S.geo.latitude,
       longitude: S.geo.longitude,
     },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "00:00",
-      closes: "23:59",
-    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "15:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "16:00",
+        closes: "18:00",
+      }
+    ],
     areaServed: [
       {
         "@type": "City",
@@ -189,7 +205,7 @@ export function WebSiteJsonLd() {
     "@id": `${S.url}/#website`,
     name: S.name,
     url: S.url,
-    description: "Imprenta profesional en Huixquilucan con más de 20 años de experiencia. Servicio 24 horas.",
+    description: "Imprenta profesional en Huixquilucan con más de 20 años de experiencia.",
     publisher: { "@id": `${S.url}/#organization` },
     inLanguage: "es-MX",
     potentialAction: {

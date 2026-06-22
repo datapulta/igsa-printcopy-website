@@ -120,7 +120,7 @@ export default function NosotrosPage() {
                   {[
                     { value: "1993", label: "Año de fundación" },
                     { value: "20+", label: "Años de trayectoria" },
-                    { value: "24/7", label: "Disponibilidad" },
+                    { value: "Rápido", label: "Servicio" },
                     { value: "2", label: "Sucursales" },
                   ].map((stat) => (
                     <div key={stat.label} className="p-6 rounded-2xl glass-card text-center">
@@ -148,8 +148,8 @@ export default function NosotrosPage() {
                   Nuestra visión
                 </span>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
-                  Ser líderes en soluciones de impresión a nivel regional, ofreciendo disponibilidad{" "}
-                  <span className="gradient-text">24 horas</span>{" "}
+                  Ser líderes en soluciones de impresión a nivel regional, ofreciendo un servicio de{" "}
+                  <span className="gradient-text">alta calidad</span>{" "}
                   para responder con rapidez y eficacia a las necesidades más estrictas del mercado.
                 </h2>
               </div>

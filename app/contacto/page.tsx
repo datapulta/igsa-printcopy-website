@@ -7,15 +7,15 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 import { siteConfig } from "@/lib/seo-config"
 
 export const metadata: Metadata = {
-  title: 'Contacto — WhatsApp, Teléfono y Correo | Atención 24 Horas',
+  title: 'Contacto — WhatsApp, Teléfono y Correo | IGSA Print',
   description:
-    'Contacta a IGSA Print & Copy por WhatsApp, teléfono o correo electrónico. 2 sucursales en Huixquilucan. Atención 24/7. Cotizaciones inmediatas para tus proyectos de impresión.',
+    'Contacta a IGSA Print & Copy por WhatsApp, teléfono o correo electrónico. 2 sucursales en Huixquilucan. Cotizaciones inmediatas para tus proyectos de impresión.',
   alternates: {
     canonical: '/contacto',
   },
   openGraph: {
     title: 'Contacto | IGSA Print & Copy',
-    description: 'Cotiza tu proyecto de impresión. WhatsApp, teléfono y correo. Atención 24 horas.',
+    description: 'Cotiza tu proyecto de impresión. WhatsApp, teléfono y correo.',
     url: '/contacto',
   },
 }
@@ -27,7 +27,7 @@ const locations = [
     phone: "+52 55 3587 0335",
     whatsapp: "5535870335",
     mapUrl: "https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z",
-    schedule: "24 horas, los 7 días de la semana"
+    schedule: "Lunes a Viernes: 9 AM a 3 PM y 4 PM a 6 PM"
   },
   {
     name: "Sucursal Chichicaspa",
@@ -94,7 +94,7 @@ export default function ContactoPage() {
                   Hablemos de tu <span className="gradient-text">proyecto</span>
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
-                  Elige el canal que prefieras y te atendemos de inmediato. Estamos disponibles las 24 horas.
+                  Elige el canal que prefieras y te atendemos a la brevedad dentro de nuestros horarios de atención.
                 </p>
               </div>
             </AnimateOnScroll>

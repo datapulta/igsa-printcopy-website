@@ -6,8 +6,8 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll"
 const features = [
   {
     icon: Clock,
-    title: "Servicio las 24 horas",
-    description: "Disponibilidad completa para atender tus necesidades de impresión en cualquier momento.",
+    title: "Atención rápida y eficiente",
+    description: "Optimizamos nuestros tiempos de producción para entregarte tus proyectos lo antes posible.",
     gradient: "from-primary/20 to-primary/5",
   },
   {

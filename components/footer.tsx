@@ -8,7 +8,7 @@ const locations = [
     address: "Av. Venustiano Carranza #30, 2do Piso, San Melchor, 52760 Huixquilucan de Degollado, Mex.",
     phone: "+52 55 3587 0335",
     mapUrl: "https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z",
-    schedule: "24 horas, los 7 días de la semana"
+    schedule: "Lunes a Viernes: 9 AM a 3 PM y 4 PM a 6 PM"
   },
   {
     name: "Sucursal Chichicaspa",
@@ -170,8 +170,8 @@ export function Footer() {
                 <div>
                   <p className="font-medium text-foreground">Horarios de atención</p>
                   <p className="text-xs mt-1.5 font-semibold text-foreground/90">Huixquilucan:</p>
-                  <p className="text-xs text-muted-foreground">24 horas, 7 días de la semana</p>
-                  <p className="text-xs mt-1.5 font-semibold text-foreground/90">Chichicaspa:</p>
+                  <p className="text-xs text-muted-foreground">Lun a Vie: 9 AM - 3 PM y 4 PM - 6 PM</p>
+                  <p className="text-xs mt-1.5 font-semibold text-foreground/90">Magdalena (Chichicaspa):</p>
                   <p className="text-xs text-muted-foreground">Lun a Vie: 9 AM - 7 PM</p>
                   <p className="text-xs text-muted-foreground">Sáb: 9 AM - 2 PM</p>
                 </div>

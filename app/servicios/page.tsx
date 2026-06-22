@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Servicios | IGSA Print & Copy',
-    description: 'Impresión digital, gran formato, rotulación, señalética, letreros 3D y más. Servicio 24 horas.',
+    description: 'Impresión digital, gran formato, rotulación, señalética, letreros 3D y más con la mejor calidad.',
     url: '/servicios',
     images: [{ url: '/images/printing-services.jpg', width: 1200, height: 630, alt: 'Servicios de impresión IGSA Print & Copy' }],
   },

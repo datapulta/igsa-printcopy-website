@@ -29,7 +29,7 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-8 animate-fade-in-down">
             <Zap className="h-3.5 w-3.5 text-primary" />
             <span className="text-xs font-semibold text-primary uppercase tracking-wider">
-              Servicio 24 Horas · Más de 20 años
+              Imprenta Líder · Más de 20 años
             </span>
           </div>
 
@@ -67,7 +67,7 @@ export function HeroSection() {
           <div className="mt-16 flex flex-wrap gap-8 md:gap-12 animate-fade-in delay-600" style={{ animationFillMode: "backwards" }}>
             {[
               { value: "20+", label: "Años de experiencia" },
-              { value: "24/7", label: "Servicio disponible" },
+              { value: "Garantía", label: "De satisfacción" },
               { value: "2", label: "Sucursales" },
             ].map((stat) => (
               <div key={stat.label} className="flex items-center gap-3">

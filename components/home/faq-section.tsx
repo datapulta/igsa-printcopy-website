@@ -32,8 +32,8 @@ const faqs = [
     answer: "El tiempo de entrega estándar es de 24 a 48 horas hábiles dependiendo del tamaño y acabados requeridos. Para urgencias, consulta disponibilidad."
   },
   {
-    question: "¿Trabajan urgencias?",
-    answer: "Sí, contamos con servicio de urgencias las 24 horas. El costo puede variar dependiendo del trabajo requerido y la hora de solicitud."
+    question: "¿Trabajan pedidos urgentes?",
+    answer: "Sí, realizamos trabajos urgentes y entregas express según la disponibilidad de nuestra agenda. Te recomendamos contactarnos directamente por WhatsApp para darte prioridad."
   },
   {
     question: "¿Qué me recomiendan para una lona que va al exterior?",
@@ -85,7 +85,7 @@ export function FAQSection() {
           {/* Decorative Side Panel */}
           <AnimateOnScroll direction="right" className="hidden lg:block">
             <div className="sticky top-32 space-y-6">
-              {/* 24/7 Card */}
+              {/* Atención Rápida Card */}
               <div className="relative p-10 rounded-3xl glass-card overflow-hidden">
                 {/* Decorative glow */}
                 <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-[80px]" />
@@ -93,13 +93,13 @@ export function FAQSection() {
 
                 <div className="relative text-center">
                   <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 mb-6 animate-pulse-glow">
-                    <span className="text-3xl font-black gradient-text">24/7</span>
+                    <span className="text-2xl font-black gradient-text">Express</span>
                   </div>
                   <p className="text-xl font-bold text-foreground mb-2">
-                    Servicio disponible
+                    Atención y Calidad
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Estamos aquí para resolver todas tus dudas y atender proyectos urgentes
+                    Estamos aquí para resolver tus dudas y cotizar tus proyectos de manera rápida y profesional.
                   </p>
                 </div>
               </div>
