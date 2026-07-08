@@ -42,27 +42,27 @@ export default function NuevoLocalPage() {
     {
       step: "01",
       title: "Salida del local anterior",
-      desc: "Inicia tu recorrido desde la antigua ubicación en Av. Venustiano Carranza #30."
+      desc: "Inicia desde la ubicación anterior en Av. Venustiano Carranza #30 (marcada con el pin rojo)."
     },
     {
       step: "02",
-      title: "Camina sobre Venustiano Carranza",
-      desc: "Avanza unos 350 metros hacia el este. Pasarás de largo frente a Elektra Mega y Farmacias Similares."
+      title: "Gira en Calle Emiliano Zapata",
+      desc: "Camina unos metros hacia el este y gira a la derecha sobre Calle Emiliano Zapata (pasando Impresos Valdom)."
     },
     {
       step: "03",
-      title: "Gira en la Calle José María Morelos",
-      desc: "Da vuelta a la izquierda para incorporarte a la calle José María Morelos."
+      title: "Gira a la izquierda en Morelos",
+      desc: "Al llegar al cruce, gira a la izquierda para incorporarte a la Calle José María Morelos."
     },
     {
       step: "04",
-      title: "Pasa el Grupo Médico Veterinario",
-      desc: "Camina 100 metros hacia el norte. Pasarás frente al Grupo Médico Veterinario San Juan (#49)."
+      title: "Sigue derecho hacia el este",
+      desc: "Avanza derecho sobre José María Morelos cruzando las calles Vicente Guerrero, Moctezuma, Sor Juana Inés de la Cruz y Cuauhtémoc."
     },
     {
       step: "05",
       title: "¡Llegaste a tu destino!",
-      desc: "Nos encontramos inmediatamente después, en el número 51. Fachada estilo ladrillo con portón blanco."
+      desc: "Nos encontramos a mano derecha en José María Morelos #51, justo después de cruzar la calle Apopocatzin."
     }
   ]
 
