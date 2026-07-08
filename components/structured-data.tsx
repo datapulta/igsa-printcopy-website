@@ -18,7 +18,7 @@ export function OrganizationJsonLd() {
     address: [
       {
         "@type": "PostalAddress",
-        streetAddress: "Av. Venustiano Carranza #30, 2do Piso, San Melchor",
+        streetAddress: "José María Morelos #51, San Juan Bautista",
         addressLocality: "Huixquilucan de Degollado",
         addressRegion: "Estado de México",
         postalCode: "52760",
@@ -80,7 +80,7 @@ export function LocalBusinessJsonLd() {
     paymentAccepted: "Efectivo, Tarjeta de crédito, Tarjeta de débito, Transferencia",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Av. Venustiano Carranza #30, 2do Piso, San Melchor",
+      streetAddress: "José María Morelos #51, San Juan Bautista",
       addressLocality: "Huixquilucan de Degollado",
       addressRegion: "Estado de México",
       postalCode: "52760",

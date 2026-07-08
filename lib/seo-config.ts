@@ -12,8 +12,8 @@ export const siteConfig = {
   whatsapp: '525571381809',
   foundingYear: '1993',
   geo: {
-    latitude: 19.3621026,
-    longitude: -99.3491322,
+    latitude: 19.3616992,
+    longitude: -99.3453603,
   },
   social: {
     facebook: 'https://facebook.com/igsaprintcopy',

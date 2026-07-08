@@ -23,10 +23,10 @@ export const metadata: Metadata = {
 const locations = [
   {
     name: "Sucursal Huixquilucan",
-    address: "Av. Venustiano Carranza #30, 2do Piso, San Melchor, 52760 Huixquilucan de Degollado, Mex.",
+    address: "José María Morelos #51, San Juan Bautista, 52760 Huixquilucan de Degollado, Mex.",
     phone: "+52 55 3587 0335",
     whatsapp: "5535870335",
-    mapUrl: "https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z",
+    mapUrl: "https://maps.app.goo.gl/pdp7VVyuqPRKazUo7",
     schedule: "Lunes a Viernes: 9 AM a 3 PM y 4 PM a 6 PM"
   },
   {
