@@ -47,7 +47,7 @@ export default function NuevoLocalPage() {
     {
       step: "02",
       title: "Gira en Calle Emiliano Zapata",
-      desc: "Camina unos metros hacia el este y gira a la derecha sobre Calle Emiliano Zapata (pasando Impresos Valdom)."
+      desc: "Camina unos metros hacia el este y gira a la derecha sobre Calle Emiliano Zapata."
     },
     {
       step: "03",
