@@ -92,7 +92,7 @@ export default function NuevoLocalPage() {
               ¡Nos cambiamos <span className="gradient-text">de lugar</span>!
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-              Para brindarte una mejor atención, nos hemos mudado a un espacio más amplio, moderno y cómodo en el centro de Huixquilucan.
+              Nos hemos trasladado a una nueva ubicación más cerca de ti, para brindarte un servicio más cómodo, ágil y con la atención personalizada de siempre.
             </p>
 
             {/* GPS Navigation Actions */}
