@@ -8,16 +8,8 @@ import { siteConfig } from "@/lib/seo-config"
 
 export const metadata: Metadata = {
   title: 'Contacto — WhatsApp, Teléfono y Correo | IGSA Print',
-  description:
-    'Contacta a IGSA Print & Copy por WhatsApp, teléfono o correo electrónico. 2 sucursales en Huixquilucan. Cotizaciones inmediatas para tus proyectos de impresión.',
-  alternates: {
-    canonical: '/contacto',
-  },
-  openGraph: {
-    title: 'Contacto | IGSA Print & Copy',
-    description: 'Cotiza tu proyecto de impresión. WhatsApp, teléfono y correo.',
-    url: '/contacto',
-  },
+  description: 'Contacta a IGSA Print & Copy por WhatsApp, teléfono o correo electrónico. 2 sucursales en Huixquilucan.',
+  alternates: { canonical: '/contacto' },
 }
 
 const locations = [
@@ -47,10 +39,7 @@ const contactMethods = [
     description: "Respuesta inmediata. Envíanos fotos de tu proyecto y te cotizamos al momento.",
     action: "Enviar mensaje",
     href: `https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio%20de%20impresi%C3%B3n`,
-    color: "from-[#25D366]/20 to-[#25D366]/5",
-    hoverGlow: "hover:shadow-[#25D366]/20",
-    iconColor: "text-[#25D366]",
-    btnClass: "bg-[#25D366] text-white hover:shadow-lg hover:shadow-[#25D366]/30",
+    btnClass: "bg-gray-900 text-white hover:bg-gray-800",
   },
   {
     icon: Phone,
@@ -58,10 +47,7 @@ const contactMethods = [
     description: "Atención directa para resolver tus dudas y recibir asesoría personalizada.",
     action: "Llamar ahora",
     href: "tel:+525535870335",
-    color: "from-accent/20 to-accent/5",
-    hoverGlow: "hover:shadow-accent/20",
-    iconColor: "text-accent",
-    btnClass: "bg-accent text-white hover:shadow-lg hover:shadow-accent/30",
+    btnClass: "bg-gray-900 text-white hover:bg-gray-800",
   },
   {
     icon: Mail,
@@ -69,10 +55,7 @@ const contactMethods = [
     description: "Para proyectos más detallados, envíanos tus archivos y especificaciones.",
     action: "Enviar correo",
     href: "mailto:cotizacion@igsaprint.com?subject=Cotización%20IGSA%20Print&body=Hola%2C%20me%20interesa%20cotizar%20el%20siguiente%20servicio%3A",
-    color: "from-primary/20 to-primary/5",
-    hoverGlow: "hover:shadow-primary/20",
-    iconColor: "text-primary",
-    btnClass: "bg-primary text-primary-foreground hover:shadow-lg hover:shadow-primary/30",
+    btnClass: "bg-gray-900 text-white hover:bg-gray-800",
   },
 ]
 
@@ -82,36 +65,38 @@ export default function ContactoPage() {
       <BreadcrumbJsonLd items={[{ name: "Inicio", href: "/" }, { name: "Contacto", href: "/contacto" }]} />
       <Header />
       <main className="min-h-screen pt-20">
-        <section className="py-20 md:py-28 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
-          <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-primary/[0.03] rounded-full blur-[120px]" />
-          <div className="absolute bottom-20 left-0 w-[300px] h-[300px] bg-accent/[0.04] rounded-full blur-[100px]" />
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        
+        {/* Hero */}
+        <section className="py-20 md:py-32 relative overflow-hidden">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <AnimateOnScroll>
-              <div className="text-center max-w-3xl mx-auto">
-                <span className="inline-block px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full mb-6">Contacto</span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
-                  Hablemos de tu <span className="gradient-text">proyecto</span>
+              <div className="max-w-3xl">
+                <p className="text-sm font-medium text-primary mb-4">Contacto</p>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-[0.9] tracking-tight mb-8">
+                  Hablemos de tu
+                  <br />
+                  <span className="text-gray-400">proyecto</span>
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
+                <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
                   Elige el canal que prefieras y te atendemos a la brevedad dentro de nuestros horarios de atención.
                 </p>
               </div>
             </AnimateOnScroll>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
               {contactMethods.map((method, index) => (
                 <AnimateOnScroll key={index} delay={index * 0.12}>
-                  <div className="group relative p-8 rounded-2xl glass-card premium-card h-full flex flex-col items-center text-center">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl ${method.hoverGlow}`}>
-                      <method.icon className={`h-7 w-7 ${method.iconColor}`} />
+                  <div className="group p-8 rounded-3xl bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 h-full flex flex-col transition-all duration-500">
+                    <div className="w-12 h-12 rounded-2xl bg-white group-hover:bg-gray-100 flex items-center justify-center mb-6 transition-all duration-500">
+                      <method.icon className="h-6 w-6 text-gray-600" />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">{method.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-8 flex-1">{method.description}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed mb-8 flex-1">{method.description}</p>
                     <a
                       href={method.href}
                       target={method.href.startsWith("http") ? "_blank" : undefined}
                       rel={method.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className={`group/btn inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] w-full justify-center ${method.btnClass}`}
+                      className={`group/btn inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-full transition-all duration-300 ${method.btnClass}`}
                     >
                       {method.action}
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -123,36 +108,39 @@ export default function ContactoPage() {
           </div>
         </section>
 
-        <section className="py-20 relative section-divider">
-          <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-            <AnimateOnScroll className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Nuestras <span className="gradient-text">sucursales</span></h2>
+        {/* Locations */}
+        <section className="py-32 bg-gray-50">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <AnimateOnScroll className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                Nuestras sucursales
+              </h2>
             </AnimateOnScroll>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {locations.map((location, index) => (
                 <AnimateOnScroll key={index} delay={index * 0.15}>
-                  <div className="group p-8 rounded-2xl glass-card premium-card h-full">
-                    <h3 className="text-lg font-bold text-primary mb-5">{location.name}</h3>
+                  <div className="p-8 rounded-3xl bg-white border border-gray-200 h-full">
+                    <h3 className="text-lg font-bold text-gray-900 mb-5">{location.name}</h3>
                     <div className="space-y-4 mb-8">
-                      <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-foreground/80 hover:text-primary transition-colors duration-300">
-                        <MapPin className="h-4 w-4 mt-1 shrink-0 text-primary/60" />
+                      <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-gray-700 hover:text-gray-900 transition-colors">
+                        <MapPin className="h-4 w-4 mt-1 shrink-0 text-gray-400" />
                         <span className="text-sm leading-relaxed">{location.address}</span>
                       </a>
-                      {location.reference && <p className="text-xs text-muted-foreground ml-7">Ref: {location.reference}</p>}
-                      <div className="flex items-start gap-3 text-foreground/80">
-                        <Clock className="h-4 w-4 mt-1 shrink-0 text-primary/60" />
+                      {location.reference && <p className="text-xs text-gray-500 ml-7">Ref: {location.reference}</p>}
+                      <div className="flex items-start gap-3 text-gray-700">
+                        <Clock className="h-4 w-4 mt-1 shrink-0 text-gray-400" />
                         <span className="text-sm leading-relaxed">{location.schedule}</span>
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      <a href={`https://wa.me/${location.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 hover:bg-[#25D366]/20 transition-all duration-300">
+                      <a href={`https://wa.me/${location.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300">
                         <MessageCircle className="h-3.5 w-3.5" />WhatsApp
                       </a>
-                      <a href={`tel:${location.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-all duration-300">
+                      <a href={`tel:${location.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-gray-100 text-gray-900 hover:bg-gray-200 transition-all duration-300">
                         <Phone className="h-3.5 w-3.5" />{location.phone}
                       </a>
-                      <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-white/[0.04] text-foreground/70 border border-white/[0.08] hover:bg-white/[0.08] transition-all duration-300">
+                      <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-gray-100 text-gray-900 hover:bg-gray-200 transition-all duration-300">
                         <MapPin className="h-3.5 w-3.5" />Ver mapa
                       </a>
                     </div>
@@ -163,20 +151,19 @@ export default function ContactoPage() {
           </div>
         </section>
 
-        <section className="py-16 relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-card to-background" />
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-            <AnimateOnScroll className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-foreground">Encuéntranos</h2>
-              <p className="text-sm text-muted-foreground mt-2">Visítanos en cualquiera de nuestras dos sucursales</p>
+        {/* Maps */}
+        <section className="py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <AnimateOnScroll className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Encuéntranos</h2>
+              <p className="text-gray-600 mt-4">Visítanos en cualquiera de nuestras dos sucursales</p>
             </AnimateOnScroll>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Sucursal Huixquilucan */}
               <AnimateOnScroll delay={0.1}>
                 <div className="space-y-4">
-                  <h4 className="text-lg font-semibold text-primary">Sucursal Huixquilucan (Centro)</h4>
-                  <div className="rounded-2xl overflow-hidden border border-white/[0.06] h-96 glass-card">
+                  <h4 className="text-lg font-semibold text-gray-900">Sucursal Huixquilucan (Centro)</h4>
+                  <div className="rounded-3xl overflow-hidden border border-gray-200 h-96 bg-white">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.0123456789!2d-99.3491322!3d19.3621026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d207c5d125be03%3A0x5844f6fe77c39456!2sIgsa%20Print%20%26%20Copy!5e0!3m2!1ses!2smx!4v1234567890"
                       width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
@@ -186,11 +173,10 @@ export default function ContactoPage() {
                 </div>
               </AnimateOnScroll>
 
-              {/* Sucursal Magdalena */}
               <AnimateOnScroll delay={0.2}>
                 <div className="space-y-4">
-                  <h4 className="text-lg font-semibold text-primary">Sucursal Magdalena (Chichicaspa)</h4>
-                  <div className="rounded-2xl overflow-hidden border border-white/[0.06] h-96 glass-card">
+                  <h4 className="text-lg font-semibold text-gray-900">Sucursal Magdalena (Chichicaspa)</h4>
+                  <div className="rounded-3xl overflow-hidden border border-gray-200 h-96 bg-white">
                     <iframe
                       src="https://maps.google.com/maps?q=Carretera%20Huixquilucan%20-%20Naucalpan%2C%20Magdalena%20Chichicaspa%2C%2052773%2C%20Edo.%20Mex.&t=&z=15&ie=UTF8&iwloc=&output=embed"
                       width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"

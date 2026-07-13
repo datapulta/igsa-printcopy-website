@@ -20,13 +20,12 @@ export function Header() {
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 30)
+    const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll, { passive: true })
     handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : ""
     return () => { document.body.style.overflow = "" }
@@ -35,89 +34,80 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-background/60 backdrop-blur-2xl border-b border-white/[0.06] shadow-2xl shadow-black/20"
+            ? "bg-white/80 backdrop-blur-xl border-b border-gray-100"
             : "bg-transparent"
         }`}
       >
-        {/* Barra de colores mexicana (solo en página de sorteo) */}
         {pathname === "/sorteo" && (
           <div className="w-full h-1 bg-gradient-to-r from-green-600 via-white to-red-600" />
         )}
         
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
-          {/* Logo */}
-          <Link href="/" className="relative flex items-center group z-10">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+          <Link href="/" className="relative flex items-center z-10">
             <Image
               src="/logo-igsa-2026-facebook.svg"
               alt="IGSA Print & Copy Logo"
               width={48}
               height={48}
-              className="h-10 lg:h-12 w-auto transition-all duration-500 group-hover:scale-105"
+              className="h-10 w-auto"
               priority
             />
           </Link>
 
-          {/* Desktop Navigation — Centered */}
           <div className="hidden lg:flex lg:items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2">
-            <div className="flex items-center gap-1 bg-white/[0.04] backdrop-blur-md rounded-full px-1.5 py-1.5 border border-white/[0.08]">
+            <nav className="flex items-center gap-1">
               {navigation.map((item) => {
                 const isActive = pathname === item.href
                 return (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`relative px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 group ${
+                    className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                       isActive
-                        ? "text-primary-foreground bg-primary shadow-md shadow-primary/20"
-                        : "text-foreground/70 hover:text-foreground hover:bg-white/[0.06]"
+                        ? "text-gray-900 bg-gray-100"
+                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                     }`}
                   >
                     {item.name}
-                    {!isActive && (
-                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary rounded-full transition-all duration-300 group-hover:w-4" />
-                    )}
                   </Link>
                 )
               })}
-            </div>
+            </nav>
           </div>
 
-          {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3 z-10">
             <a
               href={`https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-primary text-primary-foreground rounded-full hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300"
             >
               <MessageCircle className="h-4 w-4" />
-              Cotizar ahora
+              Cotizar
             </a>
           </div>
 
-          {/* Mobile: Animated Hamburger */}
           <button
             type="button"
             aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
-            className="lg:hidden relative w-11 h-11 flex items-center justify-center rounded-full bg-white/[0.05] border border-white/[0.08] z-10 hover:bg-white/[0.1] transition-colors"
+            className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 z-10"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <span className="sr-only">{mobileMenuOpen ? "Cerrar" : "Menú"}</span>
             <div className="w-5 h-4 flex flex-col justify-between">
               <span
-                className={`block w-full h-[2px] bg-foreground rounded-full transition-all duration-300 origin-center ${
+                className={`block w-full h-[1.5px] bg-gray-900 rounded-full transition-all duration-300 origin-center ${
                   mobileMenuOpen ? "translate-y-[7px] rotate-45" : ""
                 }`}
               />
               <span
-                className={`block w-full h-[2px] bg-foreground rounded-full transition-all duration-300 ${
-                  mobileMenuOpen ? "opacity-0 scale-x-0" : ""
+                className={`block w-full h-[1.5px] bg-gray-900 rounded-full transition-all duration-300 ${
+                  mobileMenuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`block w-full h-[2px] bg-foreground rounded-full transition-all duration-300 origin-center ${
+                className={`block w-full h-[1.5px] bg-gray-900 rounded-full transition-all duration-300 origin-center ${
                   mobileMenuOpen ? "-translate-y-[7px] -rotate-45" : ""
                 }`}
               />
@@ -126,20 +116,17 @@ export function Header() {
         </nav>
       </header>
 
-      {/* Mobile Menu — Full Screen Overlay */}
       <div
-        className={`lg:hidden fixed inset-0 z-40 transition-all duration-500 ${
+        className={`lg:hidden fixed inset-0 z-40 transition-all duration-300 ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
       >
-        {/* Backdrop */}
-        <div className="absolute inset-0 bg-background/98 backdrop-blur-3xl" />
+        <div className="absolute inset-0 bg-white" />
 
-        {/* Content */}
         <div className="relative h-full flex flex-col justify-center px-8">
-          <nav className="space-y-1">
+          <nav className="space-y-2">
             {navigation.map((item, index) => {
               const isActive = pathname === item.href
               return (
@@ -147,14 +134,11 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block py-4 text-3xl font-bold transition-all duration-500 border-b border-border/20 ${
-                    isActive ? "text-primary" : "text-foreground hover:text-primary"
+                  className={`block py-4 text-3xl font-bold transition-all duration-300 border-b border-gray-100 ${
+                    isActive ? "text-gray-900" : "text-gray-600"
                   } ${mobileMenuOpen ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"}`}
                   style={{ transitionDelay: mobileMenuOpen ? `${index * 0.08 + 0.1}s` : "0s" }}
                 >
-                  <span className="text-xs font-normal text-muted-foreground mr-4">
-                    0{index + 1}
-                  </span>
                   {item.name}
                 </Link>
               )
@@ -162,7 +146,7 @@ export function Header() {
           </nav>
 
           <div
-            className={`mt-12 transition-all duration-500 ${
+            className={`mt-12 transition-all duration-300 ${
               mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
             }`}
             style={{ transitionDelay: mobileMenuOpen ? "0.5s" : "0s" }}
@@ -171,29 +155,11 @@ export function Header() {
               href={`https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold bg-primary text-primary-foreground rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all"
+              className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold bg-gray-900 text-white rounded-full"
               onClick={() => setMobileMenuOpen(false)}
             >
               <MessageCircle className="h-5 w-5" />
               Cotizar por WhatsApp
-            </a>
-          </div>
-
-          {/* Contact info at bottom */}
-          <div
-            className={`absolute bottom-12 left-8 right-8 flex flex-wrap gap-6 text-sm text-muted-foreground transition-all duration-500 ${
-              mobileMenuOpen ? "opacity-100" : "opacity-0"
-            }`}
-            style={{ transitionDelay: mobileMenuOpen ? "0.6s" : "0s" }}
-          >
-            <a href="tel:+525535870335" className="hover:text-primary transition-colors">
-              +52 55 3587 0335
-            </a>
-            <a href="mailto:cotizacion@igsaprint.com" className="hover:text-primary transition-colors">
-              cotizacion@igsaprint.com
-            </a>
-            <a href="mailto:igsaprintcopy@gmail.com" className="hover:text-primary transition-colors">
-              igsaprintcopy@gmail.com
             </a>
           </div>
         </div>

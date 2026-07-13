@@ -1,6 +1,6 @@
 # IGSA Print & Copy
 
-> Imprenta profesional con más de 20 años de experiencia en Huixquilucan, Estado de México, México. Servicio disponible 24 horas, los 7 días de la semana.
+> Imprenta profesional con mas de 20 anos de experiencia en Huixquilucan, Estado de Mexico, Mexico.
 
 - Website: https://www.igsaprint.com
 - Servicios: https://www.igsaprint.com/servicios
@@ -10,89 +10,89 @@
 
 ## Sobre la Empresa
 
-IGSA Print & Copy es una empresa fundada en 1993 en Huixquilucan de Degollado, Estado de México. Originalmente dedicada a trámites gubernamentales a nivel municipal, evolucionó para ofrecer servicios integrales de impresión y diseño gráfico. Cuenta con 2 sucursales y servicio 24/7.
+IGSA Print & Copy es una empresa fundada en 1993 en Huixquilucan de Degollado, Estado de Mexico. Originalmente dedicada a tramites gubernamentales a nivel municipal, evoluciono para ofrecer servicios integrales de impresion y diseno grafico. Cuenta con 2 sucursales.
 
 ## Servicios Principales
 
-| Servicio | Descripción | Categoría |
+| Servicio | Descripcion | Categoria |
 |---|---|---|
-| Impresiones Digitales | Tarjetas, folletos, documentos con acabados profesionales | Impresión |
-| Gran Formato | Pósters, banners, lonas con máxima calidad | Impresión |
-| Sublimación | Personalización de textiles y artículos promocionales | Impresión |
-| Letreros 3D | Letras corpóreas con o sin iluminación | Señalización |
-| Rotulación Vehicular | Vinilos de alta resistencia para vehículos | Señalización |
-| Señalética | Directorios para corporativos y espacios públicos | Señalización |
-| Corte Láser | Corte de precisión en diversos materiales | Fabricación |
-| Diseño Gráfico | Propuestas visuales listas para impresión | Diseño |
-| Prototipos Rápidos | Materialización de ideas antes de producción | Fabricación |
+| Impresiones Digitales | Tarjetas, folletos, documentos con acabados profesionales | Impresion |
+| Gran Formato | Posters, banners, lonas con maxima calidad | Impresion |
+| Sublimacion | Personalizacion de textiles y articulos promocionales | Impresion |
+| Materiales Rigidos | Impresion en PVC, acrilico, Dibond, Coroplast | Impresion |
+| Letreros 3D | Letras corporeas con o sin iluminacion | Senalizacion |
+| Rotulacion Vehicular | Vinilos de alta resistencia para vehiculos | Senalizacion |
+| Senaletica | Directorios para corporativos y espacios publicos | Senalizacion |
+| Corte Laser | Corte de precision en diversos materiales | Fabricacion |
+| Diseno Grafico | Propuestas visuales listas para impresion | Diseno |
+| Prototipos Rapidos | Materializacion de ideas antes de produccion | Fabricacion |
 
 ## Ubicaciones
 
 ### Sucursal Huixquilucan (Principal)
-- Dirección: Av. Venustiano Carranza #30, 2do Piso, San Melchor, 52760 Huixquilucan de Degollado, Estado de México
-- Teléfono: +52 55 3587 0335
-- Coordenadas: 19.3621026, -99.3491322
-- Google Maps: https://www.google.com/maps/place/Igsa+Print+%26+Copy/@19.3621026,-99.3491322,17z
-- Horario de atención: 24 horas, los 7 días de la semana
+- Direccion: Jose Maria Morelos #51, San Juan Bautista, 52760 Huixquilucan de Degollado, Estado de Mexico
+- Telefono: +52 55 3587 0335
+- Coordenadas: 19.3616992, -99.3453603
+- Google Maps: https://maps.app.goo.gl/pdp7VVyuqPRKazUo7
+- Horario de atencion: Lunes a Viernes de 9:00 AM a 3:00 PM y de 4:00 PM a 6:00 PM
 
 ### Sucursal Chichicaspa
-- Dirección: Carretera Huixquilucan - Naucalpan, Magdalena Chichicaspa, 52773, Estado de México
-- Referencia: A la altura del Tecnológico Cuicalli
-- Teléfono: +52 55 7138 1809
-- Horario de atención: Lunes a Viernes de 9:00 AM a 7:00 PM, Sábados de 9:00 AM a 2:00 PM
+- Direccion: Carretera Huixquilucan - Naucalpan, Magdalena Chichicaspa, 52773, Estado de Mexico
+- Referencia: A la altura del Tecnologico Cuicalli
+- Telefono: +52 55 7138 1809
+- Horario de atencion: Lunes a Viernes de 9:00 AM a 7:00 PM, Sabados de 9:00 AM a 2:00 PM
 
 ## Contacto Directo
 
-- WhatsApp (respuesta inmediata): +52 55 3587 0335
-- Correo electrónico: cotizacion@igsaprint.com y igsaprintcopy@gmail.com
-- Horario de atención: 24 horas, 7 días de la semana
+- WhatsApp (respuesta inmediata): +52 55 7138 1809
+- Correo electronico: cotizacion@igsaprint.com y igsaprintcopy@gmail.com
+- Horario de atencion: Lunes a Viernes (horarios segun sucursal)
 
 ## Datos Clave
 
-- Fundación: 1993
-- Experiencia: Más de 20 años
+- Fundacion: 1993
+- Experiencia: Mas de 20 anos
 - Sucursales: 2 (Huixquilucan y Chichicaspa)
-- Disponibilidad: 24/7
-- Forma de pago: Efectivo, tarjeta de crédito, tarjeta de débito, transferencia
+- Forma de pago: Efectivo, tarjeta de credito, tarjeta de debito, transferencia
 - Moneda: MXN (Pesos Mexicanos)
 - Rango de precios: $$
 
 ## Valores
 
-- Innovación: Tecnología de vanguardia y soluciones creativas
-- Transparencia: Presupuestos claros y comunicación honesta
-- Accesibilidad: Confidencialidad y protección de archivos del cliente
+- Innovacion: Tecnologia de vanguardia y soluciones creativas
+- Transparencia: Presupuestos claros y comunicacion honesta
+- Accesibilidad: Confidencialidad y proteccion de archivos del cliente
 
-## Misión
+## Mision
 
-Ofrecer soluciones de impresión de la más alta calidad y creatividad, brindando productos personalizados que fortalezcan la identidad visual de los clientes.
+Ofrecer soluciones de impresion de la mas alta calidad y creatividad, brindando productos personalizados que fortalezcan la identidad visual de los clientes.
 
-## Visión
+## Vision
 
-Ser líderes en soluciones de impresión a nivel regional, con disponibilidad 24 horas.
+Ser lideres en soluciones de impresion a nivel regional, ofreciendo un servicio de alta calidad para responder con rapidez y eficacia a las necesidades mas estrictas del mercado.
 
 ## FAQ
 
-P: ¿Cuál es el ancho del rollo para impresión de alta resolución?
+P: Cual es el ancho del rollo para impresion de alta resolucion?
 R: Rollos de hasta 1.60 metros de ancho.
 
-P: ¿Ofrecen venta y renta de estructuras para lona?
-R: Sí, tanto venta como renta de estructuras metálicas en diferentes tamaños.
+P: Ofrecen venta y renta de estructuras para lona?
+R: Si, tanto venta como renta de estructuras metalicas en diferentes tamanos.
 
-P: ¿Pueden imprimir en un ancho más grande que el rollo?
-R: Sí, mediante técnica de unión de paneles con acabado profesional.
+P: Pueden imprimir en un ancho mas grande que el rollo?
+R: Si, mediante tecnica de union de paneles con acabado profesional.
 
-P: ¿Las lonas incluyen ojillos?
-R: Sí, incluyen ojillos en las esquinas sin costo adicional.
+P: Las lonas incluyen ojillos?
+R: Si, incluyen ojillos en las esquinas sin costo adicional.
 
-P: ¿Cuánto tardan en entregar una lona impresa?
-R: 24 a 48 horas hábiles. Servicio de urgencias disponible 24/7.
+P: Cuanto tardan en entregar una lona impresa?
+R: 24 a 48 horas habiles dependiendo del tamano y acabados requeridos.
 
-P: ¿Trabajan urgencias?
-R: Sí, las 24 horas.
+P: Trabajan pedidos urgentes?
+R: Si, realizamos trabajos urgentes y entregas express segun disponibilidad.
 
-P: ¿Qué recomiendan para lona de exterior?
-R: Lona vinílica con acabado mate o brillante, resistente a UV y agua. Lona mesh para zonas con viento.
+P: Que recomiendan para lona de exterior?
+R: Lona vinilica con acabado mate o brillante, resistente a UV y agua. Lona mesh para zonas con viento.
 
-P: ¿Ofrecen instalación de lonas?
-R: Sí, con equipo especializado para diferentes superficies y alturas.
+P: Ofrecen instalacion de lonas?
+R: Si, con equipo especializado para diferentes superficies y alturas.

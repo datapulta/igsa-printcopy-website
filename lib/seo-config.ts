@@ -16,7 +16,8 @@ export const siteConfig = {
     longitude: -99.3453603,
   },
   social: {
-    facebook: 'https://facebook.com/igsaprintcopy',
-    instagram: 'https://instagram.com/igsaprintcopy',
+    facebook: 'https://www.facebook.com/IGSAPrintCopy/',
+    instagram: 'https://www.instagram.com/igsaprintcopy',
+    tiktok: 'https://tiktok.com/@igsaprintcopy',
   },
 } as const

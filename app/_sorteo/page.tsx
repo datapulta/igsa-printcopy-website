@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 import { 
   Trophy, Medal, CalendarDays, ShieldCheck, AlertTriangle, 
-  Camera, Share2, Heart, MessageCircle, MapPin, CheckCircle2, XCircle, Disc, Phone, Mail
+  Camera, Share2, Heart, MessageCircle, MapPin, CheckCircle2, XCircle
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -119,8 +119,6 @@ const prizeExamples = [
 ]
 
 export default function SorteoPage() {
-  const whatsappLink = "https://wa.me/525571381809?text=Hola%2C%20quiero%20registrar%20mi%20participación%20en%20el%20Sorteo%20IGSA%202026"
-
   return (
     <>
       <script

@@ -6,68 +6,70 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll"
 const features = [
   {
     icon: Clock,
-    title: "Atención rápida y eficiente",
-    description: "Optimizamos nuestros tiempos de producción para entregarte tus proyectos lo antes posible.",
-    gradient: "from-primary/20 to-primary/5",
+    title: "Atención rápida",
+    description: "Optimizamos tiempos de producción para entregarte tus proyectos lo antes posible.",
+    span: "md:col-span-1",
   },
   {
     icon: Award,
-    title: "Más de 20 años de experiencia",
-    description: "Décadas de conocimiento y experiencia garantizan resultados de la más alta calidad.",
-    gradient: "from-accent/20 to-accent/5",
+    title: "20+ años de experiencia",
+    description: "Décadas de conocimiento garantizan resultados de la más alta calidad.",
+    span: "md:col-span-1",
   },
   {
     icon: Sparkles,
-    title: "Personalización ilimitada",
+    title: "Personalización total",
     description: "Adaptamos cada proyecto a tus necesidades específicas sin restricciones.",
-    gradient: "from-primary/20 to-accent/5",
+    span: "md:col-span-2",
   },
   {
     icon: Cpu,
-    title: "Equipo de última generación",
-    description: "Tecnología de punta para garantizar acabados perfectos en cada impresión.",
-    gradient: "from-accent/20 to-primary/5",
+    title: "Tecnología de punta",
+    description: "Equipo de última generación para acabados perfectos en cada impresión.",
+    span: "md:col-span-2",
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 relative section-divider">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-card via-background to-background" />
+    <section className="py-32 relative">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          
+          {/* Left: Header */}
+          <div className="lg:col-span-4 lg:sticky lg:top-32">
+            <p className="text-sm font-medium text-primary mb-4">¿Por qué elegirnos?</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              Lo que nos hace diferentes
+            </h2>
+          </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-14">
-          <span className="inline-block px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full mb-4">
-            ¿Por qué elegirnos?
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Lo que nos <span className="gradient-text">distingue</span>
-          </h2>
-        </AnimateOnScroll>
+          {/* Right: Bento Grid */}
+          <div className="lg:col-span-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {features.map((feature, index) => (
+                <AnimateOnScroll 
+                  key={index} 
+                  delay={index * 0.1} 
+                  direction="up"
+                  className={feature.span}
+                >
+                  <div className="group relative p-8 rounded-3xl bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 h-full transition-all duration-500">
+                    <div className="w-12 h-12 rounded-2xl bg-white group-hover:bg-primary/10 flex items-center justify-center mb-6 transition-all duration-500">
+                      <feature.icon className="h-6 w-6 text-gray-400 group-hover:text-primary transition-colors duration-500" />
+                    </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {features.map((feature, index) => (
-            <AnimateOnScroll key={index} delay={index * 0.1} direction="up">
-              <div className="group relative p-6 rounded-2xl glass-card premium-card h-full">
-                {/* Icon */}
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-5 transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/10`}>
-                  <feature.icon className="h-6 w-6 text-primary" />
-                </div>
-
-                {/* Content */}
-                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-
-                {/* Subtle corner accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/[0.03] to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-            </AnimateOnScroll>
-          ))}
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </AnimateOnScroll>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

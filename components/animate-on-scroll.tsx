@@ -37,11 +37,11 @@ export function AnimateOnScroll({
   }, [])
 
   const hiddenTransform = {
-    up: "translateY(40px)",
-    down: "translateY(-40px)",
-    left: "translateX(-40px)",
-    right: "translateX(40px)",
-    scale: "scale(0.92)",
+    up: "translateY(20px)",
+    down: "translateY(-20px)",
+    left: "translateX(-20px)",
+    right: "translateX(20px)",
+    scale: "scale(0.97)",
   }[direction]
 
   return (
@@ -51,7 +51,7 @@ export function AnimateOnScroll({
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "none" : hiddenTransform,
-        transition: `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s`,
+        transition: `opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s`,
         willChange: "opacity, transform",
       }}
     >
