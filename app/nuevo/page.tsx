@@ -7,6 +7,7 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 import { siteConfig } from "@/lib/seo-config"
 import { MapPin, Navigation, MessageCircle, Copy, Check, Sparkles, Cpu, Award, ExternalLink } from "lucide-react"
+import { captureEvent, captureException } from "@/lib/posthog"
 
 export default function NuevoLocalPage() {
   const [copied, setCopied] = useState(false)
@@ -20,6 +21,10 @@ export default function NuevoLocalPage() {
       setCopied(true)
       setTimeout(() => setCopied(false), 2500)
     } catch (err) {
+      captureException(err, {
+        error_context: "copy_new_address",
+        page_name: "nuevo",
+      })
       console.error("Error al copiar al portapapeles", err)
     }
   }
@@ -61,6 +66,10 @@ export default function NuevoLocalPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gray-900 text-white font-semibold hover:bg-gray-800 transition-all duration-300"
+                onClick={() => captureEvent("new_location_action_clicked", {
+                  action_type: "open_maps",
+                  destination_type: "google_maps",
+                })}
               >
                 Abrir en Maps
                 <ExternalLink className="h-4 w-4" />
@@ -70,6 +79,10 @@ export default function NuevoLocalPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-gray-200 bg-white hover:bg-gray-50 transition-all duration-300 text-sm font-semibold text-gray-700"
+                onClick={() => captureEvent("new_location_action_clicked", {
+                  action_type: "open_waze",
+                  destination_type: "waze",
+                })}
               >
                 Abrir en Waze
                 <ExternalLink className="h-3.5 w-3.5 text-gray-400" />
@@ -110,7 +123,13 @@ export default function NuevoLocalPage() {
                 </p>
 
                 <button
-                  onClick={handleCopy}
+                  onClick={() => {
+                    captureEvent("new_location_action_clicked", {
+                      action_type: "copy_address",
+                      destination_type: "clipboard",
+                    })
+                    handleCopy()
+                  }}
                   className="flex items-center justify-between w-full py-3 px-4 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 transition-all text-xs font-medium text-gray-700"
                 >
                   <span className="truncate pr-4 text-gray-600 select-all">{newAddress}</span>
@@ -208,6 +227,10 @@ export default function NuevoLocalPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-300"
+                onClick={() => captureEvent("new_location_action_clicked", {
+                  action_type: "request_whatsapp_help",
+                  destination_type: "whatsapp",
+                })}
               >
                 <MessageCircle className="h-4 w-4" />
                 Escribir por WhatsApp
