@@ -113,31 +113,36 @@ const products = [
     name: "Boletos",
     desc: "Entradas numeradas y foliadas con pleca de pre-corte de seguridad, perfectos para rifas o eventos masivos.",
     icon: Ticket,
-    tone: "bg-rose-50 text-rose-800"
+    tone: "bg-rose-50 text-rose-800",
+    image: "/images/boletos.png"
   },
   {
     name: "Volantes",
-    desc: "Flyers publicitarios de reparto masivo impresos a color en papel couche para campañas publicitarias.",
+    desc: "Flyers publicitarios de reparto masivo impresos a color en papel couche para campaigns publicitarias.",
     icon: Sparkles,
-    tone: "bg-yellow-50 text-yellow-800"
+    tone: "bg-yellow-50 text-yellow-800",
+    image: "/images/volantes.png"
   },
   {
     name: "Etiquetas Adhesivas",
     desc: "Stickers e imanes adhesivos troquelados en planilla o individuales para etiquetado de productos y empaques.",
     icon: Tag,
-    tone: "bg-emerald-50 text-emerald-800"
+    tone: "bg-emerald-50 text-emerald-800",
+    image: "/images/etiquetas-adhesivas.png"
   },
   {
     name: "Papelería Corporativa",
     desc: "Hojas membretadas, sobres oficiales y hojas institucionales que mantienen tu identidad corporativa al día.",
     icon: PenTool,
-    tone: "bg-blue-50 text-blue-800"
+    tone: "bg-blue-50 text-blue-800",
+    image: "/images/papeleria-corporativa.png"
   },
   {
     name: "Catálogos",
     desc: "Cuadernillos grapados de múltiples páginas impresos a color para exhibir tu catálogo completo de productos.",
     icon: BookOpen,
-    tone: "bg-indigo-50 text-indigo-800"
+    tone: "bg-indigo-50 text-indigo-800",
+    image: "/images/catalogos.png"
   },
   {
     name: "Tesis",
@@ -149,7 +154,8 @@ const products = [
     name: "Revistas",
     desc: "Publicaciones impresas periódicas engrapadas o en lomo cuadrado con acabados profesionales en portada.",
     icon: BookOpen,
-    tone: "bg-cyan-50 text-cyan-800"
+    tone: "bg-cyan-50 text-cyan-800",
+    image: "/images/revistas.png"
   }
 ]
 
