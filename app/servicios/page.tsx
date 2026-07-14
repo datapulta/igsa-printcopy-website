@@ -404,27 +404,6 @@ export default function ServiciosPage() {
           </div>
         </section>
 
-        {/* Banner */}
-        <section className="py-20">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <AnimateOnScroll direction="scale">
-              <div className="relative overflow-hidden rounded-[2rem] aspect-[3/1]">
-                <Image src="/images/laser-cutting.jpg" alt="Corte láser" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent" />
-                <div className="absolute inset-0 flex items-center p-8 md:p-14">
-                  <div>
-                    <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
-                      CORTE LÁSER,<br />VOLANTES,<br />FOLLETOS.
-                    </h2>
-                    <p className="text-gray-300 text-sm md:text-base max-w-md">
-                      Tecnología de precisión para acabados perfectos en cada proyecto.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
 
         {/* CTA Final */}
         <section className="py-20 md:py-32">
