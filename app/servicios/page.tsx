@@ -67,6 +67,7 @@ const services = [
     title: "Impresiones Digitales", 
     description: "Tarjetas de presentación, folletos, volantes y documentos con acabados profesionales de alta calidad.", 
     image: "/images/printing-services.jpg",
+    href: "/servicios/digitales",
     icon: Printer,
     tags: ["Alta resolución", "Entrega rápida"],
     features: ["Offset y digital", "Papel premium", "Acabados mate/brillo"]
