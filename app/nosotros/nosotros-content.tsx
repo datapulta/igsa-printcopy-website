@@ -4,9 +4,6 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { 
-  Lightbulb, 
-  Shield, 
-  Users, 
   ArrowRight, 
   Award, 
   CheckCircle2, 
@@ -18,25 +15,16 @@ import { siteConfig } from "@/lib/seo-config"
 
 const values = [
   {
-    icon: Lightbulb,
     title: "Innovación",
-    description: "Transformamos tus ideas en realidad con tecnología de vanguardia y soluciones creativas.",
-    gradient: "from-amber-500/10 to-orange-500/10",
-    iconColor: "text-amber-600"
+    description: "Transformamos tus ideas en realidad con tecnología de vanguardia y soluciones creativas que destacan."
   },
   {
-    icon: Shield,
     title: "Transparencia",
-    description: "Presupuestos claros, comunicación honesta y procesos visibles: así trabajamos.",
-    gradient: "from-blue-500/10 to-cyan-500/10",
-    iconColor: "text-blue-600"
+    description: "Presupuestos claros, comunicación honesta y procesos visibles: así trabajamos contigo."
   },
   {
-    icon: Users,
-    title: "Confianza",
-    description: "Tus archivos y proyectos están protegidos en cada paso, garantizando confidencialidad.",
-    gradient: "from-emerald-500/10 to-teal-500/10",
-    iconColor: "text-emerald-600"
+    title: "Accesibilidad",
+    description: "Tus archivos y proyectos están protegidos en cada paso, garantizando confidencialidad y confianza."
   },
 ]
 
@@ -369,27 +357,32 @@ export function NosotrosContent() {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gray-950 text-white relative overflow-hidden border-t border-white/5">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <AnimateOnScroll className="text-center mb-16 max-w-xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-[.2em] text-[#67920f]">Pilares</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#08213c] mt-2">Nuestros Valores</h2>
-            <p className="text-sm sm:text-base text-slate-500 mt-2">Las bases éticas que sustentan nuestra relación con clientes y socios.</p>
+          <AnimateOnScroll className="mb-16">
+            {/* Badge/Label similar to screenshot */}
+            <div className="inline-block bg-white text-gray-950 text-[11px] font-extrabold px-4.5 py-2.5 rounded-lg tracking-wider uppercase shadow-md">
+              Nuestros valores clave
+            </div>
           </AnimateOnScroll>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 border border-slate-800 rounded-3xl overflow-hidden bg-slate-900/40 backdrop-blur-sm">
             {values.map((value, index) => {
-              const Icon = value.icon
               return (
-                <AnimateOnScroll key={index} delay={index * 0.1}>
-                  <div className="group relative p-8 rounded-3xl bg-slate-50/50 border border-slate-200/80 h-full transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:bg-white hover:border-slate-300">
-                    <div className="relative">
-                      <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-[#67920f]/10">
-                        <Icon className={`h-6 w-6 ${value.iconColor} transition-transform duration-500 group-hover:scale-110`} />
-                      </div>
-                      <h3 className="text-lg font-bold text-[#08213c] mb-3">{value.title}</h3>
-                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{value.description}</p>
+                <AnimateOnScroll 
+                  key={index} 
+                  delay={index * 0.1}
+                  className={`p-8 md:p-10 flex flex-col justify-between h-[230px] relative ${
+                    index > 0 ? "border-t md:border-t-0 md:border-l border-slate-800" : ""
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center gap-3.5 mb-4">
+                      {/* Vertical line indicator */}
+                      <div className="w-1 h-6 bg-blue-600 rounded-full shrink-0" />
+                      <h3 className="text-xl font-bold text-white tracking-tight">{value.title}</h3>
                     </div>
+                    <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">{value.description}</p>
                   </div>
                 </AnimateOnScroll>
               )
