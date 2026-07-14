@@ -18,8 +18,8 @@ export function FeaturesSection() {
           </div>
         </AnimateOnScroll>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {/* Card 1: Agilidad que sí cumple (Bento Destacada - Ancho 2/3) */}
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {/* Card 1: Agilidad que sí cumple (Bento Destacada - Ancho Completo) */}
           <AnimateOnScroll className="md:col-span-2 h-full" delay={0}>
             <article className="group h-full rounded-2xl border border-slate-800 bg-[#08213c] p-8 transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#08213c]/10 text-white relative overflow-hidden">
               {/* Decorative subtle background light */}
@@ -77,32 +77,72 @@ export function FeaturesSection() {
             </article>
           </AnimateOnScroll>
 
-          {/* Card 2: Detalles que se notan (Bento Estándar - 1/3 de ancho) */}
+          {/* Card 2: Detalles que se notan (Bento Estándar - 1/2 de ancho) */}
           <AnimateOnScroll className="md:col-span-1 h-full" delay={0.1}>
-            <article className="group h-full rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5 flex flex-col justify-between">
-              <div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#e6effa] text-[#16457d]">
-                  <Award className="h-5 w-5" />
+            <article className="group h-full rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5 relative overflow-hidden">
+              <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center h-full">
+                <div className="sm:col-span-8">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#e6effa] text-[#16457d]">
+                    <Award className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-6 text-xl font-bold tracking-tight text-[#08213c]">Detalles que se notan</h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
+                    Materiales y acabados elegidos para elevar la percepción de tu marca, garantizando alta precisión en colores y texturas.
+                  </p>
                 </div>
-                <h3 className="mt-8 text-xl font-semibold tracking-tight text-[#08213c]">Detalles que se notan</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                  Materiales y acabados elegidos para elevar la percepción de tu marca, garantizando alta precisión en colores y texturas.
-                </p>
+                
+                {/* Slanted Materials Preview Graphic */}
+                <div className="sm:col-span-4 flex items-center justify-center">
+                  <div className="relative w-[130px] h-[90px]">
+                    {/* Slanted Card 1: base */}
+                    <div className="absolute left-0 bottom-0 w-24 h-15 rounded-lg bg-slate-100 border border-slate-200 rotate-[-8deg] flex items-center justify-center shadow-sm">
+                      <span className="text-[7.5px] font-bold text-slate-400">PAPEL</span>
+                    </div>
+                    {/* Slanted Card 2: middle */}
+                    <div className="absolute left-4 bottom-2.5 w-24 h-15 rounded-lg bg-[#e6effa]/85 border border-[#b6d2f5] rotate-[-4deg] flex items-center justify-center shadow-md backdrop-blur-xs">
+                      <span className="text-[7.5px] font-bold text-[#16457d]">ACRÍLICO</span>
+                    </div>
+                    {/* Slanted Card 3: top */}
+                    <div className="absolute left-8 bottom-5 w-24 h-15 rounded-lg bg-white border border-slate-200 rotate-[4deg] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:translate-y-[-2px] group-hover:rotate-[6deg]">
+                      <span className="text-[7.5px] font-bold text-slate-600">ACABADO</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </article>
           </AnimateOnScroll>
 
-          {/* Card 3: Acompañamiento de principio a fin (Bento Estándar - 1/3 de ancho) */}
+          {/* Card 3: Acompañamiento de principio a fin (Bento Estándar - 1/2 de ancho) */}
           <AnimateOnScroll className="md:col-span-1 h-full" delay={0.2}>
-            <article className="group h-full rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5 flex flex-col justify-between">
-              <div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f7ecdc] text-[#8a4a14]">
-                  <WandSparkles className="h-5 w-5" />
+            <article className="group h-full rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5 relative overflow-hidden">
+              <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center h-full">
+                <div className="sm:col-span-8">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f7ecdc] text-[#8a4a14]">
+                    <WandSparkles className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-6 text-xl font-bold tracking-tight text-[#08213c]">Acompañamiento de principio a fin</h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
+                    Te ayudamos a convertir una buena idea en una pieza impecable, guiándote en la elección de materiales y formatos.
+                  </p>
                 </div>
-                <h3 className="mt-8 text-xl font-semibold tracking-tight text-[#08213c]">Acompañamiento de principio a fin</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                  Te ayudamos a convertir una buena idea en una pieza impecable, guiándote en la elección de materiales y formatos.
-                </p>
+                
+                {/* Blueprint Canvas Graphic */}
+                <div className="sm:col-span-4 flex items-center justify-center">
+                  <div className="relative w-[130px] h-[95px] flex items-center justify-center">
+                    <div className="w-[110px] h-[80px] bg-[#fafaf9] border border-slate-200 rounded-lg p-2.5 relative shadow-md [background-image:radial-gradient(rgba(0,0,0,0.06)_1px,transparent_1px)] [background-size:8px_8px] transition-all duration-300 group-hover:shadow-lg group-hover:border-slate-300">
+                      {/* Crop mark lines */}
+                      <div className="absolute left-1 top-1 w-2.5 h-2.5 border-t border-l border-slate-400" />
+                      <div className="absolute right-1 top-1 w-2.5 h-2.5 border-t border-r border-slate-400" />
+                      <div className="absolute left-1 bottom-1 w-2.5 h-2.5 border-b border-l border-slate-400" />
+                      <div className="absolute right-1 bottom-1 w-2.5 h-2.5 border-b border-r border-slate-400" />
+                      
+                      {/* Geometric shape / blueprint */}
+                      <div className="w-full h-full border border-dashed border-[#8a4a14]/30 rounded flex items-center justify-center bg-[#f7ecdc]/20 transition-colors duration-300 group-hover:bg-[#f7ecdc]/40">
+                        <span className="text-[7.5px] font-bold tracking-wider text-[#8a4a14] text-center leading-none">IDEA ➔ FÍSICO</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </article>
           </AnimateOnScroll>
