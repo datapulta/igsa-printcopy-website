@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { 
@@ -7,15 +8,15 @@ import {
   Shield, 
   Users, 
   ArrowRight, 
-  Calendar, 
   Award, 
-  MapPin, 
-  CheckCircle2,
-  Sparkles
+  CheckCircle2, 
+  MessageCircle,
+  Target,
+  Compass
 } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
+import { TrackedAnchor } from "@/components/tracked-link"
 import { siteConfig } from "@/lib/seo-config"
-import { useEffect, useState } from "react"
 
 const values = [
   {
@@ -41,27 +42,31 @@ const values = [
   },
 ]
 
-const timeline = [
+const roadmapSteps = [
   {
+    step: "01",
     year: "1993",
     title: "Fundación",
-    description: "Iniciamos operaciones ofreciendo servicios de trámites gubernamentales a nivel municipal.",
+    desc: "Iniciamos operaciones ofreciendo servicios de trámites gubernamentales a nivel municipal en Huixquilucan."
   },
   {
+    step: "02",
     year: "2000s",
-    title: "Expansión de servicios",
-    description: "Incorporamos servicios de impresión y copiado para satisfacer las necesidades de nuestros clientes.",
+    title: "Era de Impresión",
+    desc: "Incorporamos servicios de impresión y copiado básico, dando nuestros primeros pasos en la industria gráfica."
   },
   {
+    step: "03",
     year: "2010s",
-    title: "Tecnología de punta",
-    description: "Adoptamos impresión digital de gran formato y sublimación con equipos de última generación.",
+    title: "Modernización",
+    desc: "Adoptamos equipos industriales de impresión digital de gran formato y sublimación textil."
   },
   {
+    step: "04",
     year: "Hoy",
-    title: "IGSA Print & Copy",
-    description: "Somos líderes regionales en soluciones de impresión con 2 sucursales y servicio integral.",
-  },
+    title: "Liderazgo Regional",
+    desc: "Consolidados como referentes con 2 sucursales, equipamiento de vanguardia y cobertura integral."
+  }
 ]
 
 function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
@@ -107,40 +112,41 @@ export function NosotrosContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+      <section className="relative py-24 md:py-36 overflow-hidden bg-white">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f8f8f8_1px,transparent_1px),linear-gradient(to_bottom,#f8f8f8_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
+            {/* Left Content */}
             <div className="lg:col-span-6">
               <AnimateOnScroll>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 rounded-full mb-6">
-                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  <span className="text-xs font-medium text-gray-700">Desde 1993</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-full border border-slate-200/50 mb-6">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#67920f] animate-pulse" />
+                  <span className="text-xs font-bold text-slate-700 tracking-wide uppercase">Trayectoria • Desde 1993</span>
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[0.95] tracking-tight mb-6">
-                  Más de 20 años
+                <h1 className="text-4xl md:text-6xl font-bold text-[#08213c] leading-[0.92] tracking-tight mb-8">
+                  Diseñando el futuro,
                   <br />
-                  <span className="text-gray-400">haciendo historia</span>
+                  <span className="bg-gradient-to-r from-[#67920f] to-emerald-600 bg-clip-text text-transparent">haciendo historia.</span>
                 </h1>
                 
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8 max-w-lg">
-                  De trámites gubernamentales a líderes en impresión profesional. Conoce cómo evolucionamos para servirte mejor.
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-10 max-w-lg">
+                  Evolucionamos de una oficina de trámites locales a convertirnos en el taller de impresión digital y gran formato líder de la región. Creamos piezas de alto impacto que impulsan tu negocio.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/servicios"
-                    className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300"
+                    className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold bg-slate-900 text-white rounded-full hover:bg-slate-800 transition duration-300 shadow-lg shadow-slate-950/10"
                   >
-                    Ver servicios
+                    Explorar servicios
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                   <Link
                     href="/contacto"
-                    className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold text-gray-700 rounded-full border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all duration-300"
+                    className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-slate-700 rounded-full border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition duration-300"
                   >
                     Contáctanos
                   </Link>
@@ -148,35 +154,37 @@ export function NosotrosContent() {
               </AnimateOnScroll>
             </div>
 
+            {/* Right Media */}
             <div className="lg:col-span-6">
               <AnimateOnScroll direction="right">
-                <div 
-                  className="relative aspect-[4/5] rounded-3xl overflow-hidden"
-                  style={{ transform: `translateY(${scrollY * 0.08}px)` }}
-                >
-                  <Image
-                    src="/images/about-printing.jpg"
-                    alt="Instalaciones IGSA Print & Copy"
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-transparent" />
-                </div>
+                <div className="relative">
+                  {/* Photo Frame */}
+                  <div 
+                    className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-2xl"
+                    style={{ transform: `translateY(${scrollY * 0.05}px)` }}
+                  >
+                    <Image
+                      src="/images/about-printing.jpg"
+                      alt="Instalaciones IGSA Print & Copy"
+                      fill
+                      className="object-cover"
+                      priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+                  </div>
 
-                {/* Floating badge */}
-                <div 
-                  className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-5 shadow-xl border border-gray-100"
-                  style={{ animation: "float 3s ease-in-out infinite" }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Award className="w-5 h-5 text-primary" />
+                  {/* Floating glassmorphism badge */}
+                  <div 
+                    className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-2xl border border-slate-100 flex items-center gap-4 max-w-xs"
+                    style={{ animation: "float 4s ease-in-out infinite" }}
+                  >
+                    <div className="w-11 h-11 rounded-xl bg-[#67920f]/10 flex items-center justify-center shrink-0">
+                      <Award className="w-5.5 h-5.5 text-[#67920f]" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-gray-900">Calidad garantizada</p>
-                      <p className="text-xs text-gray-500">+1000 proyectos</p>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Compromiso IGSA</p>
+                      <p className="text-sm font-bold text-[#08213c] mt-0.5 leading-snug">Calidad Industrial Garantizada</p>
                     </div>
                   </div>
                 </div>
@@ -188,94 +196,132 @@ export function NosotrosContent() {
         <style jsx>{`
           @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
           }
         `}</style>
       </section>
 
-      {/* Stats with animated counters */}
-      <section className="py-20 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <AnimateOnScroll delay={0}>
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">1993</p>
-                <p className="text-sm text-gray-600">Año de fundación</p>
-              </div>
-            </AnimateOnScroll>
-            <AnimateOnScroll delay={0.1}>
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-                  <AnimatedCounter target={20} suffix="+" />
-                </p>
-                <p className="text-sm text-gray-600">Años de trayectoria</p>
-              </div>
-            </AnimateOnScroll>
-            <AnimateOnScroll delay={0.2}>
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-                  <AnimatedCounter target={2} />
-                </p>
-                <p className="text-sm text-gray-600">Sucursales</p>
-              </div>
-            </AnimateOnScroll>
-            <AnimateOnScroll delay={0.3}>
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-                  <AnimatedCounter target={100} suffix="%" />
-                </p>
-                <p className="text-sm text-gray-600">Compromiso</p>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </div>
-      </section>
+      {/* Bento Grid Stats Section */}
+      <section className="py-24 bg-[#08213c] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(103,146,15,0.1),transparent_50%)]" />
+        
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <AnimateOnScroll className="text-center mb-16 max-w-2xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-[.2em] text-[#b6df55]">Nuestras Cifras</span>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mt-2">La fuerza de la experiencia</h2>
+          </AnimateOnScroll>
 
-      {/* Mission & Vision */}
-      <section className="py-20 md:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <AnimateOnScroll direction="left">
-              <div className="group relative p-8 md:p-10 rounded-3xl bg-white border border-gray-200 hover:border-gray-300 h-full transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                <div className="relative">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                    <Sparkles className="h-7 w-7 text-primary" />
-                  </div>
-                  <p className="text-sm font-medium text-primary mb-4">Nuestra misión</p>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-6">
-                    Soluciones de la más alta calidad
-                  </h2>
-                  <p className="text-gray-600 leading-relaxed">
-                    Nos comprometemos a utilizar tecnología de la más alta calidad, materiales de excelencia y un personal altamente capacitado para garantizar resultados que superen las expectativas.
-                  </p>
-                </div>
+            {/* Box 1 (Large - 2 cols on md) */}
+            <div className="md:col-span-2 p-8 md:p-10 rounded-3xl bg-slate-900/60 border border-white/5 backdrop-blur-sm flex flex-col justify-between h-[300px]">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Origen</span>
+                <h3 className="text-5xl font-black text-[#b6df55] mt-4 tracking-tight">1993</h3>
               </div>
-            </AnimateOnScroll>
+              <p className="text-sm md:text-base text-slate-300 leading-relaxed max-w-xl">
+                Nacimos como un despacho local ofreciendo soluciones de gestoría. Esa misma vocación de servicio y honestidad cimentó el camino para convertirnos en la imprenta más confiable del municipio.
+              </p>
+            </div>
 
-            <AnimateOnScroll direction="right">
-              <div className="group relative p-8 md:p-10 rounded-3xl bg-white border border-gray-200 hover:border-gray-300 h-full transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                <div className="relative">
-                  <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
-                    <MapPin className="h-7 w-7 text-blue-600" />
-                  </div>
-                  <p className="text-sm font-medium text-blue-600 mb-4">Nuestra visión</p>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-6">
-                    Líderes en impresión regional
-                  </h2>
-                  <p className="text-gray-600 leading-relaxed">
-                    Ser líderes en soluciones de impresión a nivel regional, ofreciendo un servicio de alta calidad para responder con rapidez y eficacia a las necesidades más estrictas del mercado.
-                  </p>
-                </div>
+            {/* Box 2 */}
+            <div className="p-8 rounded-3xl bg-slate-900/60 border border-white/5 backdrop-blur-sm flex flex-col justify-between h-[300px]">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Trayectoria</span>
+                <h3 className="text-5xl font-black text-[#b6df55] mt-4 tracking-tight">
+                  <AnimatedCounter target={20} suffix="+" />
+                </h3>
               </div>
-            </AnimateOnScroll>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Años de experiencia constante resolviendo retos y liderando el mercado de impresión en el Estado de México.
+              </p>
+            </div>
+
+            {/* Box 3 */}
+            <div className="p-8 rounded-3xl bg-slate-900/60 border border-white/5 backdrop-blur-sm flex flex-col justify-between h-[300px]">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Presencia</span>
+                <h3 className="text-5xl font-black text-[#b6df55] mt-4 tracking-tight">
+                  <AnimatedCounter target={2} />
+                </h3>
+              </div>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Sucursales físicas en Huixquilucan y Chichicaspa equipadas con maquinaria de impresión y corte industrial.
+              </p>
+            </div>
+
+            {/* Box 4 (2 cols on md) */}
+            <div className="md:col-span-2 p-8 md:p-10 rounded-3xl bg-slate-900/60 border border-white/5 backdrop-blur-sm flex flex-col justify-between h-[300px]">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Eficiencia</span>
+                <h3 className="text-5xl font-black text-[#b6df55] mt-4 tracking-tight">
+                  <AnimatedCounter target={100} suffix="%" />
+                </h3>
+              </div>
+              <p className="text-sm md:text-base text-slate-300 leading-relaxed max-w-xl">
+                De compromiso absoluto en tiempos de entrega y calidad de resolución cromática. Respaldamos cada uno de tus proyectos.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Banner de gran formato / Taller */}
+      {/* Mission & Vision Section */}
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            
+            {/* Mission Card */}
+            <AnimateOnScroll direction="left">
+              <div className="group relative p-8 md:p-12 rounded-3xl bg-slate-50 border border-slate-200/80 overflow-hidden h-full flex flex-col justify-between transition-all duration-500 hover:shadow-xl hover:border-slate-300">
+                {/* CMYK Cyan Bar */}
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-cyan-500" />
+                
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-8">
+                    <Target className="h-6 w-6 text-cyan-600" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-cyan-600">Dirección</span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#08213c] mt-2 mb-6">Nuestra Misión</h3>
+                  <p className="text-sm md:text-base text-slate-600 leading-relaxed">
+                    Facilitar y potenciar la comunicación visual de nuestros clientes. Nos comprometemos a fusionar tecnología industrial de impresión con un trato personalizado impecable, asegurando productos nítidos, acabados robustos y la mejor relación costo-beneficio de la región.
+                  </p>
+                </div>
+                <div className="mt-8 flex items-center gap-1.5 text-xs font-bold text-cyan-600">
+                  <span>Cian (C) • CMYK </span>
+                </div>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Vision Card */}
+            <AnimateOnScroll direction="right">
+              <div className="group relative p-8 md:p-12 rounded-3xl bg-slate-50 border border-slate-200/80 overflow-hidden h-full flex flex-col justify-between transition-all duration-500 hover:shadow-xl hover:border-slate-300">
+                {/* CMYK Magenta Bar */}
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-rose-500" />
+                
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center mb-8">
+                    <Compass className="h-6 w-6 text-rose-600" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-rose-600">Futuro</span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#08213c] mt-2 mb-6">Nuestra Visión</h3>
+                  <p className="text-sm md:text-base text-slate-600 leading-relaxed">
+                    Posicionarnos como el principal hub de soluciones integrales de impresión y publicidad en el Estado de México. Planeamos seguir incorporando maquinaria de última generación respetuosa con el medio ambiente y expandiendo nuestros canales digitales para agilizar las solicitudes del mercado.
+                  </p>
+                </div>
+                <div className="mt-8 flex items-center gap-1.5 text-xs font-bold text-rose-600">
+                  <span>Magenta (M) • CMYK</span>
+                </div>
+              </div>
+            </AnimateOnScroll>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Plotter Workshop Panoramic Banner */}
       <section className="relative h-[400px] md:h-[450px] overflow-hidden flex items-center justify-center bg-gray-950 text-white">
         <div className="absolute inset-0">
           <Image
@@ -305,57 +351,45 @@ export function NosotrosContent() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-20 md:py-32 bg-gray-50">
+      {/* Roadmap Timeline (Startup style) */}
+      <section className="py-24 bg-slate-50/50 border-t border-b border-slate-100">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <AnimateOnScroll className="text-center mb-16">
-            <p className="text-sm font-medium text-primary mb-4">Nuestra trayectoria</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Cómo hemos evolucionado
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              De una oficina de trámites a una imprenta profesional con tecnología de punta.
-            </p>
+          <AnimateOnScroll className="text-center mb-16 max-w-xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-[.2em] text-[#67920f]">Trayectoria</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#08213c] mt-2">Nuestra evolución paso a paso</h2>
           </AnimateOnScroll>
 
-          <div className="relative">
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gray-200 md:-translate-x-1/2" />
+          {/* Timeline Roadmap Grid */}
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            <div className="space-y-12">
-              {timeline.map((item, index) => (
-                <AnimateOnScroll key={index} delay={index * 0.15}>
-                  <div className={`relative flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                    <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md md:-translate-x-1/2" />
-                    
-                    <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
-                      <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-gray-300 transition-all duration-500">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full mb-4">
-                          <Calendar className="h-3 w-3 text-primary" />
-                          <span className="text-xs font-semibold text-primary">{item.year}</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
-                      </div>
+            {/* Dashed connector line */}
+            <div className="absolute top-1/2 left-0 right-0 h-0.5 border-t-2 border-dashed border-slate-200 -translate-y-1/2 hidden lg:block z-0" />
+
+            {roadmapSteps.map((step, index) => (
+              <AnimateOnScroll key={step.step} delay={index * 0.1} className="relative z-10 h-full">
+                <article className="group p-6 rounded-3xl bg-white border border-slate-200/80 h-full flex flex-col justify-between transition duration-300 hover:shadow-lg hover:border-slate-300">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">{step.year}</span>
+                      <span className="text-3xl font-black text-slate-100 group-hover:text-[#67920f]/20 transition-colors duration-300">{step.step}</span>
                     </div>
+                    <h3 className="text-base font-bold text-[#08213c] mb-2">{step.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{step.desc}</p>
                   </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
+                </article>
+              </AnimateOnScroll>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 md:py-32">
+      {/* Core Values Section */}
+      <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <AnimateOnScroll className="text-center mb-16">
-            <p className="text-sm font-medium text-primary mb-4">Nuestros valores</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Lo que nos define
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Tres pilares fundamentales que guían cada proyecto y decisión.
-            </p>
+          <AnimateOnScroll className="text-center mb-16 max-w-xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-[.2em] text-[#67920f]">Pilares</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#08213c] mt-2">Nuestros Valores</h2>
+            <p className="text-sm sm:text-base text-slate-500 mt-2">Las bases éticas que sustentan nuestra relación con clientes y socios.</p>
           </AnimateOnScroll>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -363,14 +397,13 @@ export function NosotrosContent() {
               const Icon = value.icon
               return (
                 <AnimateOnScroll key={index} delay={index * 0.1}>
-                  <div className="group relative p-8 rounded-3xl bg-white border border-gray-200 hover:border-gray-300 h-full transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`} />
+                  <div className="group relative p-8 rounded-3xl bg-slate-50/50 border border-slate-200/80 h-full transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:bg-white hover:border-slate-300">
                     <div className="relative">
-                      <div className="w-14 h-14 rounded-2xl bg-gray-100 group-hover:bg-white flex items-center justify-center mb-6 transition-all duration-500">
-                        <Icon className={`h-7 w-7 ${value.iconColor} transition-transform duration-500 group-hover:scale-110`} />
+                      <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-[#67920f]/10">
+                        <Icon className={`h-6 w-6 ${value.iconColor} transition-transform duration-500 group-hover:scale-110`} />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">{value.description}</p>
+                      <h3 className="text-lg font-bold text-[#08213c] mb-3">{value.title}</h3>
+                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{value.description}</p>
                     </div>
                   </div>
                 </AnimateOnScroll>
@@ -380,49 +413,42 @@ export function NosotrosContent() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 md:py-32">
+      {/* Contact CTA Section */}
+      <section className="py-24 bg-slate-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <AnimateOnScroll direction="scale">
-            <div className="relative rounded-[2.5rem] overflow-hidden bg-gray-900 p-12 md:p-20">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(143,184,46,0.15),transparent_50%)]" />
+            <div className="relative rounded-[2.5rem] overflow-hidden bg-[#08213c] p-12 md:p-20 text-center text-white">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(103,146,15,0.15),transparent_50%)]" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(0,63,127,0.1),transparent_50%)]" />
               
-              <div className="relative text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-6">
-                  <CheckCircle2 className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-semibold text-white">Listos para ayudarte</span>
+              <div className="relative max-w-2xl mx-auto">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full mb-6 border border-white/5">
+                  <CheckCircle2 className="h-4 w-4 text-[#b6df55]" />
+                  <span className="text-xs font-bold text-white tracking-wide uppercase">Listos para ayudarte</span>
                 </div>
 
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-[1.05] tracking-tight">
                   ¿Quieres ser parte de
                   <br />
-                  <span className="text-gray-400">nuestra historia?</span>
+                  <span className="text-[#b6df55]">nuestra historia?</span>
                 </h2>
-                <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-                  Únete a los cientos de clientes que confían en nosotros para sus proyectos de impresión.
+                <p className="text-sm sm:text-base text-slate-300 mb-10 leading-relaxed">
+                  Únete a los cientos de comercios, corporativos y particulares que confían en IGSA Print & Copy para materializar sus piezas de diseño.
                 </p>
-                
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link 
-                    href="/contacto" 
-                    className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold bg-white text-gray-900 rounded-full hover:bg-gray-100 transition-all duration-300"
-                  >
-                    Iniciar proyecto
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href={`https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20IGSA`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold text-white rounded-full border border-gray-700 hover:border-gray-600 hover:bg-white/5 transition-all duration-300"
-                  >
-                    <svg className="h-4 w-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                    WhatsApp directo
-                  </a>
-                </div>
+
+                <TrackedAnchor
+                  href={`https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20gustar%C3%ADa%20iniciar%20un%20proyecto%20con%20ustedes`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 text-xs sm:text-sm font-bold bg-white text-slate-900 rounded-full hover:bg-slate-100 transition duration-300 shadow-md"
+                  event="about_cta_clicked"
+                  properties={{
+                    cta_location: "about_footer",
+                    page_name: "nosotros"
+                  }}
+                >
+                  <MessageCircle className="h-4 w-4 text-[#67920f]" /> Iniciar proyecto
+                </TrackedAnchor>
               </div>
             </div>
           </AnimateOnScroll>
