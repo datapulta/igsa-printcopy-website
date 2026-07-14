@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, ComponentType } from "react"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -25,19 +25,58 @@ import {
   MessageCircle,
   Search,
   Sparkles,
-  Printer
+  Printer,
+  X,
+  Check
 } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 import { siteConfig } from "@/lib/seo-config"
 
-const products = [
+interface Product {
+  name: string
+  desc: string
+  icon: ComponentType<{ className?: string }>
+  tone: string
+  image?: string
+  details?: {
+    longDesc?: string
+    processTitle?: string
+    processSteps?: { title: string; desc: string }[]
+    sizes?: string[]
+    papers?: string[]
+    types?: string[]
+  }
+}
+
+const products: Product[] = [
   {
     name: "Dípticos y Trípticos",
     desc: "Folletos plegados ideales para menús, guías informativas y catálogos corporativos rápidos.",
     icon: Layers,
     tone: "bg-[#e8f4c9] text-[#335711]",
-    image: "/images/dipticos-tripticos.png"
+    image: "/images/dipticos-tripticos.png",
+    details: {
+      longDesc: "La impresión en dípticos y trípticos es ideal para comunicar mensajes breves e impactar al cliente con información clara y concisa. Son herramientas altamente versátiles que pueden usarse para promocionar ofertas, catálogos de productos, servicios, campañas publicitarias o incluir instrucciones simples en empaques.",
+      processTitle: "¿Cómo elaboramos un díptico o tríptico?",
+      processSteps: [
+        {
+          title: "Carátula Principal",
+          desc: "Es la primera sección visible cuando el folleto está cerrado. Aquí se coloca el nombre de la empresa, logotipo y una imagen principal atractiva que represente el contenido."
+        },
+        {
+          title: "Interiores",
+          desc: "Al desplegar el folleto, se encuentra la parte central que contiene el mensaje principal. Manteniendo la información breve, clara, bien organizada y con tipografías legibles."
+        },
+        {
+          title: "Contraportada",
+          desc: "Incluye los datos de contacto como dirección, teléfono, correo y sitio web. Es fundamental para generar confianza y facilitar la comunicación con el cliente."
+        }
+      ],
+      sizes: ["Carta (19.7 x 27.5 cm)", "Oficio (19.7 x 35.5 cm)", "Tabloide (39.7 x 27.5 cm)"],
+      papers: ["Bond 90 gr.", "Couche 115 gr."],
+      types: ["4x0 (Color al frente)", "4x1 (Color al frente, vuelta B/N)", "4x4 (Color ambos lados)"]
+    }
   },
   {
     name: "Diplomas",
@@ -162,11 +201,48 @@ const products = [
 
 export default function DigitalesPage() {
   const [searchTerm, setSearchTerm] = useState("")
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
   const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     product.desc.toLowerCase().includes(searchTerm.toLowerCase())
   )
+
+  const handleOpenDetails = (product: Product) => {
+    setSelectedProduct(product)
+  }
+
+  const handleCloseDetails = () => {
+    setSelectedProduct(null)
+  }
+
+  // Helper function to get default specs for products without custom detailed specs
+  const getProductSpecs = (product: Product) => {
+    if (product.details) return product.details
+
+    // Fallback standard specs
+    return {
+      longDesc: product.desc,
+      processTitle: "¿Cómo se elabora?",
+      processSteps: [
+        {
+          title: "Recepción de Archivo",
+          desc: "Revisamos tu archivo de diseño para validar resolución, márgenes y perfiles de color correctos."
+        },
+        {
+          title: "Impresión Digital Láser",
+          desc: "Imprimimos en prensa digital de última tecnología con registro perfecto y fidelidad de tonos."
+        },
+        {
+          title: "Acabado y Refine",
+          desc: "Cortamos milimétricamente tus piezas y aplicamos terminados extras como laminados o suajados."
+        }
+      ],
+      sizes: ["Carta (21.5 x 28 cm)", "Media Carta (14 x 21.5 cm)", "Tabloide (30.5 x 45.7 cm)"],
+      papers: ["Couche 150 gr / 300 gr", "Bond 90 gr", "Opalina 225 gr"],
+      types: ["Color frente (4x0)", "Color ambos lados (4x4)"]
+    }
+  }
 
   return (
     <>
@@ -248,7 +324,10 @@ export default function DigitalesPage() {
                         <div>
                           {/* Image Header or Gradient Placeholder */}
                           {product.image ? (
-                            <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-5 bg-slate-50 border border-slate-100">
+                            <div 
+                              onClick={() => handleOpenDetails(product)}
+                              className="relative w-full aspect-video rounded-xl overflow-hidden mb-5 bg-slate-50 border border-slate-100 cursor-pointer"
+                            >
                               <Image 
                                 src={product.image} 
                                 alt={product.name} 
@@ -258,17 +337,31 @@ export default function DigitalesPage() {
                               />
                             </div>
                           ) : (
-                            <div className={`flex w-full aspect-video items-center justify-center rounded-xl ${product.tone} mb-5 border border-current/5`}>
+                            <div 
+                              onClick={() => handleOpenDetails(product)}
+                              className={`flex w-full aspect-video items-center justify-center rounded-xl ${product.tone} mb-5 border border-current/5 cursor-pointer`}
+                            >
                               <Icon className="h-8 w-8" />
                             </div>
                           )}
                           
-                          <h3 className="text-lg font-bold text-[#08213c] tracking-tight">{product.name}</h3>
+                          <h3 
+                            onClick={() => handleOpenDetails(product)}
+                            className="text-lg font-bold text-[#08213c] tracking-tight hover:text-[#67920f] transition-colors cursor-pointer"
+                          >
+                            {product.name}
+                          </h3>
                           <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600">{product.desc}</p>
                         </div>
                         
                         <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Imprenta al instante</span>
+                          <button
+                            onClick={() => handleOpenDetails(product)}
+                            className="text-xs font-bold text-slate-600 hover:text-slate-900 transition-colors"
+                          >
+                            Ver detalles
+                          </button>
+                          
                           <TrackedAnchor
                             href={`https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20impresi%C3%B3n%20de%20${encodeURIComponent(product.name)}`}
                             target="_blank"
@@ -301,6 +394,165 @@ export default function DigitalesPage() {
             )}
           </div>
         </section>
+
+        {/* Product Details Modal (Drawer) */}
+        {selectedProduct && (() => {
+          const specs = getProductSpecs(selectedProduct)
+          return (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
+              {/* Backdrop */}
+              <div 
+                onClick={handleCloseDetails}
+                className="absolute inset-0 bg-[#08213c]/60 backdrop-blur-sm transition-opacity duration-300"
+              />
+              
+              {/* Modal Container */}
+              <div className="relative w-full max-w-4xl max-h-[85vh] bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row transition-transform duration-300 scale-100 z-10">
+                
+                {/* Close Button */}
+                <button
+                  onClick={handleCloseDetails}
+                  className="absolute right-4 top-4 z-20 p-2 text-slate-400 hover:text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+
+                {/* Left Side: Product Media & Specs */}
+                <div className="w-full md:w-5/12 bg-slate-50 border-r border-slate-100 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
+                  <div>
+                    {selectedProduct.image ? (
+                      <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-6 bg-white border border-slate-100">
+                        <Image 
+                          src={selectedProduct.image} 
+                          alt={selectedProduct.name} 
+                          fill 
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div className={`flex w-full aspect-video items-center justify-center rounded-2xl ${selectedProduct.tone} mb-6 border border-current/5`}>
+                        {(() => {
+                          const Icon = selectedProduct.icon
+                          return <Icon className="h-10 w-10" />
+                        })()}
+                      </div>
+                    )}
+
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Especificaciones Técnicas</h4>
+                    
+                    <div className="space-y-4">
+                      {specs.sizes && specs.sizes.length > 0 && (
+                        <div>
+                          <p className="text-[11px] font-bold text-[#08213c] uppercase">Tamaños disponibles</p>
+                          <ul className="mt-1 space-y-1">
+                            {specs.sizes.map((s) => (
+                              <li key={s} className="text-xs text-slate-600 flex items-center gap-1.5">
+                                <Check className="h-3 w-3 text-[#67920f] shrink-0" />
+                                {s}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      
+                      {specs.papers && specs.papers.length > 0 && (
+                        <div>
+                          <p className="text-[11px] font-bold text-[#08213c] uppercase">Tipos de Papel</p>
+                          <ul className="mt-1 space-y-1">
+                            {specs.papers.map((p) => (
+                              <li key={p} className="text-xs text-slate-600 flex items-center gap-1.5">
+                                <Check className="h-3 w-3 text-[#67920f] shrink-0" />
+                                {p}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      
+                      {specs.types && specs.types.length > 0 && (
+                        <div>
+                          <p className="text-[11px] font-bold text-[#08213c] uppercase">Modalidad de Impresión</p>
+                          <ul className="mt-1 space-y-1">
+                            {specs.types.map((t) => (
+                              <li key={t} className="text-xs text-slate-600 flex items-center gap-1.5">
+                                <Check className="h-3 w-3 text-[#67920f] shrink-0" />
+                                {t}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="pt-6 mt-6 border-t border-slate-200/60 hidden md:block">
+                    <p className="text-[10px] text-slate-400 font-semibold leading-relaxed">
+                      IGSA Print & Copy • Más de 20 años de experiencia técnica a tu servicio.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right Side: Product Details & Process */}
+                <div className="w-full md:w-7/12 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-none">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#67920f]">Impresión Profesional</span>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#08213c] mt-1 mb-4">{selectedProduct.name}</h3>
+                    
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                      {specs.longDesc}
+                    </p>
+
+                    {specs.processTitle && (
+                      <div className="mb-6">
+                        <h4 className="text-sm font-bold text-[#08213c] border-b border-slate-100 pb-2 mb-4">
+                          {specs.processTitle}
+                        </h4>
+                        <div className="space-y-4">
+                          {specs.processSteps?.map((step, idx) => (
+                            <div key={step.title} className="flex gap-3">
+                              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[10px] font-black text-slate-500 shrink-0">
+                                {idx + 1}
+                              </span>
+                              <div>
+                                <h5 className="text-xs font-bold text-[#08213c]">{step.title}</h5>
+                                <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">{step.desc}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <button
+                      onClick={handleCloseDetails}
+                      className="text-xs font-bold text-slate-500 hover:text-slate-700 order-2 sm:order-1"
+                    >
+                      Cerrar catálogo
+                    </button>
+                    
+                    <TrackedAnchor
+                      href={`https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20impresi%C3%B3n%20de%20${encodeURIComponent(selectedProduct.name)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-bold bg-[#67920f] text-white rounded-full hover:bg-[#5b810d] transition duration-300 shadow-md shadow-[#67920f]/10 order-1 sm:order-2"
+                      event="digital_product_modal_quote_clicked"
+                      properties={{
+                        product_name: selectedProduct.name,
+                        cta_location: "details_modal"
+                      }}
+                    >
+                      <MessageCircle className="h-4 w-4" /> Cotizar este producto
+                    </TrackedAnchor>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          )
+        })()}
 
         {/* Preparation Guidelines */}
         <section className="py-20 md:py-28 bg-white border-t border-slate-100">
