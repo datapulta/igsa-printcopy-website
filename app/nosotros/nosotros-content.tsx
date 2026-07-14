@@ -283,9 +283,13 @@ export function NosotrosContent() {
           <div className="max-w-4xl">
             <AnimateOnScroll>
               {/* Badge/Label similar to screenshot */}
-              <div className="inline-block bg-white text-gray-950 text-[11px] font-extrabold px-4.5 py-2.5 rounded-lg mb-8 tracking-wider uppercase shadow-md">
+              <div className="inline-block bg-white text-gray-950 text-[11px] font-extrabold px-4.5 py-2.5 rounded-lg tracking-wider uppercase shadow-md">
                 Nuestra misión
               </div>
+              
+              {/* Separador cromático verde/lima */}
+              <div className="w-16 h-1 bg-[#b6df55] rounded-full mt-6 mb-8" />
+              
               <h2 className="text-2xl md:text-4xl font-normal leading-relaxed text-white tracking-tight mb-8">
                 Ofrecer soluciones de la más alta calidad y creatividad, brindando a nuestros clientes productos personalizados que fortalezcan su identidad visual y alcance.
               </h2>
@@ -297,8 +301,11 @@ export function NosotrosContent() {
         </div>
       </section>
 
+      {/* Separador físico entre Misión y Visión */}
+      <div className="w-full h-px bg-slate-800/80 relative z-10" />
+
       {/* Nuestra Visión Banner */}
-      <section className="relative py-28 md:py-36 overflow-hidden flex items-center justify-center bg-gray-950 text-white border-t border-white/5">
+      <section className="relative py-28 md:py-36 overflow-hidden flex items-center justify-center bg-gray-950 text-white">
         <div className="absolute inset-0">
           <Image
             src="/images/taller-detalle.png"
@@ -314,9 +321,13 @@ export function NosotrosContent() {
           <div className="max-w-4xl">
             <AnimateOnScroll>
               {/* Badge/Label similar to screenshot */}
-              <div className="inline-block bg-white text-gray-950 text-[11px] font-extrabold px-4.5 py-2.5 rounded-lg mb-8 tracking-wider uppercase shadow-md">
+              <div className="inline-block bg-white text-gray-950 text-[11px] font-extrabold px-4.5 py-2.5 rounded-lg tracking-wider uppercase shadow-md">
                 Nuestra visión
               </div>
+              
+              {/* Separador cromático magenta */}
+              <div className="w-16 h-1 bg-rose-500 rounded-full mt-6 mb-8" />
+              
               <h2 className="text-2xl md:text-4xl font-normal leading-relaxed text-white tracking-tight">
                 Ser líderes en soluciones de impresión a nivel regional, ofreciendo disponibilidad 24 horas para responder con rapidez y eficacia a las necesidades más estrictas del mercado.
               </h2>
