@@ -426,6 +426,7 @@ export default function DigitalesPage() {
                           src={selectedProduct.image} 
                           alt={selectedProduct.name} 
                           fill 
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 40vw, 30vw"
                           className="object-cover"
                         />
                       </div>
