@@ -73,7 +73,7 @@ export function LocalBusinessJsonLd() {
     telephone: S.phone.huixquilucan,
     email: S.email,
     description:
-      "Imprenta profesional con más de 20 años de experiencia. Servicios de impresión digital, gran formato, rotulación, señalética, letreros 3D, sublimación y corte láser con excelente tiempo de entrega.",
+      "Imprenta profesional con más de 20 años de experiencia. Servicios de impresión digital, gran formato, rotulación, señalética, letreros 3D, personalizables y corte láser con excelente tiempo de entrega.",
     foundingDate: S.foundingYear,
     priceRange: "$$",
     currenciesAccepted: "MXN",
@@ -130,7 +130,7 @@ export function LocalBusinessJsonLd() {
           itemListElement: [
             { "@type": "Offer", itemOffered: { "@type": "Service", name: "Impresiones Digitales", description: "Tarjetas de presentación, folletos, documentos con acabados profesionales" } },
             { "@type": "Offer", itemOffered: { "@type": "Service", name: "Impresiones a Gran Formato", description: "Pósters, banners, lonas y gráficos de gran tamaño" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sublimación", description: "Personalización de textiles y artículos promocionales" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Personalizables", description: "Personalización de textiles y artículos promocionales" } },
           ],
         },
         {
@@ -138,7 +138,7 @@ export function LocalBusinessJsonLd() {
           name: "Señalización",
           itemListElement: [
             { "@type": "Offer", itemOffered: { "@type": "Service", name: "Letreros 3D", description: "Letras corpóreas con o sin iluminación" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rotulación Vehicular", description: "Vinilos de alta resistencia para vehículos" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rotulación", description: "Vinilos de alta resistencia para vehículos, escaparates y paredes" } },
             { "@type": "Offer", itemOffered: { "@type": "Service", name: "Señalética", description: "Letreros y directorios para corporativos y espacios públicos" } },
           ],
         },
@@ -228,9 +228,9 @@ export function ServicePageJsonLd() {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Impresiones Digitales", url: `${S.url}/servicios#digitales` },
       { "@type": "ListItem", position: 2, name: "Gran Formato", url: `${S.url}/servicios#gran-formato` },
-      { "@type": "ListItem", position: 3, name: "Sublimación", url: `${S.url}/servicios#sublimacion` },
+      { "@type": "ListItem", position: 3, name: "Personalizables", url: `${S.url}/servicios#personalizables` },
       { "@type": "ListItem", position: 4, name: "Letreros 3D", url: `${S.url}/servicios#letreros-3d` },
-      { "@type": "ListItem", position: 5, name: "Rotulación Vehicular", url: `${S.url}/servicios#rotulacion` },
+      { "@type": "ListItem", position: 5, name: "Rotulación", url: `${S.url}/servicios#rotulacion` },
       { "@type": "ListItem", position: 6, name: "Señalética", url: `${S.url}/servicios#senaletica` },
       { "@type": "ListItem", position: 7, name: "Corte Láser", url: `${S.url}/servicios#corte-laser` },
       { "@type": "ListItem", position: 8, name: "Diseño Gráfico", url: `${S.url}/servicios#diseno` },

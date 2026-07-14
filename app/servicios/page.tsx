@@ -27,7 +27,7 @@ import { siteConfig } from "@/lib/seo-config"
 export const metadata: Metadata = {
   title: 'Servicios de Impresión — Digital, Gran Formato, Rotulación y Más',
   description:
-    'Descubre todos los servicios de IGSA Print & Copy: impresión digital, gran formato, sublimación, letreros 3D, rotulación vehicular, señalética, corte láser y diseño gráfico en Huixquilucan.',
+    'Descubre todos los servicios de IGSA Print & Copy: impresión digital, gran formato, personalizables, letreros 3D, rotulación, señalética, corte láser y diseño gráfico en Huixquilucan.',
   alternates: { canonical: '/servicios' },
 }
 
@@ -89,12 +89,12 @@ const services = [
     features: ["Trovicel", "Acrílico", "Dibond"]
   },
   { 
-    title: "Sublimación", 
-    description: "Personalización de textiles, tazas, mouse pads y artículos promocionales con calidad fotográfica.", 
+    title: "Personalizables", 
+    description: "Técnicas de impresión versátil y resistente. Ideal para personalizar textiles, merchandising y artículos promocionales con la mejor relación calidad-precio.", 
     image: "/images/hero-printing.jpg",
     icon: Shirt,
-    tags: ["Full color", "Duradero"],
-    features: ["Textiles", "Artículos", "Merchandising"]
+    tags: ["Textiles y tazas", "Artículos de regalo"],
+    features: ["Sublimación premium", "Artículos de merchandising", "Regalos corporativos"]
   },
   { 
     title: "Letreros 3D", 
@@ -105,12 +105,12 @@ const services = [
     features: ["Acrílico", "Metal", "LED integrado"]
   },
   { 
-    title: "Rotulación Vehicular", 
-    description: "Vinilos de alta resistencia para vehículos, escaparates y cualquier superficie con instalación profesional.", 
+    title: "Rotulación", 
+    description: "Aplicación profesional de vinilos de alta resistencia para decorar o marcar vehículos, escaparates, paredes y cualquier superficie.", 
     image: "/images/vehicle-wrap.jpg",
     icon: Car,
-    tags: ["Vinil premium", "Instalación"],
-    features: ["Full wrap", "Parcial", "Lettering"]
+    tags: ["Vinil premium", "Cualquier superficie"],
+    features: ["Vehículos comerciales", "Escaparates y tiendas", "Vinil de alta resistencia"]
   },
   { 
     title: "Señalética", 
