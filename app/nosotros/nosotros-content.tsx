@@ -11,7 +11,6 @@ import {
   Award, 
   CheckCircle2, 
   MessageCircle,
-  Target,
   Compass
 } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
@@ -268,85 +267,76 @@ export function NosotrosContent() {
         </div>
       </section>
 
-      {/* Mission & Vision Section */}
-      <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            
-            {/* Mission Card */}
-            <AnimateOnScroll direction="left">
-              <div className="group relative p-8 md:p-12 rounded-3xl bg-slate-50 border border-slate-200/80 overflow-hidden h-full flex flex-col justify-between transition-all duration-500 hover:shadow-xl hover:border-slate-300">
-                {/* CMYK Cyan Bar */}
-                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-cyan-500" />
-                
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-8">
-                    <Target className="h-6 w-6 text-cyan-600" />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-cyan-600">Dirección</span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#08213c] mt-2 mb-6">Nuestra Misión</h3>
-                  <p className="text-sm md:text-base text-slate-600 leading-relaxed">
-                    Facilitar y potenciar la comunicación visual de nuestros clientes. Nos comprometemos a fusionar tecnología industrial de impresión con un trato personalizado impecable, asegurando productos nítidos, acabados robustos y la mejor relación costo-beneficio de la región.
-                  </p>
-                </div>
-                <div className="mt-8 flex items-center gap-1.5 text-xs font-bold text-cyan-600">
-                  <span>Cian (C) • CMYK </span>
-                </div>
+      {/* Nuestra Misión Banner */}
+      <section className="relative py-28 md:py-36 overflow-hidden flex items-center justify-center bg-gray-950 text-white">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/taller-plotter.png"
+            alt="Nuestra Misión IGSA"
+            fill
+            className="object-cover opacity-30"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/80 to-transparent" />
+        </div>
+        
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full z-10">
+          <div className="max-w-4xl">
+            <AnimateOnScroll>
+              {/* Badge/Label similar to screenshot */}
+              <div className="inline-block bg-white text-gray-950 text-[11px] font-extrabold px-4.5 py-2.5 rounded-lg mb-8 tracking-wider uppercase shadow-md">
+                Nuestra misión
               </div>
+              <h2 className="text-2xl md:text-4xl font-normal leading-relaxed text-white tracking-tight mb-8">
+                Ofrecer soluciones de la más alta calidad y creatividad, brindando a nuestros clientes productos personalizados que fortalezcan su identidad visual y alcance.
+              </h2>
+              <p className="text-gray-400 text-xs md:text-sm max-w-3xl leading-relaxed">
+                Nos comprometemos a utilizar tecnología de la más alta calidad, materiales de excelencia y un personal altamente capacitado para garantizar resultados que superen las expectativas del público objetivo.
+              </p>
             </AnimateOnScroll>
-
-            {/* Vision Card */}
-            <AnimateOnScroll direction="right">
-              <div className="group relative p-8 md:p-12 rounded-3xl bg-slate-50 border border-slate-200/80 overflow-hidden h-full flex flex-col justify-between transition-all duration-500 hover:shadow-xl hover:border-slate-300">
-                {/* CMYK Magenta Bar */}
-                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-rose-500" />
-                
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center mb-8">
-                    <Compass className="h-6 w-6 text-rose-600" />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-rose-600">Futuro</span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#08213c] mt-2 mb-6">Nuestra Visión</h3>
-                  <p className="text-sm md:text-base text-slate-600 leading-relaxed">
-                    Posicionarnos como el principal hub de soluciones integrales de impresión y publicidad en el Estado de México. Planeamos seguir incorporando maquinaria de última generación respetuosa con el medio ambiente y expandiendo nuestros canales digitales para agilizar las solicitudes del mercado.
-                  </p>
-                </div>
-                <div className="mt-8 flex items-center gap-1.5 text-xs font-bold text-rose-600">
-                  <span>Magenta (M) • CMYK</span>
-                </div>
-              </div>
-            </AnimateOnScroll>
-
           </div>
         </div>
       </section>
 
-      {/* Plotter Workshop Panoramic Banner */}
-      <section className="relative h-[400px] md:h-[450px] overflow-hidden flex items-center justify-center bg-gray-950 text-white">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/taller-plotter.png"
-            alt="Tecnología de gran formato IGSA"
-            fill
-            className="object-cover opacity-40"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/70 to-transparent" />
-        </div>
-        
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full z-10">
-          <div className="max-w-2xl">
-            <AnimateOnScroll>
-              <span className="inline-flex items-center rounded-full bg-[#8fb82e]/20 px-3 py-1 text-xs font-bold text-[#b6df55] uppercase tracking-wider mb-4">
-                Infraestructura y Tecnología
-              </span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-                Equipamiento industrial para grandes desafíos
-              </h2>
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                Contamos con plotters de alta resolución y maquinaria especializada que garantizan una nitidez inigualable, colores calibrados milimétricamente y acabados duraderos en todo tipo de sustratos.
-              </p>
-            </AnimateOnScroll>
+      {/* Nuestra Visión Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            {/* Left Column: Text */}
+            <div className="lg:col-span-7">
+              <AnimateOnScroll direction="left">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-rose-500/10 text-rose-600 rounded-full mb-6">
+                  <Compass className="h-4 w-4" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Futuro & Proyección</span>
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold text-[#08213c] tracking-tight mb-6">
+                  Nuestra Visión
+                </h3>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
+                  Posicionarnos como el principal hub de soluciones integrales de impresión y publicidad en el Estado de México. Planeamos seguir incorporando maquinaria de última generación respetuosa con el medio ambiente y expandiendo nuestros canales digitales para agilizar las solicitudes del mercado.
+                </p>
+                <div className="flex items-center gap-1.5 text-xs font-bold text-rose-500">
+                  <div className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+                  <span>Magenta (M) • CMYK</span>
+                </div>
+              </AnimateOnScroll>
+            </div>
+
+            {/* Right Column: Image */}
+            <div className="lg:col-span-5">
+              <AnimateOnScroll direction="right">
+                <div className="relative aspect-square w-full rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-2xl">
+                  <Image
+                    src="/images/vision-printing.jpg"
+                    alt="Nuestra Visión IGSA"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent" />
+                </div>
+              </AnimateOnScroll>
+            </div>
           </div>
         </div>
       </section>
