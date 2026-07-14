@@ -275,6 +275,36 @@ export function NosotrosContent() {
         </div>
       </section>
 
+      {/* Banner de gran formato / Taller */}
+      <section className="relative h-[400px] md:h-[450px] overflow-hidden flex items-center justify-center bg-gray-950 text-white">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/taller-plotter.png"
+            alt="Tecnología de gran formato IGSA"
+            fill
+            className="object-cover opacity-40"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/70 to-transparent" />
+        </div>
+        
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full z-10">
+          <div className="max-w-2xl">
+            <AnimateOnScroll>
+              <span className="inline-flex items-center rounded-full bg-[#8fb82e]/20 px-3 py-1 text-xs font-bold text-[#b6df55] uppercase tracking-wider mb-4">
+                Infraestructura y Tecnología
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+                Equipamiento industrial para grandes desafíos
+              </h2>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                Contamos con plotters de alta resolución y maquinaria especializada que garantizan una nitidez inigualable, colores calibrados milimétricamente y acabados duraderos en todo tipo de sustratos.
+              </p>
+            </AnimateOnScroll>
+          </div>
+        </div>
+      </section>
+
       {/* Timeline */}
       <section className="py-20 md:py-32 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
