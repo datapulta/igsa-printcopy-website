@@ -148,7 +148,8 @@ const products = [
     name: "Tesis",
     desc: "Impresión de alta calidad y empastado profesional de tesis universitarias con pasta dura o blanda.",
     icon: GraduationCap,
-    tone: "bg-stone-50 text-stone-800"
+    tone: "bg-stone-50 text-stone-800",
+    image: "/images/tesis.png"
   },
   {
     name: "Revistas",
