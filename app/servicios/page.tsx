@@ -174,9 +174,9 @@ export default function ServiciosPage() {
                   </div>
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[0.95] tracking-tight mb-6">
-                    Tu proyecto,
+                    Ideas que inspiran,
                     <br />
-                    <span className="text-gray-400">nuestro oficio</span>
+                    <span className="text-gray-400">impresión que impacta</span>
                   </h1>
                   
                   <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8 max-w-md">
