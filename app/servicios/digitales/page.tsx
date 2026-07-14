@@ -71,37 +71,43 @@ const products = [
     name: "Programas",
     desc: "Guías de mano y programas impresos para bodas, ceremonias religiosas, conciertos y graduaciones.",
     icon: FileText,
-    tone: "bg-pink-50 text-pink-800"
+    tone: "bg-pink-50 text-pink-800",
+    image: "/images/programas.png"
   },
   {
     name: "Tarjetas de Presentación",
     desc: "Tu firma profesional en papeles satinados, mate, texturizados o con laminado plastificado de alta resistencia.",
     icon: Contact,
-    tone: "bg-amber-50 text-amber-800"
+    tone: "bg-amber-50 text-amber-800",
+    image: "/images/tarjetas-presentacion.png"
   },
   {
     name: "Recetas",
     desc: "Recetarios médicos oficiales y hojas de consulta personalizadas para clínicas y consultorios particulares.",
     icon: HeartPulse,
-    tone: "bg-red-50 text-red-800"
+    tone: "bg-red-50 text-red-800",
+    image: "/images/recetas.png"
   },
   {
     name: "Recibos",
     desc: "Talonarios numerados de cobro o recibos oficiales autocopiantes (original y copias) con acabados grapados.",
     icon: Receipt,
-    tone: "bg-teal-50 text-teal-800"
+    tone: "bg-teal-50 text-teal-800",
+    image: "/images/recibos.png"
   },
   {
     name: "Notas de Remisión",
     desc: "Documentos de pedido o remisión autocopiantes personalizados con tu logotipo y foliado consecutivo.",
     icon: ClipboardList,
-    tone: "bg-indigo-50 text-indigo-800"
+    tone: "bg-indigo-50 text-indigo-800",
+    image: "/images/notas-remision.png"
   },
   {
     name: "Folders",
     desc: "Carpetas corporativas con o sin solapas interiores para organizar y presentar propuestas a clientes.",
     icon: FolderOpen,
-    tone: "bg-sky-50 text-sky-800"
+    tone: "bg-sky-50 text-sky-800",
+    image: "/images/folders.png"
   },
   {
     name: "Boletos",
