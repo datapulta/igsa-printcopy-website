@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import { FloatingWhatsApp } from '@/components/floating-whatsapp'
 import { OrganizationJsonLd } from '@/components/structured-data'
 import { siteConfig } from '@/lib/seo-config'
@@ -169,7 +168,6 @@ export default function RootLayout({
         <OrganizationJsonLd />
         {children}
         <FloatingWhatsApp />
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
