@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { siteConfig } from "@/lib/seo-config"
+import { TrackedAnchor } from "@/components/tracked-link"
 
 const SITE_URL = siteConfig.url
 
@@ -160,15 +161,21 @@ export default function SorteoPage() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <Button asChild size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-black text-lg px-8 py-6 rounded-full shadow-lg shadow-yellow-500/20 transition-transform hover:scale-105">
-                      <a href="#como-participar" aria-label="Ver mecánica del sorteo">
+                      <TrackedAnchor href="#como-participar" aria-label="Ver mecánica del sorteo" event="giveaway_registration_clicked" properties={{
+                        cta_location: "hero_steps",
+                        destination_type: "anchor",
+                      }}>
                         ¡COMENTA Y GANA AHORA! 👇
-                      </a>
+                      </TrackedAnchor>
                     </Button>
                     <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 rounded-full border-2 border-white/20 text-white hover:bg-white/10">
-                      <a href="https://www.facebook.com/share/p/1BzK9p4QFA/" target="_blank" rel="noopener noreferrer" aria-label="Ir a la publicación del sorteo en Facebook para participar">
+                      <TrackedAnchor href="https://www.facebook.com/share/p/1BzK9p4QFA/" target="_blank" rel="noopener noreferrer" aria-label="Ir a la publicación del sorteo en Facebook para participar" event="giveaway_registration_clicked" properties={{
+                        cta_location: "hero_registration",
+                        destination_type: "facebook",
+                      }}>
                         <Share2 className="mr-2 h-5 w-5" />
                         Registrar participación
-                      </a>
+                      </TrackedAnchor>
                     </Button>
                   </div>
                 </AnimateOnScroll>
@@ -432,9 +439,12 @@ export default function SorteoPage() {
               {/* Right: Contact Info */}
               <div className="flex flex-col items-center lg:items-end gap-6 text-center lg:text-right">
                 <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-500 text-white font-black text-lg px-8 py-6 rounded-full shadow-lg shadow-emerald-900/50 animate-pulse">
-                  <a href="https://www.facebook.com/share/p/1BzK9p4QFA/" target="_blank" rel="noopener noreferrer" aria-label="Registrarse y participar en el sorteo">
+                  <TrackedAnchor href="https://www.facebook.com/share/p/1BzK9p4QFA/" target="_blank" rel="noopener noreferrer" aria-label="Registrarse y participar en el sorteo" event="giveaway_registration_clicked" properties={{
+                    cta_location: "footer_registration",
+                    destination_type: "facebook",
+                  }}>
                     ¡REGÍSTRATE Y PARTICIPA! 👉📲
-                  </a>
+                  </TrackedAnchor>
                 </Button>
               </div>
             </div>

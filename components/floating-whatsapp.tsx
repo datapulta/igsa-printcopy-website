@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { siteConfig } from "@/lib/seo-config"
+import { captureEvent } from "@/lib/posthog"
 
 export function FloatingWhatsApp() {
   const [visible, setVisible] = useState(false)
@@ -22,6 +23,10 @@ export function FloatingWhatsApp() {
           ? "opacity-100 translate-y-0 scale-100"
           : "opacity-0 translate-y-4 scale-90"
       }`}
+      onClick={() => captureEvent("whatsapp_quote_clicked", {
+        cta_location: "floating_whatsapp",
+        widget_visible: visible,
+      })}
     >
       <span className="hidden md:block px-4 py-2 bg-white text-sm font-medium text-gray-700 rounded-xl border border-gray-200 shadow-lg">
         ¿Necesitas una cotización?

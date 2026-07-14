@@ -10,6 +10,7 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll"
 import { MessageCircle } from "lucide-react"
 import { siteConfig } from "@/lib/seo-config"
 import { faqs } from "@/lib/faqs"
+import { captureEvent } from "@/lib/posthog"
 
 export function FAQSection() {
   return (
@@ -32,6 +33,10 @@ export function FAQSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300"
+              onClick={() => captureEvent("faq_whatsapp_clicked", {
+                cta_location: "homepage_faq",
+                faq_count: faqs.length,
+              })}
             >
               <MessageCircle className="h-4 w-4" />
               Preguntar por WhatsApp

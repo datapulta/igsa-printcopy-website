@@ -5,6 +5,7 @@ import { Phone, Mail, MapPin, MessageCircle, ArrowRight, Clock } from "lucide-re
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 import { siteConfig } from "@/lib/seo-config"
+import { TrackedAnchor } from "@/components/tracked-link"
 
 export const metadata: Metadata = {
   title: 'Contacto — WhatsApp, Teléfono y Correo | IGSA Print',
@@ -92,15 +93,21 @@ export default function ContactoPage() {
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed mb-8 flex-1">{method.description}</p>
-                    <a
+                    <TrackedAnchor
                       href={method.href}
                       target={method.href.startsWith("http") ? "_blank" : undefined}
                       rel={method.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       className={`group/btn inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-full transition-all duration-300 ${method.btnClass}`}
+                      event="contact_method_clicked"
+                      properties={{
+                        method_title: method.title,
+                        contact_channel: method.href.startsWith("mailto:") ? "email" : method.href.startsWith("tel:") ? "phone" : "whatsapp",
+                        page_name: "contacto",
+                      }}
                     >
                       {method.action}
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                    </a>
+                    </TrackedAnchor>
                   </div>
                 </AnimateOnScroll>
               ))}
@@ -123,10 +130,14 @@ export default function ContactoPage() {
                   <div className="p-8 rounded-3xl bg-white border border-gray-200 h-full">
                     <h3 className="text-lg font-bold text-gray-900 mb-5">{location.name}</h3>
                     <div className="space-y-4 mb-8">
-                      <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-gray-700 hover:text-gray-900 transition-colors">
+                      <TrackedAnchor href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-gray-700 hover:text-gray-900 transition-colors" event="location_directions_clicked" properties={{
+                        location_name: location.name,
+                        action_type: "address_map",
+                        page_name: "contacto",
+                      }}>
                         <MapPin className="h-4 w-4 mt-1 shrink-0 text-gray-400" />
                         <span className="text-sm leading-relaxed">{location.address}</span>
-                      </a>
+                      </TrackedAnchor>
                       {location.reference && <p className="text-xs text-gray-500 ml-7">Ref: {location.reference}</p>}
                       <div className="flex items-start gap-3 text-gray-700">
                         <Clock className="h-4 w-4 mt-1 shrink-0 text-gray-400" />
@@ -134,15 +145,27 @@ export default function ContactoPage() {
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      <a href={`https://wa.me/${location.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300">
+                      <TrackedAnchor href={`https://wa.me/${location.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300" event="contact_method_clicked" properties={{
+                        method_title: `${location.name} WhatsApp`,
+                        contact_channel: "whatsapp",
+                        page_name: "contacto",
+                      }}>
                         <MessageCircle className="h-3.5 w-3.5" />WhatsApp
-                      </a>
-                      <a href={`tel:${location.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-gray-100 text-gray-900 hover:bg-gray-200 transition-all duration-300">
+                      </TrackedAnchor>
+                      <TrackedAnchor href={`tel:${location.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-gray-100 text-gray-900 hover:bg-gray-200 transition-all duration-300" event="contact_method_clicked" properties={{
+                        method_title: `${location.name} Teléfono`,
+                        contact_channel: "phone",
+                        page_name: "contacto",
+                      }}>
                         <Phone className="h-3.5 w-3.5" />{location.phone}
-                      </a>
-                      <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-gray-100 text-gray-900 hover:bg-gray-200 transition-all duration-300">
+                      </TrackedAnchor>
+                      <TrackedAnchor href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full bg-gray-100 text-gray-900 hover:bg-gray-200 transition-all duration-300" event="location_directions_clicked" properties={{
+                        location_name: location.name,
+                        action_type: "view_map",
+                        page_name: "contacto",
+                      }}>
                         <MapPin className="h-3.5 w-3.5" />Ver mapa
-                      </a>
+                      </TrackedAnchor>
                     </div>
                   </div>
                 </AnimateOnScroll>

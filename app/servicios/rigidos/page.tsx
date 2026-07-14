@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import Link from "next/link"
+import { TrackedAnchor, TrackedLink } from "@/components/tracked-link"
 import { ArrowLeft, Layers, Expand, Sparkles, MessageCircle } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
@@ -72,9 +72,13 @@ export default function RigidosPage() {
         <section className="py-20 md:py-32 relative overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-3xl">
-              <Link href="/servicios" className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 mb-8 transition-colors">
+              <TrackedLink href="/servicios" className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 mb-8 transition-colors" event="services_cta_clicked" properties={{
+                cta_label: "volver_a_servicios",
+                cta_destination: "/servicios",
+                page_name: "servicios_rigidos",
+              }}>
                 <ArrowLeft className="h-4 w-4" /> Volver a Servicios
-              </Link>
+              </TrackedLink>
               
               <AnimateOnScroll>
                 <p className="text-sm font-medium text-primary mb-4">Materiales Rígidos</p>
@@ -86,14 +90,19 @@ export default function RigidosPage() {
                 <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mb-10">
                   Sustratos sólidos, planos y resistentes perfectos para señalética, exhibidores, stands y decoración con tintas Látex de última generación.
                 </p>
-                <a
+                <TrackedAnchor
                   href={`https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20me%20interesa%20cotizar%20impresi%C3%B3n%20en%20materiales%20r%C3%ADgidos`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300"
+                  event="rigid_material_quote_clicked"
+                  properties={{
+                    cta_location: "hero",
+                    material_focus: "rigidos",
+                  }}
                 >
                   <MessageCircle className="h-4 w-4" /> Cotizar Rígidos
-                </a>
+                </TrackedAnchor>
               </AnimateOnScroll>
             </div>
           </div>
@@ -233,14 +242,19 @@ export default function RigidosPage() {
                   <p className="text-gray-400 mb-10 max-w-xl mx-auto leading-relaxed">
                     Envíanos tus diseños o solicita asesoría para elegir el material que mejor se adapte a tu proyecto.
                   </p>
-                  <a
+                  <TrackedAnchor
                     href={`https://wa.me/${siteConfig.whatsapp}?text=Hola%2C%20quiero%20cotizar%20impresi%C3%B3n%20en%20materiales%20r%C3%ADgidos`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold bg-white text-gray-900 rounded-full hover:bg-gray-100 transition-all duration-300"
+                    event="rigid_material_quote_clicked"
+                    properties={{
+                      cta_location: "footer",
+                      material_focus: "rigidos",
+                    }}
                   >
                     <MessageCircle className="h-4 w-4" /> Cotizar por WhatsApp
-                  </a>
+                  </TrackedAnchor>
                 </div>
               </div>
             </AnimateOnScroll>
