@@ -156,7 +156,7 @@ const products = [
     desc: "Publicaciones impresas periódicas engrapadas o en lomo cuadrado con acabados profesionales en portada.",
     icon: BookOpen,
     tone: "bg-cyan-50 text-cyan-800",
-    image: "/images/revistas.png"
+    image: "/images/revistas_v2.png"
   }
 ]
 
