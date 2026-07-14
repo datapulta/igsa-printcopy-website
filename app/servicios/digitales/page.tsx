@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { TrackedAnchor, TrackedLink } from "@/components/tracked-link"
@@ -35,31 +36,36 @@ const products = [
     name: "Dípticos y Trípticos",
     desc: "Folletos plegados ideales para menús, guías informativas y catálogos corporativos rápidos.",
     icon: Layers,
-    tone: "bg-[#e8f4c9] text-[#335711]"
+    tone: "bg-[#e8f4c9] text-[#335711]",
+    image: "/images/dipticos-tripticos.png"
   },
   {
     name: "Diplomas",
     desc: "Reconocimientos e invitaciones de honor impresos en papeles especiales de alto gramaje con excelente nitidez.",
     icon: Award,
-    tone: "bg-[#e6effa] text-[#16457d]"
+    tone: "bg-[#e6effa] text-[#16457d]",
+    image: "/images/diplomas.png"
   },
   {
     name: "Invitaciones",
     desc: "Tarjetas personalizadas para eventos sociales o corporativos con sobres opcionales y acabados finos.",
     icon: Mail,
-    tone: "bg-[#f7ecdc] text-[#8a4a14]"
+    tone: "bg-[#f7ecdc] text-[#8a4a14]",
+    image: "/images/invitaciones.png"
   },
   {
     name: "Pósters y Carteles",
     desc: "Impresión de gran impacto visual en papel bond, satinado o brillante para interiores o vitrinas.",
     icon: Printer,
-    tone: "bg-emerald-50 text-emerald-800"
+    tone: "bg-emerald-50 text-emerald-800",
+    image: "/images/posters-carteles.png"
   },
   {
     name: "Separadores",
     desc: "Puntos de libro personalizados para obsequios literarios, eventos o merchandising promocional.",
     icon: Bookmark,
-    tone: "bg-purple-50 text-purple-800"
+    tone: "bg-purple-50 text-purple-800",
+    image: "/images/separadores.png"
   },
   {
     name: "Programas",
@@ -225,13 +231,27 @@ export default function DigitalesPage() {
                   const Icon = product.icon
                   return (
                     <AnimateOnScroll key={product.name} delay={index * 0.05}>
-                      <article className="group h-full rounded-2xl border border-slate-200/80 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5 flex flex-col justify-between">
+                      <article className="group h-full rounded-2xl border border-slate-200/85 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5 flex flex-col justify-between">
                         <div>
-                          <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${product.tone} border border-current/10`}>
-                            <Icon className="h-5 w-5" />
-                          </div>
-                          <h3 className="mt-5 text-lg font-bold text-[#08213c] tracking-tight">{product.name}</h3>
-                          <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-slate-600">{product.desc}</p>
+                          {/* Image Header or Gradient Placeholder */}
+                          {product.image ? (
+                            <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-5 bg-slate-50 border border-slate-100">
+                              <Image 
+                                src={product.image} 
+                                alt={product.name} 
+                                fill 
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105" 
+                              />
+                            </div>
+                          ) : (
+                            <div className={`flex w-full aspect-video items-center justify-center rounded-xl ${product.tone} mb-5 border border-current/5`}>
+                              <Icon className="h-8 w-8" />
+                            </div>
+                          )}
+                          
+                          <h3 className="text-lg font-bold text-[#08213c] tracking-tight">{product.name}</h3>
+                          <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600">{product.desc}</p>
                         </div>
                         
                         <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
